@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_cadastro" tools:context="com.example.ccsst.projeto.Cadastro">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextNome"
+                android:layout_below="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:hint="Nome(Entidade)" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editTextSenha"
+                android:layout_below="@+id/editTextNome"
+                android:layout_centerHorizontal="true"
+                android:hint="Senha" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editTextConfirmSen"
+                android:layout_below="@+id/editTextSenha"
+                android:layout_centerHorizontal="true"
+                android:hint="Confirme sua Senha" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextCPF"
+                android:layout_below="@+id/editTextConfirmSen"
+                android:layout_centerHorizontal="true"
+                android:hint="CPF/CNPJ" />
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/autoCompleteUF"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:hint="UF" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <AutoCompleteTextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/autoCompleteTextCidade"
+                    android:layout_gravity="left"
+                    android:hint="Cidade"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toLeftOf="@+id/addCidade"
+                    android:layout_alignRight="@+id/autoCompleteTextBairro"
+                    android:layout_alignEnd="@+id/autoCompleteTextBairro" />
+
+                <Button
+                    android:layout_width="61dp"
+                    android:layout_height="34dp"
+                    android:text="..."
+                    android:id="@+id/addCidade"
+                    android:layout_gravity="right"
+                    android:layout_alignBottom="@+id/autoCompleteTextCidade"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="Dialogcidade"/>
+
+                <AutoCompleteTextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/autoCompleteTextBairro"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="Bairro"
+                    android:layout_alignTop="@+id/addBairro"
+                    android:layout_toLeftOf="@+id/addBairro"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <Button
+                    android:layout_width="61dp"
+                    android:layout_height="34dp"
+                    android:text="..."
+                    android:id="@+id/addBairro"
+                    android:layout_gravity="right"
+                    android:layout_below="@id/addCidade"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="Dialogbairro"/>
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editTextRua"
+                android:layout_below="@+id/editTextCidade"
+                android:layout_centerHorizontal="true"
+                android:hint="Rua" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editTextLote"
+                android:layout_below="@+id/editTextCidade"
+                android:layout_centerHorizontal="true"
+                android:hint="Lote" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avançar"
+                android:id="@+id/button2Avancar"
+                android:layout_gravity="center"
+                android:layout_below="@+id/editTextOBS"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="41dp"
+                android:onClick="callStringRequest"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
