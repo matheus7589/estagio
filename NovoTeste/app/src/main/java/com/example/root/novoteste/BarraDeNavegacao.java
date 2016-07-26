@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class BarraDeNavegacao extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     //private SupportMapFragment mapFragment;
     //private GoogleMap map;
@@ -51,50 +51,9 @@ public class BarraDeNavegacao extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         //MENU LATERAL
 
-        //GOOGLE MAP
-        //seta o menu lateral para nao ficar em baixo do google map
-        //GoogleMapOptions options = new GoogleMapOptions();
-        //options.zOrderOnTop(true);
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
-        //mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        //map = mapFragment.getMapAsync(this);
-
-        /*mapFragment = SupportMapFragment.newInstance(options);
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.llContainer, mapFragment);
-        ft.commit();*/
-
-        //configMap();
-
-
-        //GOOGLE MAP
     }
 
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        //this.map = googleMap;
-        googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(-10.1689, -48.3317)).title("Palmas"));
-    }
-
-//    public void configMap(){
-//        map = mapFragment.getMapAsync(OnMapReadyCallback this);
-//
-//        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-//        map.setMyLocationEnabled(true);
-//
-//        LatLng latLng = new LatLng(-10.1689, -48.3317);
-//
-//        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(13).build();
-//        CameraUpdate update = CameraUpdateFactory.newCameraPosition(cameraPosition);
-//
-//        map.animateCamera(update);
-//    }
 
     @Override
     public void onBackPressed() {
@@ -135,8 +94,8 @@ public class BarraDeNavegacao extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent avaliacao = new Intent(this, AvaliacaoSensitiva.class);
-            startActivity(avaliacao);
+            Intent mapa = new Intent(BarraDeNavegacao.this, Maps.class);
+            startActivity(mapa);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
