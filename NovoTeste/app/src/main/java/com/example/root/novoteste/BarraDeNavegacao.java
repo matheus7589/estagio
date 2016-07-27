@@ -96,8 +96,9 @@ public class BarraDeNavegacao extends AppCompatActivity
         if (id == R.id.nav_camera) {
             Intent mapa = new Intent(BarraDeNavegacao.this, Maps.class);
             startActivity(mapa);
-        } else if (id == R.id.nav_gallery) {
-
+        } else if (id == R.id.ava_sense) {
+            Intent avaliacao = new Intent(BarraDeNavegacao.this, AvaliacaoSensitiva.class);
+            startActivity(avaliacao);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
