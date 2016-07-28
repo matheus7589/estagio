@@ -31,16 +31,22 @@
         <activity
             android:name=".BarraDeNavegacao"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AvaliacaoSensitiva" />
+        <activity
+            android:name=".AvaliacaoSensitiva"
+            android:label="Avaliação Sensitiva"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait" />
         <activity android:name=".Maps"
-            android:label="Mapa CadHanse">
+            android:label="Mapa CadHanse"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
