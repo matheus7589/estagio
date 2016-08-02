@@ -103,7 +103,8 @@ public class BarraDeNavegacao extends AppCompatActivity
             Intent avaliacao = new Intent(BarraDeNavegacao.this, AvaliacaoSensitiva.class);
             startActivity(avaliacao);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent abas = new Intent(BarraDeNavegacao.this, Abas.class);
+            startActivity(abas);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

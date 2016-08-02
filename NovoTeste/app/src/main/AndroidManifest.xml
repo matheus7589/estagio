@@ -47,7 +47,11 @@
         <activity
             android:name=".Maps"
             android:label="Mapa CadHanse"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Abas"
+            android:label="@string/title_activity_abas"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"></activity>
     </application>
 
 </manifest>
