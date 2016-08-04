@@ -2,6 +2,7 @@ package com.example.root.novoteste;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,12 +19,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Abas extends AppCompatActivity {
 
 
-    private String[] tabs = { "Tab 1", "Tab 2", "Tab 3" };
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -47,11 +49,13 @@ public class Abas extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
+
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
@@ -128,26 +132,38 @@ public class Abas extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+            // SETA A PORRA DOS FRAGMENTOS AQUI!!!!!!!!!!
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return new Fragmento1();
+                case 1:
+                    return new Fragmento2();
+                case 2:
+                    return new Fragmento3();
+                case 4:
+                    return new Fragmento4();
+            }
+            return null;
+
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // quantidade de Tabs
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "FRAG 1";
                 case 1:
-                    return "SECTION 2";
+                    return "FRAG 2";
                 case 2:
-                    return "SECTION 3";
+                    return "FRAG 3";
             }
             return null;
         }

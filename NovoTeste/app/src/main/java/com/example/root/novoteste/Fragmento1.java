@@ -1,58 +1,57 @@
 package com.example.root.novoteste;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class AvaliacaoSensitiva extends AppCompatActivity {
+
+/**
+ * Created by root on 01/08/2016.
+ */
+public class Fragmento1 extends Fragment {
+
 
     ImageButton button1, button2, button3, button4, button5, button6;
-    Button next;
-    ImageView imagem;
     int i = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.avaliacao_sensitiva1);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Infla o Layout pra esse fragmento
+        return inflater.inflate(R.layout.avaliacao_sensitiva1, container, false);
+    }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-
-
-        button1 = (ImageButton)findViewById(R.id.imageButton);
+        button1 = (ImageButton)view.findViewById(R.id.imageButton);
         button1.setOnClickListener(imgButtonHandler);
 
-        button2 = (ImageButton)findViewById(R.id.imageButton2);
+        button2 = (ImageButton)view.findViewById(R.id.imageButton2);
         button2.setOnClickListener(imgButtonHandler2);
 
-        button3 = (ImageButton)findViewById(R.id.imageButton3);
+        button3 = (ImageButton)view.findViewById(R.id.imageButton3);
         button3.setOnClickListener(imgButtonHandler3);
 
-        button4 = (ImageButton)findViewById(R.id.imageButton4);
+        button4 = (ImageButton)view.findViewById(R.id.imageButton4);
         button4.setOnClickListener(imgButtonHandler4);
 
-        button5 = (ImageButton)findViewById(R.id.imageButton5);
+        button5 = (ImageButton)view.findViewById(R.id.imageButton5);
         button5.setOnClickListener(imgButtonHandler5);
 
-        button6 = (ImageButton)findViewById(R.id.imageButton6);
+        button6 = (ImageButton)view.findViewById(R.id.imageButton6);
         button6.setOnClickListener(imgButtonHandler6);
 
+        // IMG BUTTONS
+    }
 
-        //imagem = (ImageView) findViewById(R.id.imageView3);
-        //next.setOnClickListener(nextButtonHandler);
-
-        }
-
-    View.OnClickListener nextButtonHandler = new View.OnClickListener(){
-
-        public void onClick(View v){
-
-        }
-
-    };
+    // HANDLER DOS IMG BUTTON
 
     View.OnClickListener imgButtonHandler = new View.OnClickListener() {
 
@@ -137,5 +136,7 @@ public class AvaliacaoSensitiva extends AppCompatActivity {
 
         }
     };
+
+    // HANDLER DOS IMG BUTTON
 
 }
