@@ -142,7 +142,7 @@ public class Abas extends AppCompatActivity {
                     return new Fragmento2();
                 case 2:
                     return new Fragmento3();
-                case 4:
+                case 3:
                     return new Fragmento4();
             }
             return null;
@@ -164,6 +164,8 @@ public class Abas extends AppCompatActivity {
                     return "FRAG 2";
                 case 2:
                     return "FRAG 3";
+                case 3:
+                    return "FRAG 4";
             }
             return null;
         }

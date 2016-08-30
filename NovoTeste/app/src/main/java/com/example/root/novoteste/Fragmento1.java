@@ -17,7 +17,7 @@ public class Fragmento1 extends Fragment {
 
 
     ImageButton button1, button2, button3, button4, button5, button6;
-    int i = 0;
+    int i1 = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +29,8 @@ public class Fragmento1 extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // IMG BUTTONS
 
         button1 = (ImageButton)view.findViewById(R.id.imageButton);
         button1.setOnClickListener(imgButtonHandler);
@@ -56,12 +58,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i1 == 0) {
                 button1.setImageResource(R.drawable.circled_1_red);
-                i = 1;
+                i1 = 1;
             }else{
                 button1.setImageResource(R.drawable.circled_1_green);
-                i = 0;
+                i1 = 0;
             }
 
         }
@@ -70,12 +72,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler2 = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i2 == 0) {
                 button2.setImageResource(R.drawable.circled_2_red);
-                i = 1;
+                i2 = 1;
             }else{
                 button2.setImageResource(R.drawable.circled_2_green);
-                i = 0;
+                i2 = 0;
             }
 
         }
@@ -84,12 +86,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler3 = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i3 == 0) {
                 button3.setImageResource(R.drawable.circled_3_red);
-                i = 1;
+                i3 = 1;
             }else{
                 button3.setImageResource(R.drawable.circled_3_green);
-                i = 0;
+                i3 = 0;
             }
 
         }
@@ -98,12 +100,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler4 = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i4 == 0) {
                 button4.setImageResource(R.drawable.circled_4_red);
-                i = 1;
+                i4 = 1;
             }else{
                 button4.setImageResource(R.drawable.circled_4_green);
-                i = 0;
+                i4 = 0;
             }
 
         }
@@ -112,12 +114,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler5 = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i5 == 0) {
                 button5.setImageResource(R.drawable.circled_5_red);
-                i = 1;
+                i5 = 1;
             }else{
                 button5.setImageResource(R.drawable.circled_5_green);
-                i = 0;
+                i5 = 0;
             }
 
         }
@@ -126,12 +128,12 @@ public class Fragmento1 extends Fragment {
     View.OnClickListener imgButtonHandler6 = new View.OnClickListener() {
 
         public void onClick(View v) {
-            if(i == 0) {
+            if(i6 == 0) {
                 button6.setImageResource(R.drawable.circled_6_red);
-                i = 1;
+                i6 = 1;
             }else{
                 button6.setImageResource(R.drawable.circled_6_green);
-                i = 0;
+                i6 = 0;
             }
 
         }

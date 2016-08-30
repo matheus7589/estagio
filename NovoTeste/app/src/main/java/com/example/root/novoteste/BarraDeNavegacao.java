@@ -100,11 +100,11 @@ public class BarraDeNavegacao extends AppCompatActivity
             Intent mapa = new Intent(BarraDeNavegacao.this, Maps.class);
             startActivity(mapa);
         } else if (id == R.id.ava_sense) {
-            Intent avaliacao = new Intent(BarraDeNavegacao.this, AvaliacaoSensitiva.class);
-            startActivity(avaliacao);
-        } else if (id == R.id.nav_slideshow) {
             Intent abas = new Intent(BarraDeNavegacao.this, Abas.class);
             startActivity(abas);
+        } else if (id == R.id.nav_slideshow) {
+            Intent cadastroIndividual = new Intent(BarraDeNavegacao.this, CadastroIndividual.class);
+            startActivity(cadastroIndividual);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

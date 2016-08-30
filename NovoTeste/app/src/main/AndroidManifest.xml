@@ -52,7 +52,11 @@
             android:name=".Abas"
             android:label="@string/title_activity_abas"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" ></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CadastroIndividual"
+            android:label="@string/title_activity_cadastro_individual"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
