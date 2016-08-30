@@ -207,7 +207,7 @@
         android:layout_height="wrap_content"
         android:text="Concluir"
         android:id="@+id/button"
-        android:layout_below="@+id/spinner"
-        android:layout_toRightOf="@+id/checkBox4"
-        android:layout_toEndOf="@+id/checkBox4" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/checkBox9"
+        android:layout_alignStart="@+id/checkBox9" />
 </RelativeLayout>

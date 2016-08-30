@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -20,7 +21,11 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class CadastroIndividual extends AppCompatActivity implements ActionBar.TabListener {
+public class CadastroIndividual extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -37,44 +42,26 @@ public class CadastroIndividual extends AppCompatActivity implements ActionBar.T
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_individual);
 
-        ActionBar ab = getActionBar();
-        ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        // Três tabs para serem exibidas na actionbar
-        ab.addTab(ab.newTab().setText("Tab 1").setTabListener(this));
-        ab.addTab(ab.newTab().setText("Tab 2").setTabListener(this));
-        ab.addTab(ab.newTab().setText("Tab 3").setTabListener(this));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        viewPager = (ViewPager) findViewById(R.id.container);
+        setupViewPager(viewPager);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
 
-        //Called when a tab is selected
-        int nTabSelected = tab.getPosition();
-        switch (nTabSelected) {
-            case 0:
-                setContentView(R.layout.avaliacao_sensitiva1);
-                break;
-            case 1:
-                setContentView(R.layout.avaliacao_sensitiva2);
-                break;
-            case 2:
-                setContentView(R.layout.avaliacao_sensitiva3);
-                break;
-        }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Cadastro_Ind1(), "Cadastro Individual");
+        adapter.addFragment(new Fragmento2(), "TWO");
+        adapter.addFragment(new Fragmento3(), "THREE");
+        viewPager.setAdapter(adapter);
     }
-
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // Called when a tab unselected.
-    }
-
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-
-        // Called when a tab is selected again.
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

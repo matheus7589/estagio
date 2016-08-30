@@ -14,10 +14,15 @@ import android.widget.Spinner;
 public class Cadastro_Ind1 extends Fragment {
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Infla o Layout pra esse fragmento
-        return inflater.inflate(R.layout.avaliacao_sensitiva1, container, false);
+        return inflater.inflate(R.layout.cadastro_individual1, container, false);
     }
 
     @Override
