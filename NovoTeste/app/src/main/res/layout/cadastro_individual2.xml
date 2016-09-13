@@ -14,48 +14,99 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="24dp" />
 
-    <CheckBox
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Branca"
-        android:id="@+id/checkBox4"
-        android:layout_above="@+id/textView8"
-        android:layout_centerHorizontal="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Preta"
-        android:id="@+id/checkBox3"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup2"
         android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Branca"
+            android:id="@+id/branca"
+            android:layout_below="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preta"
+            android:id="@+id/preta"
+            android:layout_below="@+id/textView9"
+            android:layout_centerHorizontal="true"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parda"
+            android:id="@+id/parda"
+            android:layout_alignTop="@+id/preta"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indígena"
+            android:id="@+id/indigena"
+            android:layout_below="@+id/preta"
+            android:layout_centerHorizontal="true"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Nacionalidade:"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/radioGroup2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp" />
 
-    <CheckBox
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Parda"
-        android:id="@+id/checkBox6"
-        android:layout_below="@+id/checkBox4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup3"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brasileiro"
+            android:id="@+id/brasileiro"
+            android:layout_below="@+id/textView8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="onRadioButtonClicked2"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Amarela"
-        android:id="@+id/checkBox5"
-        android:layout_below="@+id/checkBox4"
-        android:layout_centerHorizontal="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Naturalizado"
+            android:id="@+id/naturalizado"
+            android:layout_below="@+id/textView8"
+            android:layout_centerHorizontal="true"
+            android:onClick="onRadioButtonClicked2"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Indígena"
-        android:id="@+id/checkBox8"
-        android:layout_alignRight="@+id/checkBox9"
-        android:layout_alignEnd="@+id/checkBox9"
-        android:layout_above="@+id/textView8" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estrangeiro"
+            android:id="@+id/estrangeiro"
+            android:layout_alignTop="@+id/naturalizado"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="onRadioButtonClicked2"/>
+    </RadioGroup>
 
     <EditText
         android:layout_width="wrap_content"
@@ -64,47 +115,12 @@
         android:ems="10"
         android:id="@+id/editText7"
         android:hint="Nome Completo da Mãe"
-        android:layout_below="@+id/checkBox7"
-        android:layout_alignRight="@+id/checkBox9"
-        android:layout_alignEnd="@+id/checkBox9"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/radioGroup3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nacionalidade:"
-        android:id="@+id/textView8"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/checkBox3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brasileira"
-        android:id="@+id/checkBox7"
-        android:layout_alignTop="@+id/checkBox10"
-        android:layout_centerHorizontal="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Naturalizado"
-        android:id="@+id/checkBox10"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estrangeiro"
-        android:id="@+id/checkBox9"
-        android:layout_alignTop="@+id/checkBox7"
+        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>
