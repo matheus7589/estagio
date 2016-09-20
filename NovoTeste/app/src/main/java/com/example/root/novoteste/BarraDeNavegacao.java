@@ -106,7 +106,8 @@ public class BarraDeNavegacao extends AppCompatActivity
             Intent cadastroIndividual = new Intent(BarraDeNavegacao.this, CadastroIndividual.class);
             startActivity(cadastroIndividual);
         } else if (id == R.id.nav_manage) {
-
+            Intent cadastroDomicicliar = new Intent(BarraDeNavegacao.this, CadastroDomiciliar.class);
+            startActivity(cadastroDomicicliar);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

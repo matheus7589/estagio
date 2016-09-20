@@ -30,7 +30,7 @@
 
         <activity
             android:name=".BarraDeNavegacao"
-            android:label="@string/app_name"
+            android:label="Novo Teste"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -47,6 +47,7 @@
         <activity
             android:name=".Maps"
             android:label="Mapa CadHanse"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Abas"
@@ -55,7 +56,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CadastroIndividual"
-            android:label="@string/title_activity_cadastro_individual"
+            android:label="Cadastro Individual"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".CadastroDomiciliar"
+            android:label="Cadastro Domiciliar"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         </application>
 
