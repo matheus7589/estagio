@@ -48,7 +48,7 @@ public class CadastroDomiciliar extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Cadastro_Domi1(), "1º Passo");
         adapter.addFragment(new Cadastro_Domi2(), "2º Passo");
-        adapter.addFragment(new Cadastro_Domi3(), "3º Passo");
+        //adapter.addFragment(new Cadastro_Domi3(), "3º Passo");
         viewPager.setAdapter(adapter);
     }
 

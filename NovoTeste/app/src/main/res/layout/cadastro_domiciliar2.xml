@@ -1,11 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Tela 2"
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView12" />
-</LinearLayout>
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editText14"
+        android:hint="Telefone Residencial"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Localização:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:textSize="18sp"
+        android:layout_below="@+id/editText14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup4"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Rural"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rural"
+            android:layout_alignBaseline="@+id/urbana"
+            android:layout_alignBottom="@+id/urbana"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="95dp"
+            android:layout_marginEnd="95dp" />
+
+        <RadioButton
+            android:text="Urbana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/urbana"
+            android:layout_below="@+id/textView11"
+            android:layout_alignRight="@+id/textView12"
+            android:layout_alignEnd="@+id/textView12" />
+
+    </RadioGroup>
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrar"
+        android:elevation="10dp"
+        android:layout_below="@+id/radioGroup5"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="86dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText15"
+        android:hint="Nº de Moradores"
+        android:layout_below="@+id/radioGroup5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup5"
+        android:layout_marginTop="40dp"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+            <RadioButton
+                android:text="Cômodo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comodo"
+                android:layout_alignBaseline="@+id/apartamento"
+                android:layout_alignBottom="@+id/apartamento"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <RadioButton
+                android:text="Apartamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/apartamento"
+                android:layout_alignBaseline="@+id/casa"
+                android:layout_alignBottom="@+id/casa"
+                android:layout_alignRight="@+id/registrar"
+                android:layout_alignEnd="@+id/registrar" />
+
+            <RadioButton
+                android:text="Casa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/casa"
+                android:layout_above="@+id/editText15"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="13dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:text="Tipo de Domicílio:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/radioGroup4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
