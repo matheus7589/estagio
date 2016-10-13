@@ -47,8 +47,8 @@
         <activity
             android:name=".Maps"
             android:label="Mapa CadHanse"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Abas"
             android:label="@string/title_activity_abas"
@@ -57,11 +57,20 @@
         <activity
             android:name=".CadastroIndividual"
             android:label="Cadastro Individual"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".CadastroDomiciliar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CadastroDomiciliar"
             android:label="Cadastro Domiciliar"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        </application>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".listarDados"
+            android:label="Listar Dados"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Alterar"
+            android:label="Alterar dados"
+            android:theme="@style/AppTheme"></activity>
+    </application>
 
 </manifest>

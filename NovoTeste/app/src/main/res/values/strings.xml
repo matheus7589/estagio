@@ -41,4 +41,5 @@
         <item>Sergipe</item>
         <item>Tocantins</item>
     </string-array>
+    <string name="title_activity_listar_dados">listarDados</string>
 </resources>

@@ -51,6 +51,13 @@ public class Abas extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         viewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(viewPager);
 

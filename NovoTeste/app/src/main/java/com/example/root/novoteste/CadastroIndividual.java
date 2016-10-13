@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class CadastroIndividual extends AppCompatActivity {
@@ -35,6 +36,15 @@ public class CadastroIndividual extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
 
         viewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(viewPager);
