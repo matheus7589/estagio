@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,7 +17,10 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText8"
-        android:hint="Nome do Logradouro" />
+        android:hint="Nome do Logradouro"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -25,7 +28,10 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText9"
-        android:hint="Nº do Logradouro" />
+        android:hint="Nº do Logradouro"
+        android:layout_below="@+id/editText8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -33,19 +39,28 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText10"
-        android:hint="Complemento" />
+        android:hint="Complemento"
+        android:layout_below="@+id/editText9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:text="Estado:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView14"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/editText10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner2" />
+        android:id="@+id/spinner2"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -53,7 +68,10 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText11"
-        android:hint="Município" />
+        android:hint="Município"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -61,7 +79,11 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText12"
-        android:hint="Bairro" />
+        android:hint="Bairro"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -69,5 +91,299 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/editText13"
-        android:hint="CEP" />
-</LinearLayout>
+        android:hint="CEP"
+        android:layout_below="@+id/editText12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editText18"
+        android:hint="Telefone Residencial"
+        android:layout_below="@+id/editText13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Localização:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView22"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editText18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView22"
+        android:id="@+id/localizacao"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true" >
+
+        <RadioButton
+            android:text="Rural"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton52"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Urbana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton51" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Situação de moradia/Posse da terra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/localizacao"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textView23"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView23"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:id="@+id/moradia"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Próprio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton60"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Financiado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton59"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Alugado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton58"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Arrendado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton57"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Cedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton56"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Ocupação"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton55"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Situação de Rua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton54"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton53"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView24"
+        android:layout_alignLeft="@+id/textView24"
+        android:orientation="horizontal"
+        android:layout_alignStart="@+id/textView24" >
+
+        <RadioButton
+            android:text="Casa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton64"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Apartamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton63"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Cômodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton62"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton61"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Condição de posse e uso da terra:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/moradia"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView28" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView28"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+        <RadioButton
+            android:text="Proprietário"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton72"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Parceiro(a)/Meeiro(a)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton71"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Assentado(a)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton70"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Posseiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton69"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Arrendatário(a)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton68"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Comodatário(a)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton67"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Beneficiário(a) do Banco da Terra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton66"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não se aplica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton65"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Tipo de Domicílio:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView24"
+        android:layout_above="@+id/localizacao"
+        android:layout_toRightOf="@+id/textView23"
+        android:layout_toEndOf="@+id/textView23"
+        android:layout_marginLeft="127dp"
+        android:layout_marginStart="127dp" />
+
+    <TextView
+        android:text="Nº de moradores:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numeromoradores"
+        android:layout_below="@+id/moradia"
+        android:layout_marginTop="45dp"
+        android:layout_alignRight="@+id/textView24"
+        android:layout_alignEnd="@+id/textView24"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText19"
+        android:layout_below="@id/numeromoradores"
+        android:layout_alignLeft="@+id/numeromoradores"
+        android:layout_alignStart="@+id/numeromoradores"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="número" />
+
+    <TextView
+        android:text="Nº de Cômodos:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText19"
+        android:layout_alignLeft="@+id/editText19"
+        android:layout_marginTop="45dp"
+        android:layout_alignStart="@+id/editText19"
+        android:id="@+id/textView32"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText21"
+        android:layout_below="@+id/textView32"
+        android:layout_alignLeft="@+id/textView32"
+        android:layout_alignStart="@+id/textView32"
+        android:layout_marginTop="12dp"
+        android:hint="número" />
+</RelativeLayout>

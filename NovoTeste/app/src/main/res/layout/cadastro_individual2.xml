@@ -10,41 +10,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
+        android:textStyle="bold"
         android:textSize="18sp"
         android:layout_below="@+id/radioGroup2"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="Relação de parentesco com o responsável familiar:"
+        android:text="Curso mais elevado que frequenta/frequentou?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
-        android:id="@+id/textView15" />
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/textView15"
+        android:textSize="16sp" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView15"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@+id/textView17"
+        android:layout_alignStart="@+id/textView17"
+        android:layout_alignRight="@+id/textView17"
+        android:layout_alignEnd="@+id/textView17"
         android:id="@+id/parentesco"
         tools:orientation="vertical">
+
 
         <RadioButton
             android:text="Cônjugue/Companheiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton11"
+            android:id="@+id/radioButton"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Filho(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton10"
+            android:id="@+id/radioButton2"
             android:layout_weight="1"
             android:duplicateParentState="false" />
 
@@ -52,21 +59,21 @@
             android:text="Enteado(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton9"
+            android:id="@+id/radioButton3"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Neto(a)/Bisneto(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton8"
+            android:id="@+id/radioButton4"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Pai/Mãe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton7"
+            android:id="@+id/radioButton5"
             android:layout_weight="1" />
 
         <RadioButton
@@ -80,47 +87,53 @@
             android:text="Irmão/Irmã"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioButton7"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Genro/Nora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioButton8"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro parente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton9"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Não parente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButton10"
             android:layout_weight="1" />
+
     </RadioGroup>
 
     <TextView
-        android:text="Curso mais elevado que frequenta/frequentou?"
+        android:text="Relação de parentesco com o responsável da família:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView17"
         android:layout_alignBaseline="@+id/textView15"
         android:layout_alignBottom="@+id/textView15"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView17"
-        android:layout_alignLeft="@+id/textView17"
-        android:layout_alignStart="@+id/textView17">
+        android:layout_below="@+id/textView15"
+        android:layout_alignLeft="@+id/textView15"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_alignRight="@+id/textView15"
+        android:layout_alignEnd="@+id/textView15"
+        android:id="@+id/radioGroup8">
 
         <RadioButton
             android:text="Creche"
@@ -186,7 +199,7 @@
             android:layout_weight="1" />
 
         <RadioButton
-            android:text="Ensino Médio, Médio 2º Ciclo(Científico, Técnico, etc)"
+            android:text="Ensino Médio, Médio 2º Ciclo(Técnico, etc)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton13"
@@ -221,13 +234,297 @@
             android:layout_weight="1" />
 
         <RadioButton
-            android:text="Nenhum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton27"
-            android:layout_weight="1" />
+        android:text="Nenhum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton27"
+        android:layout_weight="1" />
 
     </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Ocupação"
+        android:ems="10"
+        android:id="@+id/editText16"
+        android:layout_below="@+id/parentesco"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignLeft="@+id/parentesco"
+        android:layout_alignStart="@+id/parentesco" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/creche"
+        android:layout_below="@+id/editText16"
+        android:layout_alignLeft="@+id/editText16"
+        android:layout_alignStart="@+id/editText16"
+        android:layout_marginTop="31dp">
+
+        <RadioButton
+            android:text="Sim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton22"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton11"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Frequenta escola ou creche?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText16"
+        android:textStyle="bold"
+        android:layout_alignLeft="@+id/editText16"
+        android:layout_alignStart="@+id/editText16"
+        android:id="@+id/textView20"
+        android:textSize="16sp" />
+
+    <TextView
+        android:text="Situação no mercado de trabalho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup8"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/textView25"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView25"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:id="@+id/mercadotrab">
+
+        <RadioButton
+            android:text="Empregador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton36"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Assalariado com carteira de trabalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton35"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Assalariado sem carteira de trabalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton34"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Autônomo com previdência social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton33"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Autônomo sem previdência social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton32"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Aposentado/Pensionista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton31"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Desempregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton30"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não trabalha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton29"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton28"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Orientação sexual/identidade de gênero:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup8"
+        android:layout_alignParentLeft="@id/creche"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@+id/creche"
+        android:id="@+id/textView26"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView26"
+        android:layout_alignLeft="@+id/textView26"
+        android:layout_alignStart="@+id/textView26"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:text="Heterossexual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton38"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Gay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton37"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Lésbica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton39"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Bissexual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton40"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Travesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton41"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Transsexual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton42"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton43"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não informar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton44"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Deficiência:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mercadotrab"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView27"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView27"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:text="Auditiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton50"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Intelectual/Cognitiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton49"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Visual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton48"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Física"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton47"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton46"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não possui deficiência"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton45"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:id="@+id/button4" />
 
 
 </RelativeLayout>
