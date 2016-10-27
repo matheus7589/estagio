@@ -28,7 +28,7 @@
         android:id="@+id/cartaosus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="5dp"
         android:text="Cartão"
         tools:gravity="center_vertical"
@@ -38,7 +38,7 @@
         android:id="@+id/nomeLivro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="5dp"
         android:text="Nome"
         tools:gravity="center_horizontal" />
