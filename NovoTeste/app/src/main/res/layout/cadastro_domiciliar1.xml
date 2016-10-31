@@ -269,7 +269,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView28"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" >
+        android:layout_alignParentStart="true"
+        android:id="@+id/condiTerra">
 
         <RadioButton
             android:text="Proprietário"
@@ -384,6 +385,64 @@
         android:layout_below="@+id/textView32"
         android:layout_alignLeft="@+id/textView32"
         android:layout_alignStart="@+id/textView32"
-        android:layout_marginTop="12dp"
-        android:hint="número" />
+        android:layout_marginTop="5dp"
+        android:hint="número"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Tipo de Acesso ao Domicílio:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/condiTerra"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/textView18" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Pavimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton76"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Chão Batido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton75"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Fluvial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton74"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton73"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp" />
 </RelativeLayout>

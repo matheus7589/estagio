@@ -232,17 +232,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView10" />
 
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/registrar"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/municipio"
-        android:layout_centerHorizontal="true"
-        tools:gravity="center_vertical|center_horizontal"
-        android:layout_gravity="center_horizontal" />
-
     <TextView
         android:text="Identificaçãi do Usuário/Cidadão"
         android:layout_width="wrap_content"
@@ -252,5 +241,16 @@
         android:layout_toRightOf="@+id/radioGroup"
         android:layout_toEndOf="@+id/radioGroup"
         android:textSize="18sp" />
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrar"
+        tools:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
 </RelativeLayout>

@@ -5,48 +5,313 @@
 
 
     <TextView
-        android:text="Localização:"
-        android:layout_width="match_parent"
+        android:text="Abastecimento de Água:"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView11"
-        android:textSize="18sp"
-        android:layout_below="@+id/editText14"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="19dp" />
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView11" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/radioGroup4"
-        android:layout_marginTop="14dp"
         android:layout_below="@+id/textView11"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/abastecimentoAgua"
+        android:orientation="horizontal">
 
         <RadioButton
-            android:text="Rural"
+            android:text="Rede Encanada até o Domicílio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rural"
-            android:layout_alignBaseline="@+id/urbana"
-            android:layout_alignBottom="@+id/urbana"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="95dp"
-            android:layout_marginEnd="95dp" />
+            android:id="@+id/radioButton81"
+            android:layout_weight="1" />
 
         <RadioButton
-            android:text="Urbana"
+            android:text="Poço/Nascente no Domicílio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/urbana"
-            android:layout_below="@+id/textView11"
-            android:layout_alignRight="@+id/textView12"
-            android:layout_alignEnd="@+id/textView12" />
+            android:id="@+id/radioButton80"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Cisterna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton79"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Carro Pipa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton78"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton77"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Tratamento de Água no Domicílio:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/abastecimentoAgua"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView12" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView12"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12"
+        android:id="@+id/tratamentoAgua" >
+
+        <RadioButton
+            android:text="Filtração"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton85"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Fervura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton84"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Cloração"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton83"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Sem Tratamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton82"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Destino do Lixo:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_alignLeft="@+id/registrar"
+        android:layout_alignStart="@+id/registrar"
+        android:id="@+id/textView21" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView21"
+        android:layout_alignLeft="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:id="@+id/destinoLixo" >
+
+        <RadioButton
+            android:text="Coletado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton89"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Queimado/Enterrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton88"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Céu Aberto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton87"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton86"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Disponibilidade de Energia Elétrica:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView29"
+        android:layout_above="@+id/destinoLixo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignLeft="@+id/textView29"
+        android:layout_alignStart="@+id/textView29"
+        android:id="@+id/energia" >
+
+        <RadioButton
+            android:text="Sim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton91"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Não"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton90"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Fomra de Escoamento do Banheiro ou Sanitário:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tratamentoAgua"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"
+        android:id="@+id/textView30" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView30"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/formaEscoamento" >
+
+        <RadioButton
+            android:text="Rede Coletora de Esgoto ou Pluvial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton97"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Fossa Séptica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton96"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Fossa Rudimentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton95"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Direto para um Rio, Lago ou Mar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton94"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Céu Aberto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton93"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton92"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Animais no Domicílio:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView30"
+        android:layout_toRightOf="@+id/registrar"
+        android:layout_toEndOf="@+id/registrar"
+        android:id="@+id/textView31" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_toRightOf="@+id/textView21"
+        android:layout_toEndOf="@+id/textView21"
+        android:id="@+id/animais">
+
+        <RadioButton
+            android:text="Gato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton103"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Cachorro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton102"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Pássaro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton101"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="De Criação(porco, galinha...)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton100"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton99"
+            android:layout_weight="1" />
 
     </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText15"
+        android:layout_below="@id/animais"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/registrar"
+        android:layout_toEndOf="@+id/registrar"
+        android:hint="Quantos" />
 
     <Button
         android:text="Registrar"
@@ -54,88 +319,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/registrar"
         android:elevation="10dp"
-        android:layout_below="@+id/radioGroup5"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="86dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText15"
-        android:hint="Nº de Moradores"
-        android:layout_below="@+id/radioGroup5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/radioGroup5"
-        android:layout_marginTop="40dp"
-        android:layout_alignTop="@+id/textView12"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-            <RadioButton
-                android:text="Cômodo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/comodo"
-                android:layout_alignBaseline="@+id/apartamento"
-                android:layout_alignBottom="@+id/apartamento"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-            <RadioButton
-                android:text="Apartamento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/apartamento"
-                android:layout_alignBaseline="@+id/casa"
-                android:layout_alignBottom="@+id/casa"
-                android:layout_alignRight="@+id/registrar"
-                android:layout_alignEnd="@+id/registrar" />
-
-            <RadioButton
-                android:text="Casa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/casa"
-                android:layout_above="@+id/editText15"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="13dp" />
-
-    </RadioGroup>
-
-    <TextView
-        android:text="Tipo de Domicílio:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView12"
-        android:textSize="18sp"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/radioGroup4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editText14"
-        android:hint="Telefone Residencial"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="12dp" />
 
 
 </RelativeLayout>
