@@ -1,5 +1,6 @@
 package com.example.root.novoteste;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -72,6 +73,11 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
         Toast.makeText(getApplicationContext(),
                 "Novo marcador adicionado: " + point.toString(), Toast.LENGTH_LONG)
                 .show();
+
+
+        Intent intent = new Intent(Maps.this, CadastroDomiciliar.class);
+        startActivity(intent);
+
     }
 
 
