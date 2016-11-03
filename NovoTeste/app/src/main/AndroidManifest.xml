@@ -40,11 +40,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AvaliacaoSensitiva"
-            android:label="Avaliação Sensitiva"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".Maps"
             android:label="Mapa CadHanse"
             android:screenOrientation="portrait"

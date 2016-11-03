@@ -30,22 +30,22 @@ public class Cadastro_Domi2 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        RadioButton urbana = (RadioButton) getActivity().findViewById(R.id.urbana);
-        RadioButton rural = (RadioButton) getActivity().findViewById(R.id.rural);
-
-
-        RadioButton casa = (RadioButton) getActivity().findViewById(R.id.casa);
-        RadioButton apartamento = (RadioButton) getActivity().findViewById(R.id.apartamento);
-        RadioButton comodo = (RadioButton) getActivity().findViewById(R.id.comodo);
-        //RadioButton outro = (RadioButton) getActivity().findViewById(R.id.outro);
-
-
-        urbana.setOnClickListener(next_Listener);
-        rural.setOnClickListener(next_Listener);
-
-        casa.setOnClickListener(outro_Listener);
-        apartamento.setOnClickListener(outro_Listener);
-        comodo.setOnClickListener(outro_Listener);
+//        RadioButton urbana = (RadioButton) getActivity().findViewById(R.id.urbana);
+//        RadioButton rural = (RadioButton) getActivity().findViewById(R.id.rural);
+//
+//
+//        RadioButton casa = (RadioButton) getActivity().findViewById(R.id.casa);
+//        RadioButton apartamento = (RadioButton) getActivity().findViewById(R.id.apartamento);
+//        RadioButton comodo = (RadioButton) getActivity().findViewById(R.id.comodo);
+//        //RadioButton outro = (RadioButton) getActivity().findViewById(R.id.outro);
+//
+//
+//        urbana.setOnClickListener(next_Listener);
+//        rural.setOnClickListener(next_Listener);
+//
+//        casa.setOnClickListener(outro_Listener);
+//        apartamento.setOnClickListener(outro_Listener);
+//        comodo.setOnClickListener(outro_Listener);
         //outro.setOnClickListener(outro_Listener);
     }
 
@@ -53,15 +53,15 @@ public class Cadastro_Domi2 extends Fragment {
         public void onClick(View v) {
 
             //xml find out which radio button has been checked ...
-            RadioGroup radio_grp = (RadioGroup) getActivity().findViewById(R.id.radioGroup4); //change or leave out this line (I've put it in because you might find it useful later )
+            //RadioGroup radio_grp = (RadioGroup) getActivity().findViewById(R.id.radioGroup4); //change or leave out this line (I've put it in because you might find it useful later )
 
-            RadioButton urbana = (RadioButton) getActivity().findViewById(R.id.urbana);
-            RadioButton rural = (RadioButton) getActivity().findViewById(R.id.rural);
-            if (urbana.isChecked() == true) {
-                //toast ... button has been selected ...
-            } else if (rural.isChecked() == true) {
-
-            }
+//            RadioButton urbana = (RadioButton) getActivity().findViewById(R.id.urbana);
+//            RadioButton rural = (RadioButton) getActivity().findViewById(R.id.rural);
+//            if (urbana.isChecked() == true) {
+//                //toast ... button has been selected ...
+//            } else if (rural.isChecked() == true) {
+//
+//            }
         }
     };
 
@@ -69,20 +69,20 @@ public class Cadastro_Domi2 extends Fragment {
         public void onClick(View v) {
 
             //xml find out which radio button has been checked ...
-            RadioGroup radio_grp = (RadioGroup) getActivity().findViewById(R.id.radioGroup5); //change or leave out this line (I've put it in because you might find it useful later )
-
-            RadioButton casa = (RadioButton) getActivity().findViewById(R.id.casa);  //you dont need to do this again if global ...
-            RadioButton apartamento = (RadioButton) getActivity().findViewById(R.id.apartamento);
-            RadioButton comodo = (RadioButton) getActivity().findViewById(R.id.comodo);
+//            RadioGroup radio_grp = (RadioGroup) getActivity().findViewById(R.id.radioGroup5); //change or leave out this line (I've put it in because you might find it useful later )
+//
+//            RadioButton casa = (RadioButton) getActivity().findViewById(R.id.casa);  //you dont need to do this again if global ...
+//            RadioButton apartamento = (RadioButton) getActivity().findViewById(R.id.apartamento);
+//            RadioButton comodo = (RadioButton) getActivity().findViewById(R.id.comodo);
             //RadioButton outro = (RadioButton) getActivity().findViewById(R.id.outro);
-
-            if (casa.isChecked() == true) {
-                //toast ... button has been selected ...
-            } else if (apartamento.isChecked() == true) {
-
-            } else if (comodo.isChecked() == true) {
-
-            }
+//
+//            if (casa.isChecked() == true) {
+//                //toast ... button has been selected ...
+//            } else if (apartamento.isChecked() == true) {
+//
+//            } else if (comodo.isChecked() == true) {
+//
+//            }
         }
     };
 }
