@@ -21,6 +21,7 @@ public class CriaBanco extends SQLiteOpenHelper {
     private static final String NMORADORES = "n_de_moradores";
     private static final String TIPOLOGRAD = "tipo_de_logradouro";
     private static final String NOMELOGRAD = "nome_logradouro";
+    private static final String NUMLOGRAD = "numero_logradouro";
     private static final String COMPLEMENTO = "complemento";
     private static final String BAIRRO = "bairro";
     private static final String MUNICIPIO = "municipio";            ///USA NO INDIVIDUO TAMBEM
@@ -28,6 +29,7 @@ public class CriaBanco extends SQLiteOpenHelper {
     private static final String UF = "uf";                         ///USA NO INDIVIDUO TAMBEM
     private static final String TELERESIDENCIAL = "telefone_residencial";
     private static final String TIPOLOCALIZACAO = "tipo_de_localizacao";
+    private static final String SITDMORADIA = "situacao_de_moradia";
     private static final String TIPODOMICILIO = "tipo_de_domicilio";
     private static final String NUMEROCOMODOS = "numero_de_comodos";
     private static final String POSSE_USO_TERRRA = "posse_pso_da_terra";
@@ -81,6 +83,7 @@ public class CriaBanco extends SQLiteOpenHelper {
                 + LATITUDE + " VARCHAR(15) NOT NULL,"
                 + LONGITUDE + " VARCHAR(15) NOT NULL,"
                 + NMORADORES + " INTEGER NOT NULL,"
+                + NUMLOGRAD + " INTEGER NOT NULL,"
                 + TIPOLOGRAD + " VARCHAR(25) NOT NULL,"
                 + NOMELOGRAD + " VARCHAR(25) NOT NULL,"
                 + COMPLEMENTO + " VARCHAR(25) NOT NULL,"
@@ -90,6 +93,7 @@ public class CriaBanco extends SQLiteOpenHelper {
                 + UF + " VARCHAR(2) NOT NULL,"
                 + TELERESIDENCIAL + " INTEGER NOT NULL,"
                 + TIPOLOCALIZACAO + " VARCHAR(10) NOT NULL,"
+                + SITDMORADIA + " VARVCHAR(15) NOT NULL,"
                 + TIPODOMICILIO + " VARCHAR(15) NOT NULL,"
                 + NUMEROCOMODOS + " INTEGER NOT NULL,"
                 + POSSE_USO_TERRRA + " VARCHAR(25) NOT NULL,"
@@ -342,6 +346,14 @@ public class CriaBanco extends SQLiteOpenHelper {
 
     public static String getFkIndividuo() {
         return FK_INDIVIDUO;
+    }
+
+    public static String getNUMLOGRAD() {
+        return NUMLOGRAD;
+    }
+
+    public static String getSITDMORADIA() {
+        return SITDMORADIA;
     }
 }
 

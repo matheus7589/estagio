@@ -7,13 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by root on 20/09/2016.
  */
 
 public class Cadastro_Domi1 extends Fragment {
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,5 +45,8 @@ public class Cadastro_Domi1 extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+
     }
+
 }

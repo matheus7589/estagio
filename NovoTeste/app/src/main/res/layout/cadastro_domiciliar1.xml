@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/cns"
         android:hint="CNS do Responsável" />
 
     <EditText
@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/nomeLogradouro"
         android:hint="Nome do Logradouro"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/cns"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText9"
+        android:id="@+id/numLogradouro"
         android:hint="Nº do Logradouro"
-        android:layout_below="@+id/editText8"
+        android:layout_below="@+id/nomeLogradouro"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -38,9 +38,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText10"
+        android:id="@+id/complemento"
         android:hint="Complemento"
-        android:layout_below="@+id/editText9"
+        android:layout_below="@+id/numLogradouro"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView14"
         android:textSize="18sp"
-        android:layout_below="@+id/editText10"
+        android:layout_below="@+id/complemento"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText11"
+        android:id="@+id/municipio"
         android:hint="Município"
         android:layout_below="@+id/spinner2"
         android:layout_alignParentLeft="true"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText12"
+        android:id="@+id/bairro"
         android:hint="Bairro"
         android:layout_below="@+id/spinner2"
         android:layout_alignParentLeft="true"
@@ -90,9 +90,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText13"
+        android:id="@+id/cep"
         android:hint="CEP"
-        android:layout_below="@+id/editText12"
+        android:layout_below="@+id/bairro"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -101,9 +101,9 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText18"
+        android:id="@+id/telResidencial"
         android:hint="Telefone Residencial"
-        android:layout_below="@+id/editText13"
+        android:layout_below="@+id/cep"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView22"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/editText18"
+        android:layout_below="@+id/telResidencial"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="16sp" />
@@ -224,7 +224,8 @@
         android:layout_below="@+id/textView24"
         android:layout_alignLeft="@+id/textView24"
         android:orientation="horizontal"
-        android:layout_alignStart="@+id/textView24" >
+        android:layout_alignStart="@+id/textView24"
+        android:id="@+id/tipoDomicilio">
 
         <RadioButton
             android:text="Casa"
@@ -359,7 +360,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText19"
+        android:id="@+id/numMoradores"
         android:layout_below="@id/numeromoradores"
         android:layout_alignLeft="@+id/numeromoradores"
         android:layout_alignStart="@+id/numeromoradores"
@@ -372,10 +373,10 @@
         android:text="Nº de Cômodos:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText19"
-        android:layout_alignLeft="@+id/editText19"
+        android:layout_below="@+id/numMoradores"
+        android:layout_alignLeft="@+id/numMoradores"
         android:layout_marginTop="45dp"
-        android:layout_alignStart="@+id/editText19"
+        android:layout_alignStart="@+id/numMoradores"
         android:id="@+id/textView32"
         android:textSize="16sp" />
 
@@ -384,7 +385,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText21"
+        android:id="@+id/numComodos"
         android:layout_below="@+id/textView32"
         android:layout_alignLeft="@+id/textView32"
         android:layout_alignStart="@+id/textView32"
@@ -410,7 +411,8 @@
         android:orientation="horizontal"
         android:layout_below="@+id/textView18"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/tipoAcesso">
 
         <RadioButton
             android:text="Pavimento"
@@ -441,12 +443,4 @@
             android:layout_weight="1" />
     </RadioGroup>
 
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp" />
 </RelativeLayout>

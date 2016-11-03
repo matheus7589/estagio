@@ -1,5 +1,6 @@
 package com.example.root.novoteste;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -25,6 +27,7 @@ import static com.example.root.novoteste.R.id.toolbar;
 public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMapClickListener, OnMapLongClickListener {
 
     GoogleMap mapa;
+    ProgressDialog dialog;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -42,6 +45,20 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
         setContentView(R.layout.activity_maps2);
 
 
+        //CONTROLA TOOLBAR
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //CONTROLA TOOLBAR
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -75,8 +92,27 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
                 .show();
 
 
-        Intent intent = new Intent(Maps.this, CadastroDomiciliar.class);
-        startActivity(intent);
+        dialog = ProgressDialog.show(Maps.this,"Novo Cadastro","Salvando localização. Aguarde...", false, true);
+        dialog.setCancelable(false);
+
+
+        new Thread() {
+
+            public void run() {
+
+                try {
+
+                    Thread.sleep(5000);
+                    dialog.dismiss();
+                    Intent intent = new Intent(Maps.this, CadastroDomiciliar.class);
+                    startActivity(intent);
+                }catch (Exception e) {
+
+                }
+            }
+        }.start();
+
+        //finish();
 
     }
 

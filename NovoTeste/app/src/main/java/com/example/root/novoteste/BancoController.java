@@ -18,14 +18,30 @@ public class BancoController {
         banco = new CriaBanco(context);
     }
 
-    public String insereDado(String nome, String cartao){
+
+    public String insereDado(String nameLogradouro, String numberLograd, String comple, String estado, String muni, String bairr, String CEP,
+                             String teleResid, String localizacao, String moradia, String tipoDomicilio, String condiTerra, String tipoAcesso, String numMora, String numComods){
         ContentValues valores;
         long resultado;
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(banco.getNOME(), nome);
-        valores.put(banco.getRG(), cartao);
+        valores.put(banco.getNOMELOGRAD(), nameLogradouro);
+        valores.put(banco.getNUMLOGRAD(), numberLograd);
+        valores.put(banco.getCOMPLEMENTO(), comple);
+        valores.put(banco.getUF(), estado);
+        valores.put(banco.getMUNICIPIO(), muni);
+        valores.put(banco.getBAIRRO(), bairr);
+        valores.put(banco.getCEP(), CEP);
+        valores.put(banco.getTELERESIDENCIAL(), teleResid);
+        valores.put(banco.getTIPOLOCALIZACAO(), localizacao);
+        valores.put(banco.getSITDMORADIA(), moradia);
+        valores.put(banco.getTIPODOMICILIO(), tipoDomicilio);
+        valores.put(banco.getPosseUsoTerrra(), condiTerra);
+        valores.put(banco.getTIPOACESSO(), tipoAcesso);
+        valores.put(banco.getNMORADORES(), numMora);
+        valores.put(banco.getNUMEROCOMODOS(), numComods);
+
 
         resultado = db.insert(CriaBanco.getTABELA(), null, valores);
         db.close();

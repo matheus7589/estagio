@@ -34,9 +34,9 @@ public class InsereDado extends Activity {
             String muni = municipio.getText().toString();
             String resultado;
 
-            resultado = crud.insereDado(tele, muni);
+            //resultado = crud.insereDado(tele, muni);
 
-            Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
 

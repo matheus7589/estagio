@@ -306,7 +306,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText15"
+        android:id="@+id/quantos"
         android:layout_below="@id/animais"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/registrar"
@@ -319,9 +319,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/registrar"
         android:elevation="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

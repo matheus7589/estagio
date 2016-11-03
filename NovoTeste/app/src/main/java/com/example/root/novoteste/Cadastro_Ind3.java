@@ -68,9 +68,9 @@ public class Cadastro_Ind3 extends Fragment {
 
             //Toast.makeText(getActivity().getApplicationContext(), tele, Toast.LENGTH_LONG).show();
 
-            resultado = crud.insereDado(tele, muni);
+            //resultado = crud.insereDado(tele, muni);
 
-            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
 
