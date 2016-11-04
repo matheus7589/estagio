@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/textView7"
-        android:id="@+id/radioGroup">
+        android:id="@+id/sexo">
 
 
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="Masculino"
             android:id="@+id/masculino"
-            android:layout_alignTop="@+id/radioGroup"
+            android:layout_alignTop="@+id/sexo"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="63dp"
@@ -87,7 +87,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Raça/Cor:"
         android:id="@+id/textView9"
-        android:layout_below="@id/radioGroup"
+        android:layout_below="@id/sexo"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="24dp" />
 
@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/radioGroup2"
+        android:id="@+id/raca"
         android:layout_below="@+id/textView9">
         <RadioButton
             android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/radioGroup3"
+        android:id="@+id/nacionalidade"
         android:layout_below="@+id/textView8">
         <RadioButton
             android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
         android:text="Nacionalidade:"
         android:id="@+id/textView8"
         android:layout_marginTop="21dp"
-        android:layout_below="@+id/radioGroup2"
+        android:layout_below="@+id/raca"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -191,7 +191,7 @@
         android:id="@+id/nomeMae"
         android:hint="Nome Completo da Mãe"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/radioGroup3"
+        android:layout_below="@+id/nacionalidade"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -238,8 +238,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView19"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/radioGroup"
-        android:layout_toEndOf="@+id/radioGroup"
+        android:layout_toRightOf="@+id/sexo"
+        android:layout_toEndOf="@+id/sexo"
         android:textSize="18sp" />
 
 </RelativeLayout>

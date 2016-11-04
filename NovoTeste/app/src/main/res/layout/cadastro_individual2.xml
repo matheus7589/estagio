@@ -12,7 +12,7 @@
         android:id="@+id/textView4"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:layout_below="@+id/radioGroup2"
+        android:layout_below="@+id/raca"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -133,7 +133,7 @@
         android:layout_alignStart="@+id/textView15"
         android:layout_alignRight="@+id/textView15"
         android:layout_alignEnd="@+id/textView15"
-        android:id="@+id/radioGroup8">
+        android:id="@+id/grau">
 
         <RadioButton
             android:text="Creche"
@@ -296,7 +296,7 @@
         android:text="Situação no mercado de trabalho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup8"
+        android:layout_below="@+id/grau"
         android:layout_alignParentLeft="true"
         android:textStyle="bold"
         android:layout_alignParentStart="true"
@@ -381,7 +381,7 @@
         android:text="Orientação sexual/identidade de gênero:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup8"
+        android:layout_below="@+id/grau"
         android:layout_alignParentLeft="@id/creche"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
@@ -395,7 +395,8 @@
         android:layout_below="@+id/textView26"
         android:layout_alignLeft="@+id/textView26"
         android:layout_alignStart="@+id/textView26"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/orientacao">
 
         <RadioButton
             android:text="Heterossexual"
@@ -470,7 +471,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView27"
         android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/deficiencia">
 
         <RadioButton
             android:text="Auditiva"
