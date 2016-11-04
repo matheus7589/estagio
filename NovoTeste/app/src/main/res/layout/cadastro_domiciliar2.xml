@@ -27,35 +27,35 @@
             android:text="Rede Encanada até o Domicílio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton81"
+            android:id="@+id/redeEncanada"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Poço/Nascente no Domicílio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton80"
+            android:id="@+id/pocoNascente"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Cisterna"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton79"
+            android:id="@+id/cisternas"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Carro Pipa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton78"
+            android:id="@+id/carroPipa"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton77"
+            android:id="@+id/outro"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -83,28 +83,28 @@
             android:text="Filtração"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton85"
+            android:id="@+id/filtracao"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Fervura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton84"
+            android:id="@+id/fervura"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Cloração"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton83"
+            android:id="@+id/cloracao"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Sem Tratamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton82"
+            android:id="@+id/semTratamento"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -129,28 +129,28 @@
             android:text="Coletado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton89"
+            android:id="@+id/coletado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Queimado/Enterrado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton88"
+            android:id="@+id/queimado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Céu Aberto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton87"
+            android:id="@+id/ceuAberto"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton86"
+            android:id="@+id/outro2"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -175,14 +175,14 @@
             android:text="Sim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton91"
+            android:id="@+id/sim"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Não"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton90"
+            android:id="@+id/nao"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -208,42 +208,42 @@
             android:text="Rede Coletora de Esgoto ou Pluvial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton97"
+            android:id="@+id/redeColetora"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Fossa Séptica"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton96"
+            android:id="@+id/fossaSeptica"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Fossa Rudimentar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton95"
+            android:id="@+id/fossaRudimentar"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Direto para um Rio, Lago ou Mar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton94"
+            android:id="@+id/diretoRio"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Céu Aberto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton93"
+            android:id="@+id/ceuAberto2"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton92"
+            android:id="@+id/outro3"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -268,35 +268,35 @@
             android:text="Gato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton103"
+            android:id="@+id/gato"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Cachorro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton102"
+            android:id="@+id/dog"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Pássaro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton101"
+            android:id="@+id/bird"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="De Criação(porco, galinha...)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton100"
+            android:id="@+id/porco"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton99"
+            android:id="@+id/outro4"
             android:layout_weight="1" />
 
     </RadioGroup>
@@ -319,8 +319,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/registrar"
         android:elevation="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
 
 
 </RelativeLayout>

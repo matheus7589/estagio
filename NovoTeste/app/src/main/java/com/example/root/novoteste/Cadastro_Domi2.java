@@ -129,7 +129,7 @@ public class Cadastro_Domi2 extends Fragment {
 
             String resultado;
 
-            Toast.makeText(getActivity().getApplicationContext(), abastecimentoAgua, Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(), tratamentoAgua, Toast.LENGTH_LONG).show();
 
             //resultado = crud.insereDado(nameLogradouro, numberLograd, comple, estado, muni, bairr, CEP, teleResid, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, numMora, numComods);
 
@@ -138,70 +138,70 @@ public class Cadastro_Domi2 extends Fragment {
     };
 
     public String setAbast(int id){
-        if(id == 0)
+        if(id == R.id.redeEncanada)
             return "Rede Encanada até o Domicílio";
-        else if(id == 1)
+        else if(id == R.id.pocoNascente)
             return "Poço/Nascente no Domicílio";
-        else if(id == 2)
+        else if(id == R.id.cisternas)
             return "Cisterna";
-        else if(id == 3)
+        else if(id == R.id.carroPipa)
             return "Carro Pipa";
         else
             return "Outro";
     }
 
     public String setTratamento(int id){
-        if(id == 0)
+        if(id == R.id.filtracao)
             return "Filtração";
-        else if(id == 1)
+        else if(id == R.id.fervura)
             return "Fervura";
-        else if(id == 2)
+        else if(id == R.id.cloracao)
             return "Cloração";
         else
             return "Sem Tratamento";
     }
 
     public String setDestinoLixo(int id){
-        if(id == 0)
+        if(id == R.id.coletado)
             return "Coletado";
-        else if(id == 1)
+        else if(id == R.id.queimado)
             return "Queimado/Enterrado";
-        else if(id == 2)
+        else if(id == R.id.ceuAberto)
             return "Céu Aberto";
         else
             return "Outro";
     }
 
     public String setEnerg(int id){
-        if(id == 0)
+        if(id == R.id.sim)
             return "Sim";
         else
             return "Não";
     }
 
     public String setFormaEscoa(int id){
-        if(id == 0)
+        if(id == R.id.redeColetora)
             return "Rede Coletora de Esgoto ou Pluvial";
-        else if(id == 1)
+        else if(id == R.id.fossaSeptica)
             return "Fossa Séptica";
-        else if(id == 2)
+        else if(id == R.id.fossaRudimentar)
             return "Fossa Rudimentar";
-        else if(id == 3)
+        else if(id == R.id.diretoRio)
             return "Direto para um Rio, Lago ou Mar";
-        else if(id == 4)
+        else if(id == R.id.ceuAberto2)
             return "Céu Aberto";
         else
             return "Outro";
     }
 
     public String setAnimaiss(int id){
-        if(id == 0)
+        if(id == R.id.gato)
             return "Gato";
-        else if(id == 1)
+        else if(id == R.id.dog)
             return "Cachorro";
-        else if(id == 2)
+        else if(id == R.id.bird)
             return "Pássaro";
-        else if(id == 3)
+        else if(id == R.id.porco)
             return "De Criação(porco, galinha...)";
         else
             return "Outros";
@@ -209,67 +209,67 @@ public class Cadastro_Domi2 extends Fragment {
 
 
     public String setLocal(int id){
-        if(id == 0)
+        if(id == R.id.rural)
             return "Rural";
         else
             return "Urbana";
     }
 
     public String setMoradia(int id){
-        if(id == 0)
+        if(id == R.id.proprio)
             return "Próprio";
-        else if(id == 1)
+        else if(id == R.id.financiado)
             return "Financiado";
-        else if(id == 2)
+        else if(id == R.id.alugado)
             return "Alugado";
-        else if(id == 3)
+        else if(id == R.id.arrendado)
             return "Arrendado";
-        else if(id == 4)
+        else if(id == R.id.cedido)
             return "Cedido";
-        else if(id == 5)
+        else if(id == R.id.ocupacao)
             return "Ocupação";
-        else if(id == 6)
+        else if(id == R.id.rua)
             return "Situação de Rua";
         else
             return "Outros";
     }
 
     public String setTipoDomicilio(int id){
-        if(id == 0)
+        if(id == R.id.casa)
             return "Casa";
-        else if(id == 1)
+        else if(id == R.id.apartamento)
             return "Apartamento";
-        else if(id == 2)
+        else if(id == R.id.comodo)
             return "Cômodo";
         else
             return "Outro";
     }
 
     public String setCondiTerra(int id){
-        if(id == 0)
+        if(id == R.id.proprietario)
             return "Proprietário";
-        else if(id == 1)
+        else if(id == R.id.parceiro)
             return "Parceiro(a)/Meeiro(a)";
-        else if(id == 2)
+        else if(id == R.id.assentado)
             return "Assentado(a)";
-        else if(id == 3)
+        else if(id == R.id.posseiro)
             return "Posseiro";
-        else if(id == 4)
+        else if(id == R.id.arrendatario)
             return "Arrendatário(a)";
-        else if(id == 5)
+        else if(id == R.id.comodatario)
             return "Comodatário(a)";
-        else if(id == 6)
+        else if(id == R.id.beneficiario)
             return "Beneficiário(a) do Banco da Terra";
         else
             return "Não se aplica";
     }
 
     public String setTipoAcesso(int id){
-        if(id == 0)
+        if(id == R.id.pavimento)
             return "Pavimento";
-        else if(id == 1)
+        else if(id == R.id.chaoBatido)
             return "Chão Batido";
-        else if(id == 2)
+        else if(id == R.id.fluvial)
             return "Fluvial";
         else
             return "Outro";

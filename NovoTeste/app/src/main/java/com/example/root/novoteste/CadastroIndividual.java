@@ -58,7 +58,7 @@ public class CadastroIndividual extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Cadastro_Ind1(), "1º Passo");
         adapter.addFragment(new Cadastro_Ind2(), "2º Passo");
-        adapter.addFragment(new Cadastro_Ind3(), "3º Passo");
+        //adapter.addFragment(new Cadastro_Ind3(), "3º Passo");
         viewPager.setAdapter(adapter);
     }
 

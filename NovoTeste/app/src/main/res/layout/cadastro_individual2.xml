@@ -524,7 +524,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="40dp"
         android:layout_marginStart="40dp"
-        android:id="@+id/button4" />
+        android:id="@+id/registrar2" />
 
 
 </RelativeLayout>

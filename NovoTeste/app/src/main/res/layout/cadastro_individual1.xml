@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/sus"
         android:hint="Nº do cartão SUS"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -22,9 +22,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/nomeCompleto"
         android:hint="Nome Completo"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/sus"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/dataNascimento"
         android:hint="Data de Nascimento"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/nomeCompleto"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -45,7 +45,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Sexo:"
         android:id="@+id/textView7"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/dataNascimento"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="33dp" />
@@ -188,7 +188,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText7"
+        android:id="@+id/nomeMae"
         android:hint="Nome Completo da Mãe"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/radioGroup3"
@@ -204,7 +204,7 @@
         android:ems="10"
         android:id="@+id/telefone"
         android:hint="Telefone"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/nomeMae"
         android:layout_alignParentLeft="true" />
 
     <EditText
@@ -227,7 +227,7 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/spinner1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView10" />
@@ -241,16 +241,5 @@
         android:layout_toRightOf="@+id/radioGroup"
         android:layout_toEndOf="@+id/radioGroup"
         android:textSize="18sp" />
-
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/registrar"
-        tools:gravity="center_vertical|center_horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp" />
 
 </RelativeLayout>

@@ -38,41 +38,41 @@ public class Cadastro_Ind3 extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        // Cria um  ArrayAdapter usando um array de string e um spinner padrão
-        // USAR getActivity().getApplicationContext() CASO getContext() NÃO FUNCIONE
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-                R.array.UF, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-
-        Button registrar = (Button)view.findViewById(R.id.registrar);
-
-        //telefone = (EditText)getView().findViewById(R.id.municipio);
-        //tele = telefone.getText().toString();
-
-        registrar.setOnClickListener(regHandler);
+//        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+//        // Cria um  ArrayAdapter usando um array de string e um spinner padrão
+//        // USAR getActivity().getApplicationContext() CASO getContext() NÃO FUNCIONE
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+//                R.array.UF, android.R.layout.simple_spinner_item);
+//        // Specify the layout to use when the list of choices appears
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        // Apply the adapter to the spinner
+//        spinner.setAdapter(adapter);
+//
+//        Button registrar = (Button)view.findViewById(R.id.registrar);
+//
+//        //telefone = (EditText)getView().findViewById(R.id.municipio);
+//        //tele = telefone.getText().toString();
+//
+//        registrar.setOnClickListener(regHandler);
     }
 
-    View.OnClickListener regHandler = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            BancoController crud = new BancoController(getActivity().getBaseContext());
-            telefone = (EditText)getView().findViewById(R.id.telefone);
-            municipio = (EditText)getView().findViewById(R.id.municipio);
-            tele = telefone.getText().toString();
-            muni = municipio.getText().toString();
-            String resultado;
-
-            //Toast.makeText(getActivity().getApplicationContext(), tele, Toast.LENGTH_LONG).show();
-
-            //resultado = crud.insereDado(tele, muni);
-
-            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-        }
-    };
-
+//    View.OnClickListener regHandler = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            BancoController crud = new BancoController(getActivity().getBaseContext());
+//            telefone = (EditText)getView().findViewById(R.id.telefone);
+//            municipio = (EditText)getView().findViewById(R.id.municipio);
+//            tele = telefone.getText().toString();
+//            muni = municipio.getText().toString();
+//            String resultado;
+//
+//            //Toast.makeText(getActivity().getApplicationContext(), tele, Toast.LENGTH_LONG).show();
+//
+//            //resultado = crud.insereDado(tele, muni);
+//
+//            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+//        }
+//    };
+//
 
 }

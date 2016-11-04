@@ -1,16 +1,10 @@
 <resources>
-    <string name="app_name">NovoTeste</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_abas">Abas</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_cadastro_individual">CadastroIndividual</string>
 
     <string-array name="UF">
         <item>Acre</item>
@@ -41,5 +35,4 @@
         <item>Sergipe</item>
         <item>Tocantins</item>
     </string-array>
-    <string name="title_activity_listar_dados">listarDados</string>
 </resources>

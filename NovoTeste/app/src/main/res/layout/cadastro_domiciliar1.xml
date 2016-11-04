@@ -131,14 +131,14 @@
             android:text="Rural"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton52"
+            android:id="@+id/rural"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Urbana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton51" />
+            android:id="@+id/urbana" />
     </RadioGroup>
 
     <TextView
@@ -165,56 +165,56 @@
             android:text="Próprio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton60"
+            android:id="@+id/proprio"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Financiado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton59"
+            android:id="@+id/financiado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Alugado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton58"
+            android:id="@+id/alugado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Arrendado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton57"
+            android:id="@+id/arrendado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Cedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton56"
+            android:id="@+id/cedido"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Ocupação"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton55"
+            android:id="@+id/ocupacao"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Situação de Rua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton54"
+            android:id="@+id/rua"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton53"
+            android:id="@+id/outro5"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -231,28 +231,28 @@
             android:text="Casa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton64"
+            android:id="@+id/casa"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Apartamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton63"
+            android:id="@+id/apartamento"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Cômodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton62"
+            android:id="@+id/comodo"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton61"
+            android:id="@+id/outro6"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -279,56 +279,56 @@
             android:text="Proprietário"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton72"
+            android:id="@+id/proprietario"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Parceiro(a)/Meeiro(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton71"
+            android:id="@+id/parceiro"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Assentado(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton70"
+            android:id="@+id/assentado"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Posseiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton69"
+            android:id="@+id/posseiro"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Arrendatário(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton68"
+            android:id="@+id/arrendatario"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Comodatário(a)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton67"
+            android:id="@+id/comodatario"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Beneficiário(a) do Banco da Terra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton66"
+            android:id="@+id/beneficiario"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Não se aplica"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton65"
+            android:id="@+id/naoSeAplica"
             android:layout_weight="1" />
     </RadioGroup>
 
@@ -418,28 +418,28 @@
             android:text="Pavimento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton76"
+            android:id="@+id/pavimento"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Chão Batido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton75"
+            android:id="@+id/chaoBatido"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Fluvial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton74"
+            android:id="@+id/fluvial"
             android:layout_weight="1" />
 
         <RadioButton
             android:text="Outro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton73"
+            android:id="@+id/outro7"
             android:layout_weight="1" />
     </RadioGroup>
 
