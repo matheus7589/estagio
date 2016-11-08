@@ -81,7 +81,7 @@ public class myDragActivity extends Activity {
                     owner.removeView(visualisar);
                     LinearLayout container = (LinearLayout) view;
                     container.addView(visualisar);
-                    view.setVisibility(View.VISIBLE);
+                    visualisar.setVisibility(View.VISIBLE);
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     Log.i("Script", numero +" - ACTION_DRAG_ENDED");

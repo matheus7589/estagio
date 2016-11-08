@@ -112,7 +112,8 @@ public class BarraDeNavegacao extends AppCompatActivity
             Intent consulta = new Intent(BarraDeNavegacao.this, listarDados.class);
             startActivity(consulta);
         } else if (id == R.id.nav_send) {
-
+            Intent arrastar = new Intent(BarraDeNavegacao.this, myDragActivity.class);
+            startActivity(arrastar);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

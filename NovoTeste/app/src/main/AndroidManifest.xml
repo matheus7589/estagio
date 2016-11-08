@@ -66,6 +66,10 @@
             android:name=".Alterar"
             android:label="Alterar dados"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".myDragActivity"
+            android:label="Arrastar"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
