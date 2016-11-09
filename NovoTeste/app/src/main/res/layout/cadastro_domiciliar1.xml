@@ -20,18 +20,9 @@
         android:hint="Nome do Logradouro"
         android:layout_below="@+id/cns"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/numLogradouro"
-        android:hint="Nº do Logradouro"
-        android:layout_below="@+id/nomeLogradouro"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tipoDomicilio"
+        android:layout_toStartOf="@+id/tipoDomicilio" />
 
     <EditText
         android:layout_width="match_parent"
@@ -40,7 +31,7 @@
         android:ems="10"
         android:id="@+id/complemento"
         android:hint="Complemento"
-        android:layout_below="@+id/numLogradouro"
+        android:layout_below="@+id/tipolograd"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -442,5 +433,32 @@
             android:id="@+id/outro7"
             android:layout_weight="1" />
     </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/nomeLogradouro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tipolograd"
+        android:hint="Tipo de Logradouro"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/numLogradouro"
+        android:hint="Nº do Logradouro"
+        android:layout_alignBaseline="@+id/nomeLogradouro"
+        android:layout_alignBottom="@+id/nomeLogradouro"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/numeromoradores"
+        android:layout_alignStart="@+id/numeromoradores" />
 
 </RelativeLayout>

@@ -323,5 +323,125 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp" />
 
+    <TextView
+        android:text="Material Predominante na Construção:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/formaEscoamento"
+        android:layout_alignLeft="@+id/tratamentoAgua"
+        android:layout_alignStart="@+id/tratamentoAgua"
+        android:id="@+id/textView33" />
+
+    <TextView
+        android:text="Alvenaria:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView33"
+        android:layout_alignLeft="@+id/textView33"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_marginTop="16dp"
+        android:id="@+id/textView34" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView34"
+        android:layout_alignLeft="@+id/textView34"
+        android:layout_alignStart="@+id/textView34"
+        android:id="@+id/alvenaria" >
+
+        <RadioButton
+            android:text="Com Revestimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton52"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Sem Revestimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton51"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Taipa:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView34"
+        android:layout_toRightOf="@+id/formaEscoamento"
+        android:layout_toEndOf="@+id/formaEscoamento"
+        android:id="@+id/textView35" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView35"
+        android:layout_toRightOf="@+id/textView33"
+        android:layout_toEndOf="@+id/textView33"
+        android:id="@+id/taipa" >
+
+        <RadioButton
+            android:text="Com revestimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton54"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Sem Revestimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton53"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Outros:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/taipa"
+        android:layout_alignRight="@+id/destinoLixo"
+        android:layout_alignEnd="@+id/destinoLixo"
+        android:id="@+id/textView36" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView36"
+        android:layout_alignLeft="@+id/textView36"
+        android:layout_alignStart="@+id/textView36"
+        android:id="@+id/outros" >
+
+        <RadioButton
+            android:text="Madeira Aparelhada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton58"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Material Aproveitado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton57"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Palha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton56"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Outro Material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton55"
+            android:layout_weight="1" />
+    </RadioGroup>
+
 
 </RelativeLayout>

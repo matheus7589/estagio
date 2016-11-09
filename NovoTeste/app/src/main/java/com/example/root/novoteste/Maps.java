@@ -123,29 +123,8 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
         mapa = map;
 
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-//        map.addMarker(new MarkerOptions()
-//                .position(new LatLng(-10.1689, -48.3317)).title("Palmas").draggable(true));
-//
-//        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return;
-//        }
-//        map.setMyLocationEnabled(true);
-//
         LatLng latLng = new LatLng(-10.1689, -48.3317);
-//
         CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(13).build();
-//        CameraUpdate update = CameraUpdateFactory.newCameraPosition(cameraPosition);
-//
-//        map.animateCamera(update);
-//
-
 
         //LatLng sydney = new LatLng(-34, 151);
         map.addMarker(new MarkerOptions().position(latLng).title("Marcador em Palmas"));
