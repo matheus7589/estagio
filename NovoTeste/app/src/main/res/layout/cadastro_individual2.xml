@@ -44,7 +44,7 @@
             android:text="Cônjugue/Companheiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton"
+            android:id="@+id/conjugue"
             android:layout_weight="1" />
 
         <RadioButton
@@ -247,7 +247,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText16"
+        android:id="@+id/ocupacao"
         android:layout_below="@+id/parentesco"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -261,9 +261,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/creche"
-        android:layout_below="@+id/editText16"
-        android:layout_alignLeft="@+id/editText16"
-        android:layout_alignStart="@+id/editText16"
+        android:layout_below="@+id/ocupacao"
+        android:layout_alignLeft="@+id/ocupacao"
+        android:layout_alignStart="@+id/ocupacao"
         android:layout_marginTop="31dp">
 
         <RadioButton
@@ -285,10 +285,10 @@
         android:text="Frequenta escola ou creche?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText16"
+        android:layout_below="@+id/ocupacao"
         android:textStyle="bold"
-        android:layout_alignLeft="@+id/editText16"
-        android:layout_alignStart="@+id/editText16"
+        android:layout_alignLeft="@+id/ocupacao"
+        android:layout_alignStart="@+id/ocupacao"
         android:id="@+id/textView20"
         android:textSize="16sp" />
 
@@ -516,17 +516,6 @@
             android:id="@+id/radioButton45"
             android:layout_weight="1" />
     </RadioGroup>
-
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:id="@+id/registrar2" />
 
 
 </RelativeLayout>

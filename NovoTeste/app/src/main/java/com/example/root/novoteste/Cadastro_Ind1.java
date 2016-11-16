@@ -6,14 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by root on 30/08/2016.
  */
 public class Cadastro_Ind1 extends Fragment {
+
+    private EditText telefone, municipio, cartaoSus, nomeCompleto, nomeSocial, dataNascimento, pisPasep, paisNascimento, nomeMae, eMail;
+    private String tele, muni, sus, nomeComp, nomeSoci, data, pasep, pais, mae, mail;
+    int sexo, raca, nacionalidade;
+    RadioButton radioButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +67,9 @@ public class Cadastro_Ind1 extends Fragment {
         spinner.setAdapter(adapter);
 
 
+        Button registrar = (Button) view.findViewById(R.id.cadastrar);
+        registrar.setOnClickListener(regHandler);
+
 //        RadioButton masculino = (RadioButton) getActivity().findViewById(R.id.masculino);
 //        RadioButton feminino = (RadioButton) getActivity().findViewById(R.id.feminino);
 //
@@ -67,18 +78,92 @@ public class Cadastro_Ind1 extends Fragment {
 
     }
 
-//    private View.OnClickListener next_Listener = new View.OnClickListener() {
-//        public void onClick(View v) {
+    View.OnClickListener regHandler = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            BancoController crud = new BancoController(getActivity().getBaseContext());
+            ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
+
+            //EditTexts
+            telefone = (EditText) getView().findViewById(R.id.telefone);
+            municipio = (EditText) getView().findViewById(R.id.municipio);
+            cartaoSus = (EditText) getView().findViewById(R.id.sus);
+            nomeCompleto = (EditText) getView().findViewById(R.id.nomeCompleto);
+            nomeSocial = (EditText) getView().findViewById(R.id.nomeSocial);
+            dataNascimento = (EditText) getView().findViewById(R.id.dataNascimento);
+            pisPasep = (EditText) getView().findViewById(R.id.pisPasep);
+            paisNascimento = (EditText) getView().findViewById(R.id.paisNascimento);
+            nomeMae = (EditText) getView().findViewById(R.id.nomeMae);
+            eMail = (EditText) getView().findViewById(R.id.email);
+
+
+            //RadioGroups
+            RadioGroup radio_grp1 = (RadioGroup) getView().findViewById(R.id.sexoInd);
+            sexo = radio_grp1.getCheckedRadioButtonId();
+            RadioGroup radio_grp2 = (RadioGroup) getView().findViewById(R.id.raca);
+            raca = radio_grp2.getCheckedRadioButtonId();
+            RadioGroup radio_grp14 = (RadioGroup) getView().findViewById(R.id.nacionalidade);
+            nacionalidade = radio_grp14.getCheckedRadioButtonId();
+
+
+            //Strings
+            tele = telefone.getText().toString();
+            muni = municipio.getText().toString();
+            sus = cartaoSus.getText().toString();
+            nomeComp = nomeCompleto.getText().toString();
+            nomeSoci = nomeSocial.getText().toString();
+            data = dataNascimento.getText().toString();
+            pasep = pisPasep.getText().toString();
+            pais = paisNascimento.getText().toString();
+            mae = nomeMae.getText().toString();
+            mail = eMail.getText().toString();
+
+//            BancoController crud = new BancoController(getActivity().getBaseContext());
+//            telefone = (EditText)getView().findViewById(R.id.telefone);
+//            municipio = (EditText)getView().findViewById(R.id.municipio);
+//            tele = telefone.getText().toString();
+//            muni = municipio.getText().toString();
+//            String resultado;
+
+            radioButton = (RadioButton) getView().findViewById(nacionalidade);
+
+
+            Toast.makeText(getActivity().getApplicationContext(), radioButton.getText().toString(), Toast.LENGTH_LONG).show();
+
+//            resultado = crud.insereDado(tele, muni);
 //
-//            //xml find out which radio button has been checked ...
-//            RadioGroup radio_grp=(RadioGroup)getActivity().findViewById(R.id.radioGroup); //change or leave out this line (I've put it in because you might find it useful later )
-//            RadioButton masculino = (RadioButton)getActivity().findViewById(R.id.masculino);  //you dont need to do this again if global ...
-//            RadioButton feminino = (RadioButton) getActivity().findViewById(R.id.feminino);
-//            if(masculino.isChecked() == true) {
-//                //toast ... button has been selected ...
-//            }else if(feminino.isChecked() == true){
-//
-//            }
-//        }
-//    };
+//            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+
+        }
+    };
+
+
+    public String setNacionalidade(int id){
+        if(id == R.id.brasileiro)
+            return "Brasileiro";
+        else if(id == R.id.naturalizado)
+            return "Naturalizado";
+        else
+            return "Estrangeiro";
+    }
+
+    public String setSexo(int id){
+        if(id == R.id.masculino)
+            return "Masculino";
+        else
+            return "Feminino";
+    }
+
+    public String setraca(int id){
+        if(id == R.id.branca)
+            return "Branca";
+        else if(id == R.id.preta)
+            return "Preta";
+        else if(id == R.id.parda)
+            return "Parda";
+        else
+            return "Indígena";
+    }
 }
+
+

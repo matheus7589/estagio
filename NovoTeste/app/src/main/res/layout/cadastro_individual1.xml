@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/textView7"
-        android:id="@+id/sexo">
+        android:id="@+id/sexoInd">
 
 
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Masculino"
             android:id="@+id/masculino"
-            android:layout_alignTop="@+id/sexo"
+            android:layout_alignTop="@+id/sexoInd"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="63dp"
@@ -76,7 +76,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Raça/Cor:"
         android:id="@+id/textView9"
-        android:layout_below="@id/sexo"
+        android:layout_below="@id/sexoInd"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="24dp" />
 
@@ -93,8 +93,7 @@
             android:id="@+id/branca"
             android:layout_below="@+id/textView9"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="onRadioButtonClicked"/>
+            android:layout_alignParentStart="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -102,8 +101,7 @@
             android:text="Preta"
             android:id="@+id/preta"
             android:layout_below="@+id/textView9"
-            android:layout_centerHorizontal="true"
-            android:onClick="onRadioButtonClicked"/>
+            android:layout_centerHorizontal="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -112,8 +110,7 @@
             android:id="@+id/parda"
             android:layout_alignTop="@+id/preta"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="onRadioButtonClicked"/>
+            android:layout_alignParentEnd="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -121,8 +118,7 @@
             android:text="Indígena"
             android:id="@+id/indigena"
             android:layout_below="@+id/preta"
-            android:layout_centerHorizontal="true"
-            android:onClick="onRadioButtonClicked"/>
+            android:layout_centerHorizontal="true" />
     </RadioGroup>
 
     <RadioGroup
@@ -138,8 +134,7 @@
             android:id="@+id/brasileiro"
             android:layout_below="@+id/textView8"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="onRadioButtonClicked2"/>
+            android:layout_alignParentStart="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -147,8 +142,7 @@
             android:text="Naturalizado"
             android:id="@+id/naturalizado"
             android:layout_below="@+id/textView8"
-            android:layout_centerHorizontal="true"
-            android:onClick="onRadioButtonClicked2"/>
+            android:layout_centerHorizontal="true"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -157,8 +151,7 @@
             android:id="@+id/estrangeiro"
             android:layout_alignTop="@+id/naturalizado"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="onRadioButtonClicked2"/>
+            android:layout_alignParentEnd="true" />
     </RadioGroup>
 
     <TextView
@@ -222,13 +215,13 @@
         android:layout_below="@+id/textView10" />
 
     <TextView
-        android:text="Identificaçãi do Usuário/Cidadão"
+        android:text="Identificação do Usuário/Cidadão"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView19"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/sexo"
-        android:layout_toEndOf="@+id/sexo"
+        android:layout_toRightOf="@+id/sexoInd"
+        android:layout_toEndOf="@+id/sexoInd"
         android:textSize="18sp" />
 
     <EditText
@@ -236,7 +229,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/email"
         android:layout_below="@+id/spinner1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -261,24 +254,11 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_below="@+id/nomeCompleto"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/editText2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Nome Social" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:layout_alignTop="@+id/textView7"
         android:layout_toRightOf="@+id/nacionalidade"
         android:layout_marginLeft="74dp"
         android:layout_marginStart="74dp"
-        android:id="@+id/editText3"
+        android:id="@+id/pisPasep"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:hint="Nº Pis/Pasep" />
@@ -289,11 +269,30 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_alignBottom="@+id/raca"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:id="@+id/editText4"
+        android:layout_alignLeft="@+id/pisPasep"
+        android:layout_alignStart="@+id/pisPasep"
+        android:id="@+id/paisNascimento"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:hint="Pais de Nascimento" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nomeSocial"
+        android:hint="Nome Social"
+        android:layout_below="@+id/nomeCompleto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cadastrar"
+        android:layout_below="@+id/textView19"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

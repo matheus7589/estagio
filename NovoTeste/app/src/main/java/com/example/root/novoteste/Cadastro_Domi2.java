@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -39,7 +38,7 @@ public class Cadastro_Domi2 extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button registrar = (Button)view.findViewById(R.id.registrar);
+        Button registrar = (Button)view.findViewById(R.id.registrador);
 
         registrar.setOnClickListener(regHandler);
 

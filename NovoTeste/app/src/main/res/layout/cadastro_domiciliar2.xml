@@ -113,8 +113,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView12"
-        android:layout_alignLeft="@+id/registrar"
-        android:layout_alignStart="@+id/registrar"
+        android:layout_alignLeft="@+id/registrador"
+        android:layout_alignStart="@+id/registrador"
         android:id="@+id/textView21" />
 
     <RadioGroup
@@ -252,8 +252,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView30"
-        android:layout_toRightOf="@+id/registrar"
-        android:layout_toEndOf="@+id/registrar"
+        android:layout_toRightOf="@+id/registrador"
+        android:layout_toEndOf="@+id/registrador"
         android:id="@+id/textView31" />
 
     <RadioGroup
@@ -309,19 +309,9 @@
         android:id="@+id/quantos"
         android:layout_below="@id/animais"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/registrar"
-        android:layout_toEndOf="@+id/registrar"
+        android:layout_toRightOf="@+id/registrador"
+        android:layout_toEndOf="@+id/registrador"
         android:hint="Quantos" />
-
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/registrar"
-        android:elevation="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
 
     <TextView
         android:text="Material Predominante na Construção:"
@@ -442,6 +432,16 @@
             android:id="@+id/radioButton55"
             android:layout_weight="1" />
     </RadioGroup>
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrador"
+        android:elevation="10dp"
+        android:layout_alignBaseline="@+id/textView11"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

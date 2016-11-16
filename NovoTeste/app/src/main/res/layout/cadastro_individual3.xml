@@ -143,14 +143,6 @@
             android:layout_weight="1" />
     </RadioGroup>
 
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/registrar" />
-
     <TextView
         android:text="Participa de Algum Grupo Comunitário?"
         android:layout_width="wrap_content"
@@ -249,4 +241,12 @@
             android:id="@+id/mudancaTerritorio"
             android:layout_weight="1" />
     </RadioGroup>
+
+    <Button
+        android:text="Registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registra"
+        android:layout_above="@+id/cuidador"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

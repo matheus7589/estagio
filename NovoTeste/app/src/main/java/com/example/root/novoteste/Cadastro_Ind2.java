@@ -5,12 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 
 /**
  * Created by root on 30/08/2016.
@@ -36,21 +32,9 @@ public class Cadastro_Ind2 extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button registrar = (Button)view.findViewById(R.id.registrar2);
-        registrar.setOnClickListener(regHandler);
-
     }
 
-    View.OnClickListener regHandler = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            BancoController crud = new BancoController(getActivity().getBaseContext());
-            ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
 
-            //EditTexts
-
-        }
-    };
 
 
 }
