@@ -5,6 +5,8 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
@@ -15,17 +17,33 @@ import android.widget.LinearLayout;
  * Created by root on 07/11/2016.
  */
 
-public class myDragActivity extends Activity {
+public class myDragActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag);
 
+        //CONTROLA TOOLBAR
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //CONTROLA TOOLBAR
+
         findViewById(R.id.img1).setOnLongClickListener(new MyOnLongClickListener());
         findViewById(R.id.img2).setOnLongClickListener(new MyOnLongClickListener());
+        findViewById(R.id.img3).setOnLongClickListener(new MyOnLongClickListener());
 
-        findViewById(R.id.topleft).setOnDragListener(new MyOnDragListener(1));
+        //findViewById(R.id.topleft).setOnDragListener(new MyOnDragListener(1));
         findViewById(R.id.topright).setOnDragListener(new MyOnDragListener(2));
     }
 
@@ -38,7 +56,7 @@ public class myDragActivity extends Activity {
             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
 
             view.startDrag(clipData, shadowBuilder, view, 0);
-            view.setVisibility(view.INVISIBLE);
+            //view.setVisibility(view.INVISIBLE);
 
             return true;
         }
@@ -72,7 +90,7 @@ public class myDragActivity extends Activity {
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
                     Log.i("Script", numero +" - ACTION_DRAG_EXITED");
-                    view.setBackgroundColor(Color.BLUE);
+                    view.setBackgroundColor(Color.GRAY);
                     break;
                 case DragEvent.ACTION_DROP:
                     Log.i("Script", numero +" - ACTION_DROP");
@@ -85,7 +103,7 @@ public class myDragActivity extends Activity {
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     Log.i("Script", numero +" - ACTION_DRAG_ENDED");
-                    view.setBackgroundColor(Color.BLUE);
+                    //view.setBackgroundColor(Color.BLUE);
                     break;
             }
 
