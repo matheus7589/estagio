@@ -16,7 +16,7 @@
     android:rowCount="3">
 
     <TextView
-        android:id="@+id/idLivro"
+        android:id="@+id/idDomicilio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -28,19 +28,19 @@
         android:id="@+id/cartaosus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="5dp"
         android:text="Cartão"
         tools:gravity="center_vertical"
         android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/nomeLivro"
+        android:id="@+id/nomeTelefone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="5dp"
-        android:text="Nome"
+        android:text="Telefone"
         tools:gravity="center_horizontal" />
 
 </GridLayout>

@@ -28,6 +28,7 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
 
     GoogleMap mapa;
     ProgressDialog dialog;
+    double lat, lon;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -91,6 +92,8 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, OnMap
                 "Novo marcador adicionado: " + point.toString(), Toast.LENGTH_LONG)
                 .show();
 
+        lat = point.latitude;
+        lon = point.longitude;
 
         dialog = ProgressDialog.show(Maps.this,"Novo Cadastro","Salvando localização. Aguarde...", false, true);
         dialog.setCancelable(false);

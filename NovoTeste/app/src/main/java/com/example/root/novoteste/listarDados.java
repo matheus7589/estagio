@@ -35,26 +35,26 @@ public class listarDados extends AppCompatActivity {
         BancoController crud = new BancoController(getBaseContext());
         final Cursor cursor = crud.carregaDados();
 
-        String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getNOME(), CriaBanco.getRG()};
-        int[] idViews = new int[] {R.id.idLivro, R.id.nomeLivro, R.id.cartaosus};
+        String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getTELERESIDENCIAL(), CriaBanco.getCartaoSus()};
+        int[] idViews = new int[] {R.id.idDomicilio, R.id.nomeTelefone, R.id.cartaosus};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.content_listar_dados,cursor,nomeCampos,idViews, 0);
         lista = (ListView)findViewById(R.id.listView);
         lista.setAdapter(adaptador);
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String codigo;
-                cursor.moveToPosition(position);
-                codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getID()));
-                Intent intent = new Intent(listarDados.this, Alterar.class);
-                intent.putExtra("codigo", codigo);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String codigo;
+//                cursor.moveToPosition(position);
+//                codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getID()));
+//                Intent intent = new Intent(listarDados.this, Alterar.class);
+//                intent.putExtra("codigo", codigo);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
     }
 

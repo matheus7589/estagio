@@ -128,11 +128,11 @@ public class Cadastro_Domi2 extends Fragment {
 
             String resultado;
 
-            Toast.makeText(getActivity().getApplicationContext(), tratamentoAgua, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), tratamentoAgua, Toast.LENGTH_LONG).show();
 
-            //resultado = crud.insereDado(nameLogradouro, numberLograd, comple, estado, muni, bairr, CEP, teleResid, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, numMora, numComods);
+            resultado = crud.insereDadoDomicilio(sus, nameLogradouro, comple, teleResid);
 
-            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
 
