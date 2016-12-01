@@ -130,7 +130,7 @@ public class Cadastro_Domi2 extends Fragment {
 
             //Toast.makeText(getActivity().getApplicationContext(), tratamentoAgua, Toast.LENGTH_LONG).show();
 
-            resultado = crud.insereDadoDomicilio(sus, nameLogradouro, comple, teleResid);
+            resultado = crud.insereDadoDomicilio(sus, bairr, teleResid);
 
             Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }

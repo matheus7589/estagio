@@ -2,6 +2,7 @@ package com.example.root.novoteste;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.MergeCursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,13 +34,19 @@ public class listarDados extends AppCompatActivity {
         });
 
         BancoController crud = new BancoController(getBaseContext());
-        final Cursor cursor = crud.carregaDados();
+        final Cursor cursorDomi = crud.carregaDadosDomicilio();
+        final Cursor cursorBairro = crud.carregaDadosEstado();
 
-        String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getTELERESIDENCIAL(), CriaBanco.getCartaoSus()};
+        final Cursor mergedCursor = new MergeCursor(new Cursor[]{
+                cursorDomi,
+                cursorBairro
+        });
+
+        String[] nomeCampos = new String[] {CriaBanco.getID(), "Bairro", CriaBanco.getCartaoSus()};
         int[] idViews = new int[] {R.id.idDomicilio, R.id.nomeTelefone, R.id.cartaosus};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.content_listar_dados,cursor,nomeCampos,idViews, 0);
+                R.layout.content_listar_dados,mergedCursor,nomeCampos,idViews, 0);
         lista = (ListView)findViewById(R.id.listView);
         lista.setAdapter(adaptador);
 
