@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:gravity="center"
+    android:weightSum="1">
 
-</LinearLayout>
+
+    <ImageView
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.72"
+        android:src="@drawable/mao_dorso"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/textView2" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageButton7"
+        android:src="@drawable/circled_1_green"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_marginLeft="161dp"
+        android:layout_marginStart="161dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mão Esquerda Dorso"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp" />
+
+</RelativeLayout>

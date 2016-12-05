@@ -18,7 +18,7 @@
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView3"
-        android:src="@drawable/mao_esquerda_palma"
+        android:src="@drawable/pe_direito_sola"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView16"
         android:layout_alignParentBottom="true" />

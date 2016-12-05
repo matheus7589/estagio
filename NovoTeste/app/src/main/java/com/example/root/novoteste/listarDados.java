@@ -2,6 +2,7 @@ package com.example.root.novoteste;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorJoiner;
 import android.database.MergeCursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class listarDados extends AppCompatActivity {
 
@@ -37,18 +39,21 @@ public class listarDados extends AppCompatActivity {
         final Cursor cursorDomi = crud.carregaDadosDomicilio();
         final Cursor cursorBairro = crud.carregaDadosEstado();
 
-        final Cursor mergedCursor = new MergeCursor(new Cursor[]{
-                cursorDomi,
-                cursorBairro
-        });
+//        final CursorJoiner mergedCursor = new CursorJoiner(new Cursor[]{
+//                cursorDomi,
+//                cursorBairro
+//        });
 
-        String[] nomeCampos = new String[] {CriaBanco.getID(), "Bairro", CriaBanco.getCartaoSus()};
-        int[] idViews = new int[] {R.id.idDomicilio, R.id.nomeTelefone, R.id.cartaosus};
+//        if(cursorBairro!=null)
+//            Toast.makeText(getApplicationContext(), mergedCursor.getString(mergedCursor.getColumnIndex(CriaBanco.getDESCRICAO())), Toast.LENGTH_LONG).show();
 
-        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.content_listar_dados,mergedCursor,nomeCampos,idViews, 0);
-        lista = (ListView)findViewById(R.id.listView);
-        lista.setAdapter(adaptador);
+//        String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getCartaoSus(), CriaBanco.getDESCRICAO()};
+//        int[] idViews = new int[] {R.id.idDomicilio, R.id.nomeTelefone, R.id.cartaosus};
+//
+//        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
+//                R.layout.content_listar_dados,mergedCursor,nomeCampos,idViews, 0);
+//        lista = (ListView)findViewById(R.id.listView);
+//        lista.setAdapter(adaptador);
 
 //        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override

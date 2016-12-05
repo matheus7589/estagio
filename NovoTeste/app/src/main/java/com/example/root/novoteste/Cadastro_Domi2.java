@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -17,11 +18,17 @@ import android.widget.Toast;
 
 public class Cadastro_Domi2 extends Fragment {
 
-    private EditText cns, nomeLogradouro, numLogradouro, complemento, municipio, bairro, cep, telResidencial, numMoradores, numComodos, howManyAnimals;
-    private String sus, nameLogradouro, numberLograd, comple, estado, muni, bairr, CEP, teleResid, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, numMora, numComods,
-            abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, animais, energia, quantosAnimais;
+    private CriaBanco banco = new CriaBanco(getContext());
+    private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, municipio, bairro, cep, telResidencial, numMoradores, numComodos, howManyAnimals;
+    private String sus, nameLogradouro, numberLograd, tipoLograd, comple,  bairr,  teleResid,  numMora, numComods, quantosAnimais, teste;
+    private RadioButton teste2;
+
+    // ID's dos radiobuttons sem converter
     int loca, mora, tipoDomi, condiTer, tipoAcess,
         abastAgua, tratAgua, destLixo, escoa, animals, energy;
+
+    // ID's dos radiobuttons convertidos
+    int estado, muni, CEP, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, animais, energia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,7 @@ public class Cadastro_Domi2 extends Fragment {
             cns = (EditText) getActivity().findViewById(R.id.cns);
             nomeLogradouro = (EditText)getActivity().findViewById(R.id.nomeLogradouro);
             numLogradouro = (EditText)getActivity().findViewById(R.id.numLogradouro);
+            tipoLogradouro = (EditText)getActivity().findViewById(R.id.tipolograd);
             complemento = (EditText)getActivity().findViewById(R.id.complemento);
             Spinner spinner = (Spinner) getActivity().findViewById(R.id.spinner2);
             municipio = (EditText)getActivity().findViewById(R.id.municipio);
@@ -66,30 +74,32 @@ public class Cadastro_Domi2 extends Fragment {
             //Radiogroups
             RadioGroup radio_grp1 = (RadioGroup) getActivity().findViewById(R.id.localizacao);
             loca = radio_grp1.getCheckedRadioButtonId();
-            localizacao = setLocal(loca);
+            teste2 = (RadioButton) getActivity().findViewById(loca);
+            localizacao = crud.carregaDadoByName(teste2.getText().toString(), banco.getTabelaTipolocalizacao());
             RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
             mora = radio_grp2.getCheckedRadioButtonId();
-            moradia = setMoradia(mora);
+            //moradia = setMoradia(mora);
             RadioGroup radio_grp3 = (RadioGroup) getActivity().findViewById(R.id.tipoDomicilio);
             tipoDomi = radio_grp3.getCheckedRadioButtonId();
-            tipoDomicilio = setTipoDomicilio(tipoDomi);
+            //tipoDomicilio = setTipoDomicilio(tipoDomi);
             RadioGroup radio_grp4 = (RadioGroup) getActivity().findViewById(R.id.condiTerra);
             condiTer = radio_grp4.getCheckedRadioButtonId();
-            condiTerra = setCondiTerra(condiTer);
+            //condiTerra = setCondiTerra(condiTer);
             RadioGroup radio_grp5 = (RadioGroup) getActivity().findViewById(R.id.tipoAcesso);
             tipoAcess = radio_grp5.getCheckedRadioButtonId();
-            tipoAcesso = setTipoAcesso(tipoAcess);
+            //tipoAcesso = setTipoAcesso(tipoAcess);
 
 
             //Strings
             sus = cns.getText().toString();
             nameLogradouro = nomeLogradouro.getText().toString();
             numberLograd = numLogradouro.getText().toString();
+            tipoLograd = tipoLogradouro.getText().toString();
             comple = complemento.getText().toString();
-            estado = spinner.getSelectedItem().toString();
-            muni = municipio.getText().toString();
+            //estado = spinner.getSelectedItem().toString();
+            //muni = municipio.getText().toString();
             bairr = bairro.getText().toString();
-            CEP = cep.getText().toString();
+            //CEP = cep.getText().toString();
             teleResid = telResidencial.getText().toString();
             numMora = numMoradores.getText().toString();
             numComods = numComodos.getText().toString();
@@ -104,22 +114,22 @@ public class Cadastro_Domi2 extends Fragment {
             //RadioGroups
             RadioGroup radio_grp6 = (RadioGroup) getView().findViewById(R.id.abastecimentoAgua);
                 abastAgua = radio_grp6.getCheckedRadioButtonId();
-                abastecimentoAgua = setAbast(abastAgua);
+                //abastecimentoAgua = setAbast(abastAgua);
             RadioGroup radio_grp7 = (RadioGroup) getView().findViewById(R.id.tratamentoAgua);
                 tratAgua = radio_grp7.getCheckedRadioButtonId();
-                tratamentoAgua = setTratamento(tratAgua);
+                //tratamentoAgua = setTratamento(tratAgua);
             RadioGroup radio_grp8 = (RadioGroup) getView().findViewById(R.id.destinoLixo);
                 destLixo = radio_grp8.getCheckedRadioButtonId();
-                destinoLixo = setDestinoLixo(destLixo);
+                //destinoLixo = setDestinoLixo(destLixo);
             RadioGroup radio_grp9 = (RadioGroup) getView().findViewById(R.id.energia);
                 energy = radio_grp9.getCheckedRadioButtonId();
-                energia = setEnerg(energy);
+                //energia = setEnerg(energy);
             RadioGroup radio_grp10 = (RadioGroup) getView().findViewById(R.id.formaEscoamento);
                 escoa = radio_grp10.getCheckedRadioButtonId();
-                formaEscoamento = setFormaEscoa(escoa);
+                //formaEscoamento = setFormaEscoa(escoa);
             RadioGroup radio_grp11 = (RadioGroup) getView().findViewById(R.id.animais);
                 animals = radio_grp11.getCheckedRadioButtonId();
-                animais = setAnimaiss(animals);
+                //animais = setAnimaiss(animals);
 
 
             //Strings
@@ -128,11 +138,11 @@ public class Cadastro_Domi2 extends Fragment {
 
             String resultado;
 
-            //Toast.makeText(getActivity().getApplicationContext(), tratamentoAgua, Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(), ""+localizacao, Toast.LENGTH_LONG).show();
 
-            resultado = crud.insereDadoDomicilio(sus, bairr, teleResid);
+            //resultado = crud.insereDado(sus, nameLogradouro, tipoLograd, numberLograd, comple, bairr, teleResid, numComods, numMora);
 
-            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
 

@@ -1,15 +1,20 @@
 package com.example.root.novoteste;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.util.StringBuilderPrinter;
+import android.widget.Toast;
 
 /**
  * Created by root on 10/10/2016.
  */
 
-public class BancoController {
+public class BancoController extends Activity {
 
     private SQLiteDatabase db;
     private CriaBanco banco;
@@ -19,20 +24,23 @@ public class BancoController {
     }
 
 
-      //public String insereDado(String cartaosus, String nameLogradouro, String numberLograd, String comple, String estado, String muni, String bairr, String CEP,
-        //                     String teleResid, String localizacao, String moradia, String tipoDomicilio, String condiTerra, String tipoAcesso, String numMora, String numComods){
-        public String insereDadoDomicilio(String cartaosus, String bairr, String teleResid){
+//    public String insereDado(String cartaosus, String nameLogradouro, String tipolograd, String numberLograd, String comple, String estado, String muni, String bairr, String CEP,
+//                             String teleResid, String localizacao, String moradia, String tipoDomicilio, String condiTerra, String tipoAcesso, String numMora, String numComods){
+        //public String insereDadoDomicilio(String cartaosus, String bairr, String teleResid){
+public String insereDado(String cartaosus, String nameLogradouro, String tipolograd, String numberLograd, String comple, String bairr, String teleResid, String numComods, String numMora){
         ContentValues valoresdomi, valoresestado;
         long resultadoDomicilio, resultadoEndere;
 
         db = banco.getWritableDatabase();
         valoresdomi = new ContentValues();
         valoresdomi.put(banco.getCartaoSus(), cartaosus);
-
         valoresdomi.put(banco.getTELERESIDENCIAL(), teleResid);
-        //valoresdomi.put(banco.getNOMELOGRAD(), nameLogradouro);
-        //valoresdomi.put(banco.getNUMLOGRAD(), numberLograd);
-        //valoresdomi.put(banco.getCOMPLEMENTO(), comple);
+        valoresdomi.put(banco.getTabelaTipologradouro(), tipolograd);
+        valoresdomi.put(banco.getNOMELOGRAD(), nameLogradouro);
+        valoresdomi.put(banco.getNUMLOGRAD(), numberLograd);
+        valoresdomi.put(banco.getCOMPLEMENTO(), comple);
+        valoresdomi.put(banco.getNUMEROCOMODOS(), numComods);
+        valoresdomi.put(banco.getNMORADORES(), numMora);
 
           resultadoDomicilio = db.insert(CriaBanco.getTabelaDomicilio(), null, valoresdomi);
 
@@ -64,7 +72,9 @@ public class BancoController {
 //        valores.put(banco.getNUMEROCOMODOS(), numComods);
 
 
-            System.out.println(CriaBanco.getTabelaBairro());
+
+
+            System.out.println((db.query(banco.getTabelaDomicilio(), id_Domicilio, null, null, null, null, null, null)).getColumnIndex(banco.getID()));
         resultadoEndere = db.insert(CriaBanco.getTabelaBairro(), null, valoresestado);
         db.close();
 
@@ -76,7 +86,7 @@ public class BancoController {
 
     public Cursor carregaDadosDomicilio(){
         Cursor cursor;
-        String[] campos =  {banco.getID(),banco.getTELERESIDENCIAL(), banco.getCartaoSus()};
+        String[] campos =  {banco.getID(), banco.getCartaoSus()};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.getTabelaDomicilio(), campos, null, null, null, null, null, null);
 
@@ -89,14 +99,16 @@ public class BancoController {
 
     public Cursor carregaDadosEstado(){
         Cursor cursor;
-        String[] campos = {banco.getID(), banco.getDESCRICAO()};
+        String[] campos = {banco.getDESCRICAO()};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.getTabelaBairro(), campos, null, null, null, null, null, null);
 
         if(cursor!=null){
             cursor.moveToFirst();
         }
+
         db.close();
+
         return cursor;
     }
 
@@ -113,6 +125,29 @@ public class BancoController {
 //        db.close();
 //        return cursor;
 //    }
+
+    public int carregaDadoByName(String nome, String tabela){
+        Cursor cursor;
+        int idResultado;
+        String teste;
+        String[] campos = {banco.getID(), banco.getDESCRICAO()}; //Colunas
+        String where = CriaBanco.getDESCRICAO() + " = ?"; // Where
+        String[] valor = {nome}; //Valor do Where para substituir
+        db = banco.getReadableDatabase();
+        cursor = db.query(tabela, campos, where, valor, null, null, null, null);
+        if(cursor!=null){
+            //Toast.makeText(this.getApplicationContext(), "Entrou!", Toast.LENGTH_LONG).show();
+            System.out.println("Entrou!!");
+            cursor.moveToFirst();
+        }
+        db.close();
+        //System.out.println(cursor.getString(cursor.getColumnIndex(CriaBanco.getDESCRICAO())));
+        idResultado = Integer.parseInt(cursor.getString(cursor.getColumnIndex(CriaBanco.getID())));
+        //System.out.println(teste);
+        //Toast.makeText(getParent().getApplicationContext(), cursor.getCount(), Toast.LENGTH_LONG).show();
+        return idResultado;
+    }
+
 //
 //    public void alteraRegistro(int id, String autor, String editora){
 //        ContentValues valores;

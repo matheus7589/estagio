@@ -68,10 +68,11 @@ public class Abas extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Fragmento1(), "Mão Palma");
-        adapter.addFragment(new Fragmento2(), "Mão Dorso");
+        adapter.addFragment(new Fragmento1(), "Mão Dir. Palma");
+        adapter.addFragment(new Fragmento2(), "Mão Dir. Dorso");
         adapter.addFragment(new Fragmento3(), "Mao Esq. Palma");
-        adapter.addFragment(new Fragmento4(), "Não sei");
+        adapter.addFragment(new Fragmento4(), "Mão Esq. Dorso");
+        adapter.addFragment(new Fragmento5(), "Pé Esq. Sola");
         viewPager.setAdapter(adapter);
     }
 }
