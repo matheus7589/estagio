@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:src="@drawable/pe_frente_direito"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/textView50"
+        android:layout_alignBottom="@+id/view3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="                                       "
+        android:id="@+id/textView50"
+        android:layout_marginTop="500px"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="                    "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1350px"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/view3" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageButton17"
+        android:src="@drawable/circled_1_green"
+        android:layout_marginBottom="108dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignRight="@+id/textView50"
+        android:layout_alignEnd="@+id/textView50"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/legenda3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView5" />
+
+</RelativeLayout>

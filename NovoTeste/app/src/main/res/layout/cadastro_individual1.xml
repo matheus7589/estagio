@@ -254,20 +254,6 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignTop="@+id/textView7"
-        android:layout_toRightOf="@+id/nacionalidade"
-        android:layout_marginLeft="74dp"
-        android:layout_marginStart="74dp"
-        android:id="@+id/pisPasep"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Nº Pis/Pasep" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:layout_alignBottom="@+id/raca"
         android:layout_alignLeft="@+id/pisPasep"
         android:layout_alignStart="@+id/pisPasep"
@@ -292,7 +278,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cadastrar"
-        android:layout_below="@+id/textView19"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/pisPasep"
+        android:hint="Nº Pis/Pasep"
+        android:layout_alignBottom="@+id/sexoInd"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/cadastrar"
+        android:layout_toEndOf="@+id/cadastrar" />
 
 </RelativeLayout>

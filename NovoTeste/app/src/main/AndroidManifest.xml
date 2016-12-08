@@ -28,6 +28,11 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBEpXGg6W5M4l1DuMhLq_igMTtvYcZBQ9o" />
 
+        <meta-data android:name="DATABASE" android:value="cadhanse.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.root.novoteste" />
+
         <activity
             android:name=".BarraDeNavegacao"
             android:label="Novo Teste"

@@ -263,71 +263,6 @@
                 android:id="@+id/textView28"
                 android:textSize="16sp" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView28"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/condiTerra">
-
-                <RadioButton
-                    android:text="Proprietário"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/proprietario"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Parceiro(a)/Meeiro(a)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/parceiro"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Assentado(a)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/assentado"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Posseiro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/posseiro"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Arrendatário(a)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/arrendatario"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Comodatário(a)"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/comodatario"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Beneficiário(a) do Banco da Terra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/beneficiario"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:text="Não se aplica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/naoSeAplica"
-                    android:layout_weight="1" />
-            </RadioGroup>
-
             <TextView
                 android:text="Tipo de Domicílio:"
                 android:layout_width="wrap_content"
@@ -465,6 +400,71 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignLeft="@+id/numeromoradores"
                 android:layout_alignStart="@+id/numeromoradores" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/condiTerra"
+                android:layout_below="@+id/textView28"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RadioButton
+                    android:text="Proprietário"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/proprietario"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Parceiro(a)/Meeiro(a)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parceiro"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Assentado(a)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/assentado"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Posseiro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/posseiro"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Arrendatário(a)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/arrendatario"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Comodatário(a)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/comodatario"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Beneficiário(a) do Banco da Terra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/beneficiario"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Não se aplica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/naoSeAplica"
+                    android:layout_weight="1" />
+            </RadioGroup>
 
         </RelativeLayout>
 </ScrollView>

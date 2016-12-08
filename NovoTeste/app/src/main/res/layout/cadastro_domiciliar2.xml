@@ -444,8 +444,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/registrador"
             android:elevation="10px"
-            android:layout_alignBaseline="@+id/textView11"
-            android:layout_alignBottom="@+id/textView11"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
 

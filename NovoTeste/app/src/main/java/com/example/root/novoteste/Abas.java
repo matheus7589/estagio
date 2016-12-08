@@ -72,7 +72,11 @@ public class Abas extends AppCompatActivity {
         adapter.addFragment(new Fragmento2(), "Mão Dir. Dorso");
         adapter.addFragment(new Fragmento3(), "Mao Esq. Palma");
         adapter.addFragment(new Fragmento4(), "Mão Esq. Dorso");
-        adapter.addFragment(new Fragmento5(), "Pé Esq. Sola");
+        adapter.addFragment(new Fragmento5(), "Pé Dir. Sola");
+        adapter.addFragment(new Fragmento6(), "Pé Dir. Frente");
+        adapter.addFragment(new Fragmento7(), "Pé Esq. Sola");
+        adapter.addFragment(new Fragmento8(), "Pé Esq. Frente");
+
         viewPager.setAdapter(adapter);
     }
 }

@@ -95,202 +95,276 @@ public class CriaBanco extends SQLiteOpenHelper {
     private static final String FK_ANIMAL = "fk_animal";
 
     ////////////////////////////////////////// DOMICILIO /////////////////////////////////////////////////
-            private static final String CREATE_TABLE_DOMICILIO = "CREATE TABLE "+TABELA_DOMICILIO+" ("
-            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + NMORADORES + " INTEGER,"
-            + NUMLOGRAD + " INTEGER,"
-            + TELERESIDENCIAL + " INTEGER,"
-            + CARTAO_SUS + " VARCHAR(11),"
-            + NUMEROCOMODOS + " INTEGER,"
-            + FK_INDIVIDUO + " INTEGER,"
-            + QUANTANIMAIS + " INTEGER,"
-            + " FOREIGN KEY (fk_individuo) REFERENCES familia (fk_individuo) ON DELETE RESTRICT ON UPDATE CASCADE )";
+    private static final String CREATE_TABLE_DOMICILIO = "CREATE TABLE "+TABELA_DOMICILIO+" ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + NMORADORES + " INTEGER,"
+    + NUMLOGRAD + " INTEGER,"
+    + TELERESIDENCIAL + " INTEGER,"
+    + CARTAO_SUS + " VARCHAR(11),"
+    + NUMEROCOMODOS + " INTEGER,"
+    + FK_INDIVIDUO + " INTEGER,"
+    + QUANTANIMAIS + " INTEGER,"
+    + " FOREIGN KEY (fk_individuo) REFERENCES familia (fk_individuo) ON DELETE RESTRICT ON UPDATE CASCADE )";
 
     //////////////////////////////////////////// INDIVIDUO ///////////////////////////////////////
-            private static final String CREATE_TABLE_INDIVIDUO = "CREATE TABLE " + TABELA_INDIVIDUO + " ("
-            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FK_DOMICILIO + " INTEGER,"
-            + NOME_COMPLETO + " VARCHAR(100),"
-            + NOME_SOCIAL + " VARCHAR(100),"
-            + CARTAO_SUS + " VARCHAR(11),"
-            + DATA_NASCIMENTO + " VARCHAR(10),"
-            + SEXO + " VARCHAR(1),"
-            + NOMEMAE + " VARCHAR(100),"
-            + TELECELULAR + " INTEGER,"
-            + OCUPACAO + " VARCHAR(15),"
-            + DATAINICIORESIDENCIA + " VARCHAR(10),"
-            + DATAFIMRESIDENCIA + " VARCHAR(10),"
-            + ESCOLACRECHE + " VARCHAR(1),"
-            + CUIDADORTRADICIONAL + " VARCHAR(1),"
-            + GRUPOCOMUNITARIO + " VARCHAR(1),"
-            + COMUNIDADETRADICIONAL + " VARCHAR(1),"
-            + PLANOSAUDE + " VARCHAR(1),"
-            +" FOREIGN KEY (fk_domicilio) REFERENCES familia (fk_domicilio) ON DELETE RESTRICT ON UPDATE CASCADE )";
+    private static final String CREATE_TABLE_INDIVIDUO = "CREATE TABLE " + TABELA_INDIVIDUO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + FK_DOMICILIO + " INTEGER,"
+    + NOME_COMPLETO + " VARCHAR(100),"
+    + NOME_SOCIAL + " VARCHAR(100),"
+    + CARTAO_SUS + " VARCHAR(11),"
+    + DATA_NASCIMENTO + " VARCHAR(10),"
+    + SEXO + " VARCHAR(1),"
+    + NOMEMAE + " VARCHAR(100),"
+    + TELECELULAR + " INTEGER,"
+    + OCUPACAO + " VARCHAR(15),"
+    + DATAINICIORESIDENCIA + " VARCHAR(10),"
+    + DATAFIMRESIDENCIA + " VARCHAR(10),"
+    + ESCOLACRECHE + " VARCHAR(1),"
+    + CUIDADORTRADICIONAL + " VARCHAR(1),"
+    + GRUPOCOMUNITARIO + " VARCHAR(1),"
+    + COMUNIDADETRADICIONAL + " VARCHAR(1),"
+    + PLANOSAUDE + " VARCHAR(1),"
+    +" FOREIGN KEY (fk_domicilio) REFERENCES familia (fk_domicilio) ON DELETE RESTRICT ON UPDATE CASCADE )";
 
     /////////////////////////////////////////// FAMILIA  //////////////////////////////////////////////
-                private static final String CREATE_TABLE_FAMILIA = "CREATE TABLE " + TABELA_FAMILIA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + FK_DOMICILIO + " INTEGER,"
-                + FK_INDIVIDUO + " INTEGER,"
-                + " FOREIGN KEY (fk_domicilio) REFERENCES domicilio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
-                + " FOREIGN KEY (fk_individuo) REFERENCES individuo (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
+    private static final String CREATE_TABLE_FAMILIA = "CREATE TABLE " + TABELA_FAMILIA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + FK_DOMICILIO + " INTEGER,"
+    + FK_INDIVIDUO + " INTEGER,"
+    + " FOREIGN KEY (fk_domicilio) REFERENCES domicilio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
+    + " FOREIGN KEY (fk_individuo) REFERENCES individuo (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
 
-    //////////////////////////////////////////// ENDERECO ////////////////////////////////////////////////
-                private static final String CREATE_TABLE_ENDERECO = "CREATE TABLE " + TABELA_ENDERECO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + LATITUDE + " REAL,"
-                + LONGITUDE + " REAL,"
-                + NOMELOGRAD + " VARCHAR(25),"
-                + COMPLEMENTO + " VARCHAR(25),"
-                + FK_BAIRRO + " INTERGER,"
-                + FK_MUNICIPIO + " INTEGER,"
-                + FK_ESTADO + " INTEGER,"
-                + FK_CEP + " INTEGER,"
-                + " FOREIGN KEY (fk_bairro) REFERENCES bairro (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
-                + " FOREIGN KEY (fk_municipio) REFERENCES municipio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
-                + " FOREIGN KEY (fk_estado) REFERENCES estado (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
-                + " FOREIGN KEY (fk_cep) REFERENCES cep (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
+        //////////////////////////////////////////// ENDERECO ////////////////////////////////////////////////
+    private static final String CREATE_TABLE_ENDERECO = "CREATE TABLE " + TABELA_ENDERECO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + LATITUDE + " REAL,"
+    + LONGITUDE + " REAL,"
+    + NOMELOGRAD + " VARCHAR(25),"
+    + COMPLEMENTO + " VARCHAR(25),"
+    + FK_BAIRRO + " INTERGER,"
+    + FK_MUNICIPIO + " INTEGER,"
+    + FK_ESTADO + " INTEGER,"
+    + FK_CEP + " INTEGER,"
+    + " FOREIGN KEY (fk_bairro) REFERENCES bairro (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
+    + " FOREIGN KEY (fk_municipio) REFERENCES municipio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
+    + " FOREIGN KEY (fk_estado) REFERENCES estado (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
+    + " FOREIGN KEY (fk_cep) REFERENCES cep (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
 
     ////////////////////////////////////////// BAIRRO /////////////////////////////////////////////////
-            private static final String CREATE_TABLE_BAIRRO = "CREATE TABLE " + TABELA_BAIRRO + " ("
-            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + DESCRICAO + " VARCHAR(50))";
+    private static final String CREATE_TABLE_BAIRRO = "CREATE TABLE " + TABELA_BAIRRO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
     //////////////////////////////////////// MUNICIPIO /////////////////////////////////////////////
-               private  static  final String CREATE_TABLE_MUNICIPIO = "CREATE TABLE " + TABELA_MUNICIPIO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    private  static  final String CREATE_TABLE_MUNICIPIO = "CREATE TABLE " + TABELA_MUNICIPIO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ///////////////////////////////////////// ESTADO ////////////////////////////////////////////////
-                private static final String CREATE_TABLE_ESTADO =  "CREATE TABLE " + TABELA_ESTADO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ///////////////////////////////////////// ESTADO ////////////////////////////////////////////////
+    private static final String CREATE_TABLE_ESTADO =  "CREATE TABLE " + TABELA_ESTADO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ///////////////////////////////////////// CEP ////////////////////////////////////////////////////
-                private  static final String CREATE_TABLE_CEP = "CREATE TABLE " + TABELA_CEP + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ///////////////////////////////////////// CEP ////////////////////////////////////////////////////
+    private  static final String CREATE_TABLE_CEP = "CREATE TABLE " + TABELA_CEP + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ///////////////////////////////////////// TIPO DOMICILIO //////////////////////////////////////////
-                private static final String CREATE_TABLE_TIPO_DOMICILIO = "CREATE TABLE " + TABELA_TIPODOMICILIO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ///////////////////////////////////////// TIPO DOMICILIO //////////////////////////////////////////
+    private static final String CREATE_TABLE_TIPO_DOMICILIO = "CREATE TABLE " + TABELA_TIPODOMICILIO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                //////////////////////////////////////// ABASTECIMENTO AGUA /////////////////////////////////////
-                private static final String CREATE_TABLE_ABASTECIMENTO_AGUA = "CREATE TABLE " + TABELA_ABASTECIMENTOAGUA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    //////////////////////////////////////// ABASTECIMENTO AGUA /////////////////////////////////////
+    private static final String CREATE_TABLE_ABASTECIMENTO_AGUA = "CREATE TABLE " + TABELA_ABASTECIMENTOAGUA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// DESTINO LIXO /////////////////////////////////////////////
-                private static final String CREATE_TABLE_DESTINO_LIXO = "CREATE TABLE " + TABELA_DESTINOLIXO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// DESTINO LIXO /////////////////////////////////////////////
+    private static final String CREATE_TABLE_DESTINO_LIXO = "CREATE TABLE " + TABELA_DESTINOLIXO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// CONDIÇÃO TERRA ////////////////////////////////////////////////
-                private static final String CREATE_TABLE_CONDICAO_TERRA = "CREATE TABLE " + TABELA_CONDICAOTERRA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// CONDIÇÃO TERRA ////////////////////////////////////////////////
+    private static final String CREATE_TABLE_CONDICAO_TERRA = "CREATE TABLE " + TABELA_CONDICAOTERRA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// TIPO LOCALIZACAO //////////////////////////////////////////////
-                private static final String CREATE_TABLE_TIPO_LOCALIZACAO = "CREATE TABLE " + TABELA_TIPOLOCALIZACAO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// TIPO LOCALIZACAO //////////////////////////////////////////////
+    private static final String CREATE_TABLE_TIPO_LOCALIZACAO = "CREATE TABLE " + TABELA_TIPOLOCALIZACAO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ////////////////////////////////////// TRATAMENTO AGUA ///////////////////////////////////////////////
-                private static final String CREATE_TABLE_TRATAMENTO_AGUA = "CREATE TABLE " + TABELA_TRATAMENTOAGUA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ////////////////////////////////////// TRATAMENTO AGUA ///////////////////////////////////////////////
+    private static final String CREATE_TABLE_TRATAMENTO_AGUA = "CREATE TABLE " + TABELA_TRATAMENTOAGUA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ////////////////////////////////////// MORADIA /////////////////////////////////////////////////////
-                private static final String CREATE_TABLE_MORADIA = "CREATE TABLE " + TABELA_MORADIA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ////////////////////////////////////// MORADIA /////////////////////////////////////////////////////
+    private static final String CREATE_TABLE_MORADIA = "CREATE TABLE " + TABELA_MORADIA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ///////////////////////////////////// ESCOAMENTO ///////////////////////////////////////////////////
-                private static final String CREATE_TABLE_ESCOAMENTO = "CREATE TABLE " + TABELA_FORMAESCOAMENTO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ///////////////////////////////////// ESCOAMENTO ///////////////////////////////////////////////////
+    private static final String CREATE_TABLE_ESCOAMENTO = "CREATE TABLE " + TABELA_FORMAESCOAMENTO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                //////////////////////////////////// ENERGIA //////////////////////////////////////////////////////
-                private static final String CREATE_TABLE_ENERGIA = "CREATE TABLE " + TABELA_ENERGIA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    //////////////////////////////////// ENERGIA //////////////////////////////////////////////////////
+    private static final String CREATE_TABLE_ENERGIA = "CREATE TABLE " + TABELA_ENERGIA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ////////////////////////////////////// TIPO ACESSO ///////////////////////////////////////////////
-                private static final String CREATE_TABLE_TIPO_ACESSO = "CREATE TABLE " + TABELA_TIPOACESSO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ////////////////////////////////////// TIPO ACESSO ///////////////////////////////////////////////
+    private static final String CREATE_TABLE_TIPO_ACESSO = "CREATE TABLE " + TABELA_TIPOACESSO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// TIPO LOGRADOURO //////////////////////////////////////////
-                private static final String CREATE_TABLE_TIPO_LOGRADOURO = "CREATE TABLE " + TABELA_TIPOLOGRADOURO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// TIPO LOGRADOURO //////////////////////////////////////////
+    private static final String CREATE_TABLE_TIPO_LOGRADOURO = "CREATE TABLE " + TABELA_TIPOLOGRADOURO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// TIPO ANIMAL /////////////////////////////////////////////
-                private static final String CREATE_TABLE_TIPO_ANIMAL = "CREATE TABLE " + TABELA_TIPOANIMAL + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// TIPO ANIMAL /////////////////////////////////////////////
+    private static final String CREATE_TABLE_TIPO_ANIMAL = "CREATE TABLE " + TABELA_TIPOANIMAL + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// QUANTIDADE ANIMAIS ///////////////////////////////////////
-                private static final String CREATE_TABLE_QUANTIDADE_ANIMAIS = "CREATE TABLE " + TABELA_QUANTIDADEANIMAIS + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + FK_DOMICILIO + " INTEGER,"
-                + FK_ANIMAL + " INTEGER,"
-                + " FOREIGN KEY (fk_domicilio) REFERENCES domicilio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
-                + " FOREIGN KEY (fk_animal) REFERENCES animal (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
+    /////////////////////////////////////// QUANTIDADE ANIMAIS ///////////////////////////////////////
+    private static final String CREATE_TABLE_QUANTIDADE_ANIMAIS = "CREATE TABLE " + TABELA_QUANTIDADEANIMAIS + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + FK_DOMICILIO + " INTEGER,"
+    + FK_ANIMAL + " INTEGER,"
+    + " FOREIGN KEY (fk_domicilio) REFERENCES domicilio (_id) ON DELETE RESTRICT ON UPDATE CASCADE,"
+    + " FOREIGN KEY (fk_animal) REFERENCES animal (_id) ON DELETE RESTRICT ON UPDATE CASCADE)";
 
-                /////////////////////////////////////// ORIENTAÇÃO SEXUAL ////////////////////////////////////////////
-                private static final String CREATE_TABLE_ORIENTACAO_SEXUAL = "CREATE TABLE " + TABELA_ORIENTACAOSEXUAL + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// ORIENTAÇÃO SEXUAL ////////////////////////////////////////////
+    private static final String CREATE_TABLE_ORIENTACAO_SEXUAL = "CREATE TABLE " + TABELA_ORIENTACAOSEXUAL + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// SAIDA CADASTRO //////////////////////////////////////////////
-                private static final String CREATE_TABLE_SAIDA_CADASTRO = "CREATE TABLE " + TABELA_SAIDACADASTRO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// SAIDA CADASTRO //////////////////////////////////////////////
+    private static final String CREATE_TABLE_SAIDA_CADASTRO = "CREATE TABLE " + TABELA_SAIDACADASTRO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                //////////////////////////////////////// DEFICIENCIA ////////////////////////////////////////////////
-                private static final String CREATE_TABLE_DEFICIENCIA = "CREATE TABLE " + TABELA_TIPOACESSO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    //////////////////////////////////////// DEFICIENCIA ////////////////////////////////////////////////
+    private static final String CREATE_TABLE_DEFICIENCIA = "CREATE TABLE " + TABELA_TIPOACESSO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// PARENTESCO //////////////////////////////////////////////////
-                private static final String CREATE_TABLE_PARENTESCO = "CREATE TABLE " + TABELA_PARENTESCO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// PARENTESCO //////////////////////////////////////////////////
+    private static final String CREATE_TABLE_PARENTESCO = "CREATE TABLE " + TABELA_PARENTESCO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                //////////////////////////////////////// RAÇA/COR //////////////////////////////////////////////////
-                private static final String CREATE_TABLE_RACA = "CREATE TABLE " + TABELA_RACACOR + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    //////////////////////////////////////// RAÇA/COR //////////////////////////////////////////////////
+    private static final String CREATE_TABLE_RACA = "CREATE TABLE " + TABELA_RACACOR + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// NACIONALIDADE ///////////////////////////////////////////////
-                private static final String CREATE_TABLE_NAICIONALIDADE = "CREATE TABLE " + TABELA_NACIONALIDADE + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// NACIONALIDADE ///////////////////////////////////////////////
+    private static final String CREATE_TABLE_NAICIONALIDADE = "CREATE TABLE " + TABELA_NACIONALIDADE + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                ////////////////////////////////////// CURSO MAIS ELEVADO //////////////////////////////////////////////
-                private static final String CREATE_TABLE_CURSO_MAIS_ELEVADO = "CREATE TABLE " + TABELA_CURSOMAISELEVADO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    ////////////////////////////////////// CURSO MAIS ELEVADO //////////////////////////////////////////////
+    private static final String CREATE_TABLE_CURSO_MAIS_ELEVADO = "CREATE TABLE " + TABELA_CURSOMAISELEVADO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// SITUAÇÃO MERCADO DE TRABALHO ///////////////////////////////////
-                private static final String CREATE_TABLE_MERCADO_TRABALHO = "CREATE TABLE " + TABELA_MERCADOTRABALHO + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// SITUAÇÃO MERCADO DE TRABALHO ///////////////////////////////////
+    private static final String CREATE_TABLE_MERCADO_TRABALHO = "CREATE TABLE " + TABELA_MERCADOTRABALHO + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                /////////////////////////////////////// QUEM FICA COM A CRIANÇA ////////////////////////////////////////
-                private static final String CREATE_TABLE_QUEM_FICA_CRIANCA = "CREATE TABLE " + TABELA_CRIANCAQUEMFICA + " ("
-                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + DESCRICAO + " VARCHAR(50))";
+    /////////////////////////////////////// QUEM FICA COM A CRIANÇA ////////////////////////////////////////
+    private static final String CREATE_TABLE_QUEM_FICA_CRIANCA = "CREATE TABLE " + TABELA_CRIANCAQUEMFICA + " ("
+    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    + DESCRICAO + " VARCHAR(50))";
 
-                //INSERTES PADRÕES
+    //INSERTS PADRÕES
 
-                private static final String INSERT_TIPO_LOCALIZACAO1 = "INSERT INTO " + TABELA_TIPOLOCALIZACAO +" ("+ DESCRICAO +") VALUES ('Rural');";
-                private static final String INSERT_TIPO_LOCALIZACAO2 = " INSERT INTO " + TABELA_TIPOLOCALIZACAO +" ("+ DESCRICAO +") VALUES ('Urbana');";
+        ////////// INSERT LOCALIZACAO ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_TIPO_LOCALIZACAO1 = "INSERT INTO " + TABELA_TIPOLOCALIZACAO +" ("+ DESCRICAO +") VALUES ('Rural');";
+        private static final String INSERT_TIPO_LOCALIZACAO2 = " INSERT INTO " + TABELA_TIPOLOCALIZACAO +" ("+ DESCRICAO +") VALUES ('Urbana');";
+
+        ////////// INSERT TIPO_DOMICILIO ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_TIPO_DOMICILIO = " INSERT INTO " + TABELA_TIPODOMICILIO + " (" + DESCRICAO + ") VALUES ('Casa');";
+        private static final String INSERT_TIPO_DOMICILIO2 = " INSERT INTO " + TABELA_TIPODOMICILIO + " (" + DESCRICAO + ") VALUES ('Apartamento');";
+        private static final String INSERT_TIPO_DOMICILIO3 = " INSERT INTO " + TABELA_TIPODOMICILIO + " (" + DESCRICAO + ") VALUES ('Cômodo');";
+        private static final String INSERT_TIPO_DOMICILIO4 = " INSERT INTO " + TABELA_TIPODOMICILIO + " (" + DESCRICAO + ") VALUES ('Outro');";
+
+        ////////// INSERT POSSE_DA_TERRA /////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_POSSE_DA_TERRA = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Próprio');";
+        private static final String INSERT_POSSE_DA_TERRA2 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Financiado');";
+        private static final String INSERT_POSSE_DA_TERRA3 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Alugado');";
+        private static final String INSERT_POSSE_DA_TERRA8 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Arrendado');";
+        private static final String INSERT_POSSE_DA_TERRA4 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Cedido');";
+        private static final String INSERT_POSSE_DA_TERRA5 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Ocupação');";
+        private static final String INSERT_POSSE_DA_TERRA6 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Situação de Rua');";
+        private static final String INSERT_POSSE_DA_TERRA7 = " INSERT INTO " + TABELA_MORADIA + " (" + DESCRICAO + ") VALUES ('Outra');";
+
+        ///////// INSERT CONDICAO_DE_POSSE ///////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_CONDICAO_DE_POSSE = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Proprietário');";
+        private static final String INSERT_CONDICAO_DE_POSSE2 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Parceiro(a)/Meeiro(a)');";
+        private static final String INSERT_CONDICAO_DE_POSSE3 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Assentado(a)');";
+        private static final String INSERT_CONDICAO_DE_POSSE4 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Posseiro');";
+        private static final String INSERT_CONDICAO_DE_POSSE5 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Arrendatário(a)');";
+        private static final String INSERT_CONDICAO_DE_POSSE6 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Comodatário(a)');";
+        private static final String INSERT_CONDICAO_DE_POSSE7 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Beneficiário(a) do Banco da Terra');";
+        private static final String INSERT_CONDICAO_DE_POSSE8 = " INSERT INTO " + TABELA_CONDICAOTERRA + " (" + DESCRICAO + ") VALUES ('Não se aplica');";
+
+        ///////// INSERT TIPO_ACESSO //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_TIPO_ACESSO = " INSERT INTO " + TABELA_TIPOACESSO + " (" + DESCRICAO + ") VALUES ('Pavimento');";
+        private static final String INSERT_TIPO_ACESSO2 = " INSERT INTO " + TABELA_TIPOACESSO + " (" + DESCRICAO + ") VALUES ('Chão Batido');";
+        private static final String INSERT_TIPO_ACESSO3 = " INSERT INTO " + TABELA_TIPOACESSO + " (" + DESCRICAO + ") VALUES ('Fluvial');";
+        private static final String INSERT_TIPO_ACESSO4 = " INSERT INTO " + TABELA_TIPOACESSO + " (" + DESCRICAO + ") VALUES ('Outro');";
+
+        //////// INSERT ABASTECIMENTO_AGUA ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_ABASTECIMENTO_AGUA = " INSERT INTO " + TABELA_ABASTECIMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Rede Encanada até o Domicílio');";
+        private static final String INSERT_ABASTECIMENTO_AGUA2 = " INSERT INTO " + TABELA_ABASTECIMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Poço/Nascente no Domicílio');";
+        private static final String INSERT_ABASTECIMENTO_AGUA3 = " INSERT INTO " + TABELA_ABASTECIMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Cisterna');";
+        private static final String INSERT_ABASTECIMENTO_AGUA4 = " INSERT INTO " + TABELA_ABASTECIMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Carro Pipa');";
+        private static final String INSERT_ABASTECIMENTO_AGUA5 = " INSERT INTO " + TABELA_ABASTECIMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Outro');";
+
+        //////// INSERT TRATAMENTO_AGUA ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_TRATAMENTO_AGUA = " INSERT INTO " + TABELA_TRATAMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Filtração');";
+        private static final String INSERT_TRATAMENTO_AGUA2 = " INSERT INTO " + TABELA_TRATAMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Fervura');";
+        private static final String INSERT_TRATAMENTO_AGUA3 = " INSERT INTO " + TABELA_TRATAMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Cloração');";
+        private static final String INSERT_TRATAMENTO_AGUA4 = " INSERT INTO " + TABELA_TRATAMENTOAGUA + " (" + DESCRICAO + ") VALUES ('Sem Tratamento');";
+
+        //////// INSERT DESTINO_LIXO /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_DESTINO_LIXO = " INSERT INTO " + TABELA_DESTINOLIXO + " (" + DESCRICAO + ") VALUES ('Coletado');";
+        private static final String INSERT_DESTINO_LIXO2 = " INSERT INTO " + TABELA_DESTINOLIXO + " (" + DESCRICAO + ") VALUES ('Queimado/Enterrado');";
+        private static final String INSERT_DESTINO_LIXO3 = " INSERT INTO " + TABELA_DESTINOLIXO + " (" + DESCRICAO + ") VALUES ('Céu Aberto');";
+        private static final String INSERT_DESTINO_LIXO4 = " INSERT INTO " + TABELA_DESTINOLIXO + " (" + DESCRICAO + ") VALUES ('Outro');";
+
+        //////// INSERT DISPONIBILIDADE_ENERGIA //////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_DISPONIBILIDADE_ENERGIA = " INSERT INTO " + TABELA_ENERGIA + " (" + DESCRICAO + ") VALUES ('Sim');";
+        private static final String INSERT_DISPONIBILIDADE_ENERGIA2 = " INSERT INTO " + TABELA_ENERGIA + " (" + DESCRICAO + ") VALUES ('Não');";
+
+        /////// INSERT FORMA_ESCOAMENTO //////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_FORMA_ESCOAMENTO = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Rede Coletora de Esgoto ou Pluvial');";
+        private static final String INSERT_FORMA_ESCOAMENTO2 = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Fossa Séptica');";
+        private static final String INSERT_FORMA_ESCOAMENTO3 = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Fossa Rudimentar');";
+        private static final String INSERT_FORMA_ESCOAMENTO4 = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Direto para um Rio, Lago ou Mar');";
+        private static final String INSERT_FORMA_ESCOAMENTO5 = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Céu Aberto');";
+        private static final String INSERT_FORMA_ESCOAMENTO6 = " INSERT INTO " + TABELA_FORMAESCOAMENTO + " (" + DESCRICAO + ") VALUES ('Outro');";
+
+        /////// INSERT ANIMAIS_DOMICILIO //////////////////////////////////////////////////////////////////////////////////////////////////////
+        private static final String INSERT_ANIMAIS_DOMICILIO = " INSERT INTO " + TABELA_TIPOANIMAL + " (" + DESCRICAO + ") VALUES ('Gato');";
+        private static final String INSERT_ANIMAIS_DOMICILIO2 = " INSERT INTO " + TABELA_TIPOANIMAL + " (" + DESCRICAO + ") VALUES ('Cachorro');";
+        private static final String INSERT_ANIMAIS_DOMICILIO3 = " INSERT INTO " + TABELA_TIPOANIMAL + " (" + DESCRICAO + ") VALUES ('Pássaro');";
+        private static final String INSERT_ANIMAIS_DOMICILIO4 = " INSERT INTO " + TABELA_TIPOANIMAL + " (" + DESCRICAO + ") VALUES ('De Criação(porco, galinha...)');";
+        private static final String INSERT_ANIMAIS_DOMICILIO5 = " INSERT INTO " + TABELA_TIPOANIMAL + " (" + DESCRICAO + ") VALUES ('Outros');";
+
+        ////// INSERT MATERIAL_PREDOMINANTE ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-                private static final int VERSAO = 1;
+    ////////// VERSAO ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final int VERSAO = 1;
 
     public CriaBanco(Context context){
         super(context, NOME_BANCO, null, VERSAO);
@@ -327,6 +401,66 @@ public class CriaBanco extends SQLiteOpenHelper {
         //Inserts Padrões
         db.execSQL(INSERT_TIPO_LOCALIZACAO1);
         db.execSQL(INSERT_TIPO_LOCALIZACAO2);
+        ////////////////////////////////////
+        db.execSQL(INSERT_TIPO_DOMICILIO);
+        db.execSQL(INSERT_TIPO_DOMICILIO2);
+        db.execSQL(INSERT_TIPO_DOMICILIO3);
+        db.execSQL(INSERT_TIPO_DOMICILIO4);
+        ///////////////////////////////////
+        db.execSQL(INSERT_POSSE_DA_TERRA);
+        db.execSQL(INSERT_POSSE_DA_TERRA2);
+        db.execSQL(INSERT_POSSE_DA_TERRA3);
+        db.execSQL(INSERT_POSSE_DA_TERRA4);
+        db.execSQL(INSERT_POSSE_DA_TERRA5);
+        db.execSQL(INSERT_POSSE_DA_TERRA6);
+        db.execSQL(INSERT_POSSE_DA_TERRA7);
+        ///////////////////////////////////
+        db.execSQL(INSERT_CONDICAO_DE_POSSE);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE2);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE3);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE4);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE5);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE6);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE7);
+        db.execSQL(INSERT_CONDICAO_DE_POSSE8);
+        ///////////////////////////////////
+        db.execSQL(INSERT_TIPO_ACESSO);
+        db.execSQL(INSERT_TIPO_ACESSO2);
+        db.execSQL(INSERT_TIPO_ACESSO3);
+        db.execSQL(INSERT_TIPO_ACESSO4);
+        ///////////////////////////////////
+        db.execSQL(INSERT_ABASTECIMENTO_AGUA);
+        db.execSQL(INSERT_ABASTECIMENTO_AGUA2);
+        db.execSQL(INSERT_ABASTECIMENTO_AGUA3);
+        db.execSQL(INSERT_ABASTECIMENTO_AGUA4);
+        db.execSQL(INSERT_ABASTECIMENTO_AGUA5);
+        ///////////////////////////////////
+        db.execSQL(INSERT_TRATAMENTO_AGUA);
+        db.execSQL(INSERT_TRATAMENTO_AGUA2);
+        db.execSQL(INSERT_TRATAMENTO_AGUA3);
+        db.execSQL(INSERT_TRATAMENTO_AGUA4);
+        ///////////////////////////////////
+        db.execSQL(INSERT_DESTINO_LIXO);
+        db.execSQL(INSERT_DESTINO_LIXO2);
+        db.execSQL(INSERT_DESTINO_LIXO3);
+        db.execSQL(INSERT_DESTINO_LIXO4);
+        ///////////////////////////////////
+        db.execSQL(INSERT_DISPONIBILIDADE_ENERGIA);
+        db.execSQL(INSERT_DISPONIBILIDADE_ENERGIA2);
+        ///////////////////////////////////
+        db.execSQL(INSERT_FORMA_ESCOAMENTO);
+        db.execSQL(INSERT_FORMA_ESCOAMENTO2);
+        db.execSQL(INSERT_FORMA_ESCOAMENTO3);
+        db.execSQL(INSERT_FORMA_ESCOAMENTO4);
+        db.execSQL(INSERT_FORMA_ESCOAMENTO5);
+        db.execSQL(INSERT_FORMA_ESCOAMENTO6);
+        ///////////////////////////////////
+        db.execSQL(INSERT_ANIMAIS_DOMICILIO);
+        db.execSQL(INSERT_ANIMAIS_DOMICILIO2);
+        db.execSQL(INSERT_ANIMAIS_DOMICILIO3);
+        db.execSQL(INSERT_ANIMAIS_DOMICILIO4);
+        db.execSQL(INSERT_ANIMAIS_DOMICILIO5);
+
 
 
     }

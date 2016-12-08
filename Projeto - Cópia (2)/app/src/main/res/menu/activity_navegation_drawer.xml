@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_RCC" android:title="Amostra de RCC de Palmas, TO" />
+        <item android:id="@+id/nav_Licenciadas" android:title="Lotes Cadastrais(Obras Licenciadas" />
+        <item android:id="@+id/nav_ComColeta" android:title="Lotes Cadastrais(Obras com Coleta)" />
+        <item android:id="@+id/nav_Quadras" android:title="Quadras de Palmas, TO" />
+        <item android:id="@+id/nav_MeioFio" android:title="Meios Fios de Palmas, TO"/>
+        <item android:id="@+id/nav_Localizacao" android:title="Localização da Quadra em Palmas, TO"/>
+        <item android:id="@+id/nav_Hidrografia" android:title="Hidrografia de Palmas, TO"/>
+    </group>
+
+
+</menu>

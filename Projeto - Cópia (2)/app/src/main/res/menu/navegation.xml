@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item android:id="@+id/action_cadastro" android:title="Cadastro"
+        android:orderInCategory="200" app:showAsAction="never">
+    <menu >
+        <group android:id="@+id/group2" android:checkableBehavior="single">
+            <item android:id="@+id/Estado" android:title="Estado" />
+            <item android:id="@+id/Cidade" android:title="Cidade" />
+            <item android:id="@+id/Bairro" android:title="Bairro" />
+        </group>
+    </menu>
+    </item>-->
+
+</menu>
