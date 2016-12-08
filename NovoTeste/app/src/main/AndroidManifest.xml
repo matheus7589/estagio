@@ -15,7 +15,7 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <application android:name="android.support.multidex.MultiDexApplication">
+    <application android:name="com.orm.SugarApp">
         android:theme="@style/AppTheme" >
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
