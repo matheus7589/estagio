@@ -1,6 +1,5 @@
 package com.example.root.novoteste;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +11,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
-import com.example.root.novoteste.models.tb_Domicilio;
+
+import com.example.root.novoteste.models.TableDomicilio;
+import com.example.root.novoteste.models.TableLocalizacao;
+
+import java.util.List;
 
 /**
  * Created by root on 20/09/2016.
@@ -20,29 +23,33 @@ import com.example.root.novoteste.models.tb_Domicilio;
 
 public class Cadastro_Domi2 extends Fragment {
 
-    Context context;
+    //Context context;
 
 //    private CriaBanco banco = new CriaBanco(getContext());
-    private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, municipio, bairro, cep, telResidencial, numMoradores, numComodos, howManyAnimals;
-    private String sus, nameLogradouro, numberLograd, tipoLograd, comple,  bairr,  teleResid,  numMora, numComods, quantosAnimais, teste;
-    private RadioButton teste2;
+    private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, telResidencial, numMoradores, numComodos, howManyAnimals;
+    private String sus, nameLogradouro, numberLograd, tipoLograd, comple, teleResid,  numMora, numComods, quantosAnimais, teste;
+    private RadioButton radioLocalizacao;
 //
-//    // ID's dos radiobuttons sem converter
-//    int loca, mora, tipoDomi, condiTer, tipoAcess,
-//        abastAgua, tratAgua, destLixo, escoa, animals, energy;
-//
-//    // ID's dos radiobuttons convertidos
-//    int estado, muni, CEP, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, animais, energia;
+    // ID's dos radiobuttons sem converter
+    int loca, mora, tipoDomi, condiTer, tipoAcess,
+        abastAgua, tratAgua, destLixo, escoa, animals, energy;
+
+    // ID's dos radiobuttons convertidos
+    int estado, muni, CEP, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, animais, energia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TableLocalizacao tableLocalizacao = new TableLocalizacao("Rural");
+        TableLocalizacao tableLocalizacao2 = new TableLocalizacao("Urbana");
+        tableLocalizacao.save();
+        tableLocalizacao2.save();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        context = getActivity().getApplicationContext();
+        //context = getActivity().getApplicationContext();
         // Infla o Layout pra esse fragmento
         return inflater.inflate(R.layout.cadastro_domiciliar2, container, false);
     }
@@ -66,22 +73,24 @@ public class Cadastro_Domi2 extends Fragment {
 //            //EditTexts
             cns = (EditText) getActivity().findViewById(R.id.cns);
             nomeLogradouro = (EditText)getActivity().findViewById(R.id.nomeLogradouro);
-//            numLogradouro = (EditText)getActivity().findViewById(R.id.numLogradouro);
-//            tipoLogradouro = (EditText)getActivity().findViewById(R.id.tipolograd);
-//            complemento = (EditText)getActivity().findViewById(R.id.complemento);
-//            Spinner spinner = (Spinner) getActivity().findViewById(R.id.spinner2);
-//            municipio = (EditText)getActivity().findViewById(R.id.municipio);
-//            bairro = (EditText)getActivity().findViewById(R.id.bairro);
-//            cep = (EditText)getActivity().findViewById(R.id.cep);
-//            telResidencial = (EditText)getActivity().findViewById(R.id.telResidencial);
-//            numMoradores = (EditText) getActivity().findViewById(R.id.numMoradores);
-//            numComodos = (EditText) getActivity().findViewById(R.id.numComodos);
+            numLogradouro = (EditText)getActivity().findViewById(R.id.numLogradouro);
+            tipoLogradouro = (EditText)getActivity().findViewById(R.id.tipolograd);
+            complemento = (EditText)getActivity().findViewById(R.id.complemento);
+            Spinner spinner = (Spinner) getActivity().findViewById(R.id.spinner2);
+            telResidencial = (EditText)getActivity().findViewById(R.id.telResidencial);
+            numMoradores = (EditText) getActivity().findViewById(R.id.numMoradores);
+            numComodos = (EditText) getActivity().findViewById(R.id.numComodos);
 //
 //            //Radiogroups
-//            RadioGroup radio_grp1 = (RadioGroup) getActivity().findViewById(R.id.localizacao);
-//            loca = radio_grp1.getCheckedRadioButtonId();
-//            teste2 = (RadioButton) getActivity().findViewById(loca);
-//            localizacao = crud.carregaDadoByName(teste2.getText().toString(), banco.getTabelaTipolocalizacao());
+              RadioGroup radio_grp1 = (RadioGroup) getActivity().findViewById(R.id.localizacao);
+              loca = radio_grp1.getCheckedRadioButtonId();
+              radioLocalizacao = (RadioButton) getActivity().findViewById(loca);
+              TableLocalizacao table = new TableLocalizacao();
+              List<TableLocalizacao> lista = table.find(TableLocalizacao.class, "descricao = ?", radioLocalizacao.getText().toString());
+              for (TableLocalizacao temporaria : lista) {
+                  Toast.makeText(getActivity().getApplicationContext(), ""+temporaria.getId(), Toast.LENGTH_LONG).show();
+              }
+              //localizacao = crud.carregaDadoByName(teste2.getText().toString(), banco.getTabelaTipolocalizacao());
 //            RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
 //            mora = radio_grp2.getCheckedRadioButtonId();
 //            //moradia = setMoradia(mora);
@@ -96,25 +105,21 @@ public class Cadastro_Domi2 extends Fragment {
 //            //tipoAcesso = setTipoAcesso(tipoAcess);
 //
 //
-//            //Strings
+//          //Strings
             sus = cns.getText().toString();
             nameLogradouro = nomeLogradouro.getText().toString();
-//            numberLograd = numLogradouro.getText().toString();
-//            tipoLograd = tipoLogradouro.getText().toString();
-//            comple = complemento.getText().toString();
-//            //estado = spinner.getSelectedItem().toString();
-//            //muni = municipio.getText().toString();
-//            bairr = bairro.getText().toString();
-//            //CEP = cep.getText().toString();
-//            teleResid = telResidencial.getText().toString();
-//            numMora = numMoradores.getText().toString();
-//            numComods = numComodos.getText().toString();
+            numberLograd = numLogradouro.getText().toString();
+            tipoLograd = tipoLogradouro.getText().toString();
+            comple = complemento.getText().toString();
+            teleResid = telResidencial.getText().toString();
+            numMora = numMoradores.getText().toString();
+            numComods = numComodos.getText().toString();
 //
 //
 //            ///////////////////////////// FRAGMENTO 2 /////////////////////////////////////////////
 //
 //            //EditTexts
-//            howManyAnimals = (EditText) getView().findViewById(R.id.quantos);
+            howManyAnimals = (EditText) getView().findViewById(R.id.quantos);
 //
 //
 //            //RadioGroups
@@ -139,7 +144,7 @@ public class Cadastro_Domi2 extends Fragment {
 //
 //
 //            //Strings
-//            quantosAnimais = howManyAnimals.getText().toString();
+            quantosAnimais = howManyAnimals.getText().toString();
 //
 //
 //            String resultado;
@@ -150,10 +155,11 @@ public class Cadastro_Domi2 extends Fragment {
 //
 //            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
-            tb_Domicilio domicilio = new tb_Domicilio(nameLogradouro, sus);
+
+            TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods);
             domicilio.save();
 
-            Toast.makeText(getActivity().getApplicationContext(), domicilio.findById(tb_Domicilio.class, 1).toString(), Toast.LENGTH_LONG).show();
+
         }
     };
 

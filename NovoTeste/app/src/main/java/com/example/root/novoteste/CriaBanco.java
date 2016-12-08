@@ -221,10 +221,6 @@ public class CriaBanco extends SQLiteOpenHelper {
     + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
     + DESCRICAO + " VARCHAR(50))";
 
-    /////////////////////////////////////// TIPO LOGRADOURO //////////////////////////////////////////
-    private static final String CREATE_TABLE_TIPO_LOGRADOURO = "CREATE TABLE " + TABELA_TIPOLOGRADOURO + " ("
-    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-    + DESCRICAO + " VARCHAR(50))";
 
     /////////////////////////////////////// TIPO ANIMAL /////////////////////////////////////////////
     private static final String CREATE_TABLE_TIPO_ANIMAL = "CREATE TABLE " + TABELA_TIPOANIMAL + " ("
@@ -393,7 +389,6 @@ public class CriaBanco extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ESCOAMENTO);
         db.execSQL(CREATE_TABLE_ENERGIA);
         db.execSQL(CREATE_TABLE_TIPO_ACESSO);
-        db.execSQL(CREATE_TABLE_TIPO_LOGRADOURO);
         db.execSQL(CREATE_TABLE_TIPO_ANIMAL);
         db.execSQL(CREATE_TABLE_QUANTIDADE_ANIMAIS);
         db.execSQL(CREATE_TABLE_ORIENTACAO_SEXUAL);
