@@ -177,7 +177,7 @@ public class Cadastro_Domi2 extends Fragment {
             RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
             mora = radio_grp2.getCheckedRadioButtonId();
             radioMoradia = (RadioButton) getActivity().findViewById(mora);
-            
+
             //moradia = setMoradia(mora);
 
 
