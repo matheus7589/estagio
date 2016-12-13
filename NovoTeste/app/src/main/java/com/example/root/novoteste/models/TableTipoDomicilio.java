@@ -12,7 +12,7 @@ public class TableTipoDomicilio extends SugarRecord {
 
     public TableTipoDomicilio(){}
 
-    public TableTipoDomicilio(String domicilio){
+    public TableTipoDomicilio(String descricao){
         this.descricao = descricao;
     }
 

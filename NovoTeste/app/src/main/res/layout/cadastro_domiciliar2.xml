@@ -192,7 +192,7 @@
         </RadioGroup>
 
         <TextView
-            android:text="Fomra de Escoamento do Banheiro ou Sanitário:"
+            android:text="Forma de Escoamento do Banheiro ou Sanitário:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tratamentoAgua"

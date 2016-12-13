@@ -61,8 +61,9 @@
         <activity
             android:name=".CadastroDomiciliar"
             android:label="Cadastro Domiciliar"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+            <!-- android:screenOrientation="portrait" -->
+
         <activity
             android:name=".listarDados"
             android:label="Listar Dados"
