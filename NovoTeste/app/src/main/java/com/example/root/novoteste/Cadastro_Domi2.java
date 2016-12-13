@@ -20,6 +20,7 @@ import com.example.root.novoteste.models.TableDomicilio;
 import com.example.root.novoteste.models.TableEnergia;
 import com.example.root.novoteste.models.TableFormaEscoamento;
 import com.example.root.novoteste.models.TableLocalizacao;
+import com.example.root.novoteste.models.TableMaterialPredominante;
 import com.example.root.novoteste.models.TableMoradia;
 import com.example.root.novoteste.models.TableTipoAcesso;
 import com.example.root.novoteste.models.TableTipoAnimal;
@@ -34,13 +35,12 @@ import java.util.List;
 
 public class Cadastro_Domi2 extends Fragment {
 
-    //Context context;
-
-//    private CriaBanco banco = new CriaBanco(getContext());
     private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, telResidencial, numMoradores, numComodos, howManyAnimals;
+
     private String sus, nameLogradouro, numberLograd, tipoLograd, comple, teleResid,  numMora, numComods, quantosAnimais, teste;
-    private RadioButton radioLocalizacao, radioTipoDomicilio;
-//
+
+    private RadioButton radioLocalizacao, radioTipoDomicilio, radioMoradia;
+
     // ID's dos radiobuttons sem converter
     int loca, mora, tipoDomi, condiTer, tipoAcess,
         abastAgua, tratAgua, destLixo, escoa, animals, energy;
@@ -116,7 +116,12 @@ public class Cadastro_Domi2 extends Fragment {
                 new TableTipoAnimal("De Criação(porco, galinha...)").save();
                 new TableTipoAnimal("Outros").save();
 
-
+                new TableMaterialPredominante("Com Revestimento").save();
+                new TableMaterialPredominante("Sem Revestimento").save();
+                new TableMaterialPredominante("Madeira Aparelhada").save();
+                new TableMaterialPredominante("Material Aproveitado").save();
+                new TableMaterialPredominante("Palha").save();
+                new TableMaterialPredominante("Outro Material").save();
 
             }
         }catch (SQLiteException exception) {
@@ -127,7 +132,6 @@ public class Cadastro_Domi2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //context = getActivity().getApplicationContext();
         // Infla o Layout pra esse fragmento
         return inflater.inflate(R.layout.cadastro_domiciliar2, container, false);
     }
@@ -145,10 +149,10 @@ public class Cadastro_Domi2 extends Fragment {
         @Override
         public void onClick(View v) {
 
-//            BancoController crud = new BancoController(getActivity().getBaseContext());
-//            ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
-//
-//            //EditTexts
+
+            ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
+
+            //EditTexts
             cns = (EditText) getActivity().findViewById(R.id.cns);
             nomeLogradouro = (EditText)getActivity().findViewById(R.id.nomeLogradouro);
             numLogradouro = (EditText)getActivity().findViewById(R.id.numLogradouro);
@@ -158,7 +162,7 @@ public class Cadastro_Domi2 extends Fragment {
             telResidencial = (EditText)getActivity().findViewById(R.id.telResidencial);
             numMoradores = (EditText) getActivity().findViewById(R.id.numMoradores);
             numComodos = (EditText) getActivity().findViewById(R.id.numComodos);
-//
+
             //Radiogroups
             RadioGroup radio_grp1 = (RadioGroup) getActivity().findViewById(R.id.localizacao);
             loca = radio_grp1.getCheckedRadioButtonId();
@@ -168,9 +172,15 @@ public class Cadastro_Domi2 extends Fragment {
             for (TableLocalizacao temporaria : lista) {
                 //Toast.makeText(getActivity().getApplicationContext(), ""+temporaria.getId(), Toast.LENGTH_LONG).show();
             }
-//            RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
-//            mora = radio_grp2.getCheckedRadioButtonId();
-//            //moradia = setMoradia(mora);
+
+
+            RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
+            mora = radio_grp2.getCheckedRadioButtonId();
+            radioMoradia = (RadioButton) getActivity().findViewById(mora);
+            
+            //moradia = setMoradia(mora);
+
+
             RadioGroup radio_grp3 = (RadioGroup) getActivity().findViewById(R.id.tipoDomicilio);
             tipoDomi = radio_grp3.getCheckedRadioButtonId();
             radioTipoDomicilio = (RadioButton) getActivity().findViewById(tipoDomi);
@@ -245,143 +255,5 @@ public class Cadastro_Domi2 extends Fragment {
 
         }
     };
-
-    public String setAbast(int id){
-        if(id == R.id.redeEncanada)
-            return "Rede Encanada até o Domicílio";
-        else if(id == R.id.pocoNascente)
-            return "Poço/Nascente no Domicílio";
-        else if(id == R.id.cisternas)
-            return "Cisterna";
-        else if(id == R.id.carroPipa)
-            return "Carro Pipa";
-        else
-            return "Outro";
-    }
-
-    public String setTratamento(int id){
-        if(id == R.id.filtracao)
-            return "Filtração";
-        else if(id == R.id.fervura)
-            return "Fervura";
-        else if(id == R.id.cloracao)
-            return "Cloração";
-        else
-            return "Sem Tratamento";
-    }
-
-    public String setDestinoLixo(int id){
-        if(id == R.id.coletado)
-            return "Coletado";
-        else if(id == R.id.queimado)
-            return "Queimado/Enterrado";
-        else if(id == R.id.ceuAberto)
-            return "Céu Aberto";
-        else
-            return "Outro";
-    }
-
-    public String setEnerg(int id){
-        if(id == R.id.sim)
-            return "Sim";
-        else
-            return "Não";
-    }
-
-    public String setFormaEscoa(int id){
-        if(id == R.id.redeColetora)
-            return "Rede Coletora de Esgoto ou Pluvial";
-        else if(id == R.id.fossaSeptica)
-            return "Fossa Séptica";
-        else if(id == R.id.fossaRudimentar)
-            return "Fossa Rudimentar";
-        else if(id == R.id.diretoRio)
-            return "Direto para um Rio, Lago ou Mar";
-        else if(id == R.id.ceuAberto2)
-            return "Céu Aberto";
-        else
-            return "Outro";
-    }
-
-    public String setAnimaiss(int id){
-        if(id == R.id.gato)
-            return "Gato";
-        else if(id == R.id.dog)
-            return "Cachorro";
-        else if(id == R.id.bird)
-            return "Pássaro";
-        else if(id == R.id.porco)
-            return "De Criação(porco, galinha...)";
-        else
-            return "Outros";
-    }
-
-
-    public String setLocal(int id){
-        if(id == R.id.rural)
-            return "Rural";
-        else
-            return "Urbana";
-    }
-
-    public String setMoradia(int id){
-        if(id == R.id.proprio)
-            return "Próprio";
-        else if(id == R.id.financiado)
-            return "Financiado";
-        else if(id == R.id.alugado)
-            return "Alugado";
-        else if(id == R.id.arrendado)
-            return "Arrendado";
-        else if(id == R.id.cedido)
-            return "Cedido";
-        else if(id == R.id.ocupacao)
-            return "Ocupação";
-        else if(id == R.id.rua)
-            return "Situação de Rua";
-        else
-            return "Outros";
-    }
-
-    public String setTipoDomicilio(int id){
-        if(id == R.id.casa)
-            return "Casa";
-        else if(id == R.id.apartamento)
-            return "Apartamento";
-        else if(id == R.id.comodo)
-            return "Cômodo";
-        else
-            return "Outro";
-    }
-
-    public String setCondiTerra(int id){
-        if(id == R.id.proprietario)
-            return "Proprietário";
-        else if(id == R.id.parceiro)
-            return "Parceiro(a)/Meeiro(a)";
-        else if(id == R.id.assentado)
-            return "Assentado(a)";
-        else if(id == R.id.posseiro)
-            return "Posseiro";
-        else if(id == R.id.arrendatario)
-            return "Arrendatário(a)";
-        else if(id == R.id.comodatario)
-            return "Comodatário(a)";
-        else if(id == R.id.beneficiario)
-            return "Beneficiário(a) do Banco da Terra";
-        else
-            return "Não se aplica";
-    }
-
-    public String setTipoAcesso(int id){
-        if(id == R.id.pavimento)
-            return "Pavimento";
-        else if(id == R.id.chaoBatido)
-            return "Chão Batido";
-        else if(id == R.id.fluvial)
-            return "Fluvial";
-        else
-            return "Outro";
-    }
 
 }
