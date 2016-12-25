@@ -3,6 +3,7 @@ package com.example.root.novoteste;
 import android.database.sqlite.SQLiteException;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.root.novoteste.enums.Localizacao;
 import com.example.root.novoteste.models.TableAbastecimentoAgua;
 import com.example.root.novoteste.models.TableCondicaoTerra;
 import com.example.root.novoteste.models.TableDestinoLixo;
@@ -37,16 +39,16 @@ public class Cadastro_Domi2 extends Fragment {
 
     private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, telResidencial, numMoradores, numComodos, howManyAnimals;
 
-    private String sus, nameLogradouro, numberLograd, tipoLograd, comple, teleResid,  numMora, numComods, quantosAnimais, teste;
+    private String sus, nameLogradouro, numberLograd, tipoLograd, comple, teleResid,  numMora, numComods, quantosAnimais;
 
-    private RadioButton radioLocalizacao, radioTipoDomicilio, radioMoradia;
+    private RadioButton radioLocalizacao, radioTipoDomicilio, radioMoradia, radioCondicaoTerra, radioTipoAcesso, radioAbastecimentoAgua, radioTratamentoAgua,
+            radioDestinoLixo, radioEnergia, radioFormaEscoamento, radioTipoAnimal;
 
     // ID's dos radiobuttons sem converter
-    int loca, mora, tipoDomi, condiTer, tipoAcess,
-        abastAgua, tratAgua, destLixo, escoa, animals, energy;
+    int loca, mora, tipoDomi, condiTer, tipoAcess, abastAgua, tratAgua, destLixo, escoa, animals, energy;
 
     // ID's dos radiobuttons convertidos
-    int estado, muni, CEP, localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, animais, energia;
+    int localizacao, moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, formaEscoamento, tipoAnimai, energia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -163,81 +165,226 @@ public class Cadastro_Domi2 extends Fragment {
             numMoradores = (EditText) getActivity().findViewById(R.id.numMoradores);
             numComodos = (EditText) getActivity().findViewById(R.id.numComodos);
 
+//          //Strings
+            sus = cns.getText().toString();
+            if(TextUtils.isEmpty(sus)) {
+                cns.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            nameLogradouro = nomeLogradouro.getText().toString();
+            if(TextUtils.isEmpty(nameLogradouro)) {
+                nomeLogradouro.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            numberLograd = numLogradouro.getText().toString();
+            if(TextUtils.isEmpty(numberLograd)) {
+                numLogradouro.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            tipoLograd = tipoLogradouro.getText().toString();
+            if(TextUtils.isEmpty(tipoLograd)) {
+                tipoLogradouro.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            comple = complemento.getText().toString();
+            if(TextUtils.isEmpty(comple)) {
+                complemento.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            teleResid = telResidencial.getText().toString();
+            if(TextUtils.isEmpty(teleResid)) {
+                telResidencial.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            numMora = numMoradores.getText().toString();
+            if(TextUtils.isEmpty(numMora)) {
+                numMoradores.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
+            numComods = numComodos.getText().toString();
+            if(TextUtils.isEmpty(numComods)) {
+                numComodos.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
             //Radiogroups
             RadioGroup radio_grp1 = (RadioGroup) getActivity().findViewById(R.id.localizacao);
-            loca = radio_grp1.getCheckedRadioButtonId();
-            radioLocalizacao = (RadioButton) getActivity().findViewById(loca);
-            TableLocalizacao table = new TableLocalizacao();
-            List<TableLocalizacao> lista = table.find(TableLocalizacao.class, "descricao = ?", radioLocalizacao.getText().toString());
-            for (TableLocalizacao temporaria : lista) {
-                //Toast.makeText(getActivity().getApplicationContext(), ""+temporaria.getId(), Toast.LENGTH_LONG).show();
+            if(radio_grp1.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Localização não selecionada!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                loca = radio_grp1.getCheckedRadioButtonId();
+                radioLocalizacao = (RadioButton) getActivity().findViewById(loca);
+                TableLocalizacao tableLocalizacao = new TableLocalizacao();
+                List<TableLocalizacao> listaLocalizacao = tableLocalizacao.find(TableLocalizacao.class, "descricao = ?", radioLocalizacao.getText().toString());
+                for (TableLocalizacao temporaria : listaLocalizacao) {
+                    localizacao = (int) (long) temporaria.getId();
+                }
             }
 
 
             RadioGroup radio_grp2 = (RadioGroup) getActivity().findViewById(R.id.moradia);
-            mora = radio_grp2.getCheckedRadioButtonId();
-            radioMoradia = (RadioButton) getActivity().findViewById(mora);
-
-            //moradia = setMoradia(mora);
+            if(radio_grp2.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Situação de moradia/Posse da terra não selecionada!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                mora = radio_grp2.getCheckedRadioButtonId();
+                radioMoradia = (RadioButton) getActivity().findViewById(mora);
+                TableMoradia tableMoradia = new TableMoradia();
+                List<TableMoradia> listaMoradia = tableMoradia.find(TableMoradia.class, "descricao = ?", radioMoradia.getText().toString());
+                for (TableMoradia temporaria : listaMoradia) {
+                    moradia = (int) (long) temporaria.getId();
+                }
+            }
 
 
             RadioGroup radio_grp3 = (RadioGroup) getActivity().findViewById(R.id.tipoDomicilio);
-            tipoDomi = radio_grp3.getCheckedRadioButtonId();
-            radioTipoDomicilio = (RadioButton) getActivity().findViewById(tipoDomi);
-            TableTipoDomicilio tipo = new TableTipoDomicilio();
-            List<TableTipoDomicilio> listaTipoDomicilio = tipo.find(TableTipoDomicilio.class, "descricao = ?", radioTipoDomicilio.getText().toString());
-            //Toast.makeText(getActivity().getApplicationContext(), ""+listaTipoDomicilio.size(), Toast.LENGTH_LONG).show();
-            for (TableTipoDomicilio tipod : listaTipoDomicilio) {
-                Toast.makeText(getActivity().getApplicationContext(), ""+tipod.getId(), Toast.LENGTH_LONG).show();
+            if(radio_grp3.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Tipo de domicílio não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                tipoDomi = radio_grp3.getCheckedRadioButtonId();
+                radioTipoDomicilio = (RadioButton) getActivity().findViewById(tipoDomi);
+                TableTipoDomicilio tableTipoDomicilio = new TableTipoDomicilio();
+                List<TableTipoDomicilio> listaTipoDomicilio = tableTipoDomicilio.find(TableTipoDomicilio.class, "descricao = ?", radioTipoDomicilio.getText().toString());
+                for (TableTipoDomicilio temporaria : listaTipoDomicilio) {
+                    tipoDomicilio = (int) (long) temporaria.getId();
+                }
             }
-//            RadioGroup radio_grp4 = (RadioGroup) getActivity().findViewById(R.id.condiTerra);
-//            condiTer = radio_grp4.getCheckedRadioButtonId();
-//            //condiTerra = setCondiTerra(condiTer);
-//            RadioGroup radio_grp5 = (RadioGroup) getActivity().findViewById(R.id.tipoAcesso);
-//            tipoAcess = radio_grp5.getCheckedRadioButtonId();
-//            //tipoAcesso = setTipoAcesso(tipoAcess);
-//
-//
-//          //Strings
-            sus = cns.getText().toString();
-            nameLogradouro = nomeLogradouro.getText().toString();
-            numberLograd = numLogradouro.getText().toString();
-            tipoLograd = tipoLogradouro.getText().toString();
-            comple = complemento.getText().toString();
-            teleResid = telResidencial.getText().toString();
-            numMora = numMoradores.getText().toString();
-            numComods = numComodos.getText().toString();
-//
-//
+
+            RadioGroup radio_grp4 = (RadioGroup) getActivity().findViewById(R.id.condiTerra);
+            if(radio_grp4.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Condição de posse e uso da terra não selecionada!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                condiTer = radio_grp4.getCheckedRadioButtonId();
+                radioCondicaoTerra = (RadioButton) getActivity().findViewById(condiTer);
+                TableCondicaoTerra tableCondicaoTerra = new TableCondicaoTerra();
+                List<TableCondicaoTerra> listaCondicaoTerra = tableCondicaoTerra.find(TableCondicaoTerra.class, "descricao = ?", radioCondicaoTerra.getText().toString());
+                for (TableCondicaoTerra temporaria : listaCondicaoTerra) {
+                    condiTerra = (int) (long) temporaria.getId();
+                }
+            }
+
+
+            RadioGroup radio_grp5 = (RadioGroup) getActivity().findViewById(R.id.tipoAcesso);
+            if(radio_grp5.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Tipo de Acesso não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                tipoAcess = radio_grp5.getCheckedRadioButtonId();
+                radioTipoAcesso = (RadioButton) getActivity().findViewById(tipoAcess);
+                TableTipoAcesso tableTipoAcesso = new TableTipoAcesso();
+                List<TableTipoAcesso> listaTipoAcesso = tableTipoAcesso.find(TableTipoAcesso.class, "descricao = ?", radioTipoAcesso.getText().toString());
+                for (TableTipoAcesso temporaria : listaTipoAcesso) {
+                    tipoAcesso = (int) (long) temporaria.getId();
+                }
+            }
+
+
 //            ///////////////////////////// FRAGMENTO 2 /////////////////////////////////////////////
-//
-//            //EditTexts
+
+            //EditTexts
             howManyAnimals = (EditText) getView().findViewById(R.id.quantos);
-//
-//
-//            //RadioGroups
-//            RadioGroup radio_grp6 = (RadioGroup) getView().findViewById(R.id.abastecimentoAgua);
-//                abastAgua = radio_grp6.getCheckedRadioButtonId();
-//                //abastecimentoAgua = setAbast(abastAgua);
-//            RadioGroup radio_grp7 = (RadioGroup) getView().findViewById(R.id.tratamentoAgua);
-//                tratAgua = radio_grp7.getCheckedRadioButtonId();
-//                //tratamentoAgua = setTratamento(tratAgua);
-//            RadioGroup radio_grp8 = (RadioGroup) getView().findViewById(R.id.destinoLixo);
-//                destLixo = radio_grp8.getCheckedRadioButtonId();
-//                //destinoLixo = setDestinoLixo(destLixo);
-//            RadioGroup radio_grp9 = (RadioGroup) getView().findViewById(R.id.energia);
-//                energy = radio_grp9.getCheckedRadioButtonId();
-//                //energia = setEnerg(energy);
-//            RadioGroup radio_grp10 = (RadioGroup) getView().findViewById(R.id.formaEscoamento);
-//                escoa = radio_grp10.getCheckedRadioButtonId();
-//                //formaEscoamento = setFormaEscoa(escoa);
-//            RadioGroup radio_grp11 = (RadioGroup) getView().findViewById(R.id.animais);
-//                animals = radio_grp11.getCheckedRadioButtonId();
-//                //animais = setAnimaiss(animals);
-//
-//
-//            //Strings
+
+            //Strings
             quantosAnimais = howManyAnimals.getText().toString();
+
+
+            //RadioGroups
+            RadioGroup radio_grp6 = (RadioGroup) getView().findViewById(R.id.abastecimentoAgua);
+            if(radio_grp6.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Tipo de abastecimento de água não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                abastAgua = radio_grp6.getCheckedRadioButtonId();
+                radioAbastecimentoAgua = (RadioButton) getActivity().findViewById(abastAgua);
+                TableAbastecimentoAgua tableAbastecimentoAgua = new TableAbastecimentoAgua();
+                List<TableAbastecimentoAgua> listaAbastecimentoAgua = tableAbastecimentoAgua.find(TableAbastecimentoAgua.class, "descricao = ?", radioAbastecimentoAgua.getText().toString());
+                for (TableAbastecimentoAgua temporaria : listaAbastecimentoAgua) {
+                    abastecimentoAgua = (int) (long) temporaria.getId();
+                }
+            }
+
+            RadioGroup radio_grp7 = (RadioGroup) getView().findViewById(R.id.tratamentoAgua);
+            if(radio_grp7.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Tratamento de água não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                tratAgua = radio_grp7.getCheckedRadioButtonId();
+                radioTratamentoAgua = (RadioButton) getActivity().findViewById(tratAgua);
+                TableTratamentoAgua tableTratamentoAgua = new TableTratamentoAgua();
+                List<TableTratamentoAgua> listaTratamentoAgua = tableTratamentoAgua.find(TableTratamentoAgua.class, "descricao = ?", radioTratamentoAgua.getText().toString());
+                for (TableTratamentoAgua temporaria : listaTratamentoAgua) {
+                    tratamentoAgua = (int) (long) temporaria.getId();
+                }
+            }
+
+            RadioGroup radio_grp8 = (RadioGroup) getView().findViewById(R.id.destinoLixo);
+            if(radio_grp8.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Destino do lixo não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                destLixo = radio_grp8.getCheckedRadioButtonId();
+                radioDestinoLixo = (RadioButton) getActivity().findViewById(destLixo);
+                TableDestinoLixo tableDestinoLixo = new TableDestinoLixo();
+                List<TableDestinoLixo> listaDestinoLixo = tableDestinoLixo.find(TableDestinoLixo.class, "descricao = ?", radioDestinoLixo.getText().toString());
+                for (TableDestinoLixo temporaria : listaDestinoLixo) {
+                    destinoLixo = (int) (long) temporaria.getId();
+                }
+            }
+
+            RadioGroup radio_grp9 = (RadioGroup) getView().findViewById(R.id.energia);
+            if(radio_grp9.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Disponibilidade de energia elétrica não informada!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                energy = radio_grp9.getCheckedRadioButtonId();
+                radioEnergia = (RadioButton) getActivity().findViewById(energy);
+                TableEnergia tableEnergia = new TableEnergia();
+                List<TableEnergia> listaEnergia = tableEnergia.find(TableEnergia.class, "descricao = ?", radioEnergia.getText().toString());
+                for (TableEnergia temporaria : listaEnergia) {
+                    energia = (int) (long) temporaria.getId();
+                }
+            }
+
+
+            RadioGroup radio_grp10 = (RadioGroup) getView().findViewById(R.id.formaEscoamento);
+            if(radio_grp10.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Forma de Escoamento não selecionada!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                escoa = radio_grp10.getCheckedRadioButtonId();
+                radioFormaEscoamento = (RadioButton) getActivity().findViewById(escoa);
+                TableFormaEscoamento tableFormaEscoamento = new TableFormaEscoamento();
+                List<TableFormaEscoamento> listaFormaEscoamento = tableFormaEscoamento.find(TableFormaEscoamento.class, "descricao = ?", radioFormaEscoamento.getText().toString());
+                for (TableFormaEscoamento temporaria : listaFormaEscoamento) {
+                    formaEscoamento = (int) (long) temporaria.getId();
+                }
+            }
+
+            RadioGroup radio_grp11 = (RadioGroup) getView().findViewById(R.id.animais);
+            if(radio_grp11.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity().getApplicationContext(), "Tipo de animal não selecionado!", Toast.LENGTH_LONG).show();
+                return;
+            }else {
+                animals = radio_grp11.getCheckedRadioButtonId();
+                radioTipoAnimal = (RadioButton) getActivity().findViewById(animals);
+                TableTipoAnimal tableTipoAnimal = new TableTipoAnimal();
+                List<TableTipoAnimal> listaTipoAnimal = tableTipoAnimal.find(TableTipoAnimal.class, "descricao = ?", radioTipoAnimal.getText().toString());
+                for (TableTipoAnimal temporaria : listaTipoAnimal) {
+                    tipoAnimai = (int) (long) temporaria.getId();
+                }
+            }
+
+            //Toast.makeText(getActivity().getApplicationContext(), "Passou mesmo tendo pego o Erro!!!!!", Toast.LENGTH_LONG).show();
 //
 //
 //            String resultado;
@@ -249,9 +396,9 @@ public class Cadastro_Domi2 extends Fragment {
 //            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
 
-            TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods);
+            TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods, localizacao,
+                    moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, energia, formaEscoamento, tipoAnimai);
             domicilio.save();
-
 
         }
     };

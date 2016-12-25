@@ -1,252 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:text="Informações Sociodemográficas"
-        android:layout_width="309dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView37"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_below="@+id/raca"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:text="Informações Sociodemográficas"
+            android:layout_width="309dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView37"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_below="@+id/raca"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:text="Criança de 0 a 9 anos, com quem fica?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView37"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp"
-        android:id="@+id/textView38" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView38"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/crianca" >
-
-        <RadioButton
-            android:text="Adulto Responsável"
+        <TextView
+            android:text="Criança de 0 a 9 anos, com quem fica?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/adulto"
-            android:layout_weight="1" />
+            android:layout_below="@+id/textView37"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp"
+            android:id="@+id/textView38" />
 
-        <RadioButton
-            android:text="Outra(s) Criança(s)"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/outracrianca"
-            android:layout_weight="1" />
+            android:layout_below="@+id/textView38"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/crianca" >
 
-        <RadioButton
-            android:text="Adolescente"
+            <RadioButton
+                android:text="Adulto Responsável"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adulto"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Outra(s) Criança(s)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/outracrianca"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Adolescente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adolescente"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Sozinha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sozinha"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Creche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/creche"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Outro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/outro9"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="Frequenta Cuidador Tradicional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/adolescente"
-            android:layout_weight="1" />
+            android:id="@+id/textView39"
+            android:layout_alignBaseline="@+id/textView38"
+            android:layout_alignBottom="@+id/textView38"
+            android:layout_toRightOf="@+id/textView38"
+            android:layout_toEndOf="@+id/textView38"
+            android:layout_marginLeft="148dp"
+            android:layout_marginStart="148dp" />
 
-        <RadioButton
-            android:text="Sozinha"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sozinha"
-            android:layout_weight="1" />
+            android:layout_below="@+id/textView39"
+            android:layout_alignLeft="@+id/textView39"
+            android:layout_alignStart="@+id/textView39"
+            android:id="@+id/cuidador" >
 
-        <RadioButton
-            android:text="Creche"
+            <RadioButton
+                android:text="Sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sim"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Não"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nao"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <TextView
+            android:text="Possui Plano de Saúde Privado?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/creche"
-            android:layout_weight="1" />
+            android:layout_below="@+id/cuidador"
+            android:layout_alignLeft="@+id/cuidador"
+            android:layout_alignStart="@+id/cuidador"
+            android:layout_marginTop="29dp"
+            android:id="@+id/textView40" />
 
-        <RadioButton
-            android:text="Outro"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/outro9"
-            android:layout_weight="1" />
-    </RadioGroup>
+            android:layout_below="@+id/textView40"
+            android:layout_alignLeft="@+id/textView40"
+            android:layout_alignStart="@+id/textView40"
+            android:id="@+id/planoSaude" >
 
-    <TextView
-        android:text="Frequenta Cuidador Tradicional"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView39"
-        android:layout_alignBaseline="@+id/textView38"
-        android:layout_alignBottom="@+id/textView38"
-        android:layout_toRightOf="@+id/textView38"
-        android:layout_toEndOf="@+id/textView38"
-        android:layout_marginLeft="148dp"
-        android:layout_marginStart="148dp" />
+            <RadioButton
+                android:text="Sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sim3"
+                android:layout_weight="1" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView39"
-        android:layout_alignLeft="@+id/textView39"
-        android:layout_alignStart="@+id/textView39"
-        android:id="@+id/cuidador" >
+            <RadioButton
+                android:text="Não"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nao3"
+                android:layout_weight="1" />
+        </RadioGroup>
 
-        <RadioButton
-            android:text="Sim"
+        <TextView
+            android:text="Participa de Algum Grupo Comunitário?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sim"
-            android:layout_weight="1" />
+            android:layout_below="@+id/crianca"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="33dp"
+            android:id="@+id/textView41" />
 
-        <RadioButton
-            android:text="Não"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nao"
-            android:layout_weight="1" />
-    </RadioGroup>
+            android:layout_below="@+id/textView41"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/grupoComunitario" >
 
-    <TextView
-        android:text="Possui Plano de Saúde Privado?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cuidador"
-        android:layout_alignLeft="@+id/cuidador"
-        android:layout_alignStart="@+id/cuidador"
-        android:layout_marginTop="29dp"
-        android:id="@+id/textView40" />
+            <RadioButton
+                android:text="Sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sim2"
+                android:layout_weight="1" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView40"
-        android:layout_alignLeft="@+id/textView40"
-        android:layout_alignStart="@+id/textView40"
-        android:id="@+id/planoSaude" >
+            <RadioButton
+                android:text="Não"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nao2"
+                android:layout_weight="1" />
+        </RadioGroup>
 
-        <RadioButton
-            android:text="Sim"
+        <TextView
+            android:text="É Membro de Povo ou Comunidade Tradicional?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sim3"
-            android:layout_weight="1" />
+            android:id="@+id/textView42"
+            android:layout_alignBaseline="@+id/textView41"
+            android:layout_alignBottom="@+id/textView41"
+            android:layout_alignLeft="@+id/planoSaude"
+            android:layout_alignStart="@+id/planoSaude" />
 
-        <RadioButton
-            android:text="Não"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nao3"
-            android:layout_weight="1" />
-    </RadioGroup>
+            android:layout_below="@+id/textView42"
+            android:layout_alignLeft="@+id/textView42"
+            android:layout_alignStart="@+id/textView42"
+            android:id="@+id/comunidadeTradicional" >
 
-    <TextView
-        android:text="Participa de Algum Grupo Comunitário?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/crianca"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
-        android:id="@+id/textView41" />
+            <RadioButton
+                android:text="Sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sim4"
+                android:layout_weight="1" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView41"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/grupoComunitario" >
+            <RadioButton
+                android:text="Não"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nao4"
+                android:layout_weight="1" />
+        </RadioGroup>
 
-        <RadioButton
-            android:text="Sim"
+        <TextView
+            android:text="Saída do Cidadão do Cadastro:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sim2"
-            android:layout_weight="1" />
+            android:layout_below="@+id/grupoComunitario"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/textView43" />
 
-        <RadioButton
-            android:text="Não"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nao2"
-            android:layout_weight="1" />
-    </RadioGroup>
+            android:layout_below="@+id/textView43"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/saida" >
 
-    <TextView
-        android:text="É Membro de Povo ou Comunidade Tradicional?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView42"
-        android:layout_alignBaseline="@+id/textView41"
-        android:layout_alignBottom="@+id/textView41"
-        android:layout_alignLeft="@+id/planoSaude"
-        android:layout_alignStart="@+id/planoSaude" />
+            <RadioButton
+                android:text="Óbito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/obito"
+                android:layout_weight="1" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView42"
-        android:layout_alignLeft="@+id/textView42"
-        android:layout_alignStart="@+id/textView42"
-        android:id="@+id/comunidadeTradicional" >
+            <RadioButton
+                android:text="Mudança de Território"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mudancaTerritorio"
+                android:layout_weight="1" />
+        </RadioGroup>
 
-        <RadioButton
-            android:text="Sim"
+        <Button
+            android:text="Registrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sim4"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Não"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nao4"
-            android:layout_weight="1" />
-    </RadioGroup>
-
-    <TextView
-        android:text="Saída do Cidadão do Cadastro:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grupoComunitario"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView43" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView43"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/saida" >
-
-        <RadioButton
-            android:text="Óbito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/obito"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Mudança de Território"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mudancaTerritorio"
-            android:layout_weight="1" />
-    </RadioGroup>
-
-    <Button
-        android:text="Registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/registra"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+            android:id="@+id/registra"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</ScrollView>
