@@ -2,13 +2,14 @@ package com.example.root.novoteste.models;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by suporte on 08/12/2016.
  */
 
-public class TableDomicilio extends SugarRecord {
+public class TableDomicilio extends SugarRecord implements Serializable{
 
     String cartaoSus;
     String nomeLogradouro;

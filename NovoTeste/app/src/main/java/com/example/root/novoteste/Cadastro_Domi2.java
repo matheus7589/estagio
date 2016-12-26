@@ -1,5 +1,7 @@
 package com.example.root.novoteste;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteException;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -36,6 +38,8 @@ import java.util.List;
  */
 
 public class Cadastro_Domi2 extends Fragment {
+
+    ProgressDialog dialog;
 
     private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, telResidencial, numMoradores, numComodos, howManyAnimals;
 
@@ -395,10 +399,35 @@ public class Cadastro_Domi2 extends Fragment {
 //
 //            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
+            try {
+                final TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods, localizacao,
+                        moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, energia, formaEscoamento, tipoAnimai);
+                domicilio.save();
 
-            TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods, localizacao,
-                    moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, energia, formaEscoamento, tipoAnimai);
-            domicilio.save();
+                dialog = ProgressDialog.show(getActivity(),"Novo Domicílio","Salvando Domicílio. Aguarde...", false, true);
+                dialog.setCancelable(false);
+
+                new Thread() {
+
+                    public void run() {
+
+                        try {
+
+                            Thread.sleep(2500);
+                            dialog.dismiss();
+                            Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
+                            individuo.putExtra("Domicilio", domicilio);
+                            startActivity(individuo);
+                        }catch (Exception e) {
+
+                        }
+                    }
+                }.start();
+                Toast.makeText(getActivity().getApplicationContext(), "Domicílio adicionado com sucesso!", Toast.LENGTH_LONG).show();
+
+            }catch (SQLiteException exception){
+                Toast.makeText(getActivity().getApplicationContext(), "Erro ao adicionar domicílio!", Toast.LENGTH_LONG).show();
+            }
 
         }
     };

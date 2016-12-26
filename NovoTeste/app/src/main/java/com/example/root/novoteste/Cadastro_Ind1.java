@@ -1,5 +1,6 @@
 package com.example.root.novoteste;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -14,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.root.novoteste.models.TableDomicilio;
+import com.example.root.novoteste.models.TableIndividuo;
 import com.example.root.novoteste.models.TableNacionalidade;
 import com.example.root.novoteste.models.TableOrientacaoSexual;
 import com.example.root.novoteste.models.TableRaca;
@@ -48,22 +51,6 @@ public class Cadastro_Ind1 extends Fragment {
         return inflater.inflate(R.layout.cadastro_individual1, container, false);
     }
 
-//    public void onRadioButtonClicked(View view) {
-//        // Is the button now checked?
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        // Check which radio button was clicked
-//        switch (view.getId()) {
-//            case R.id.masculino:
-//                if (checked)
-//                    // Pirates are the best
-//                    break;
-//            case R.id.feminino:
-//                if (checked)
-//                    // Ninjas rule
-//                    break;
-//        }
-//    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -82,12 +69,6 @@ public class Cadastro_Ind1 extends Fragment {
 
         Button registrar = (Button) view.findViewById(R.id.cadastrar);
         registrar.setOnClickListener(regHandler);
-
-//        RadioButton masculino = (RadioButton) getActivity().findViewById(R.id.masculino);
-//        RadioButton feminino = (RadioButton) getActivity().findViewById(R.id.feminino);
-//
-//        masculino.setOnClickListener(next_Listener);
-//        feminino.setOnClickListener(next_Listener);
 
     }
 
@@ -212,6 +193,8 @@ public class Cadastro_Ind1 extends Fragment {
             }
 
 
+            //Toast.makeText(getActivity().getApplicationContext(), table.getNomeLogradouro().toString(), Toast.LENGTH_LONG).show();
+
 
 //            BancoController crud = new BancoController(getActivity().getBaseContext());
 //            telefone = (EditText)getView().findViewById(R.id.telefone);
@@ -231,6 +214,8 @@ public class Cadastro_Ind1 extends Fragment {
 
         }
     };
+
+
 
 }
 

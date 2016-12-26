@@ -1,5 +1,6 @@
 package com.example.root.novoteste;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.root.novoteste.models.TableDomicilio;
 
 /**
  * Created by root on 13/09/2016.
@@ -111,6 +114,9 @@ public class Cadastro_Ind3 extends Fragment {
             texto = (RadioButton) getActivity().findViewById(grau);
 
             Toast.makeText(getActivity().getApplicationContext(), texto.getText().toString(), Toast.LENGTH_LONG).show();
+
+            Intent intent = getActivity().getIntent();
+            TableDomicilio table = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
 
 //            resultado = crud.insereDado(tele, muni);
 //
