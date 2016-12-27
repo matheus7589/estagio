@@ -15,11 +15,51 @@ public class TableIndividuo extends SugarRecord {
     String nomeMae;
     String telefoneCelular;
     String ocupacao;
+    String pis_pasep;
+    String pais;
+    String mail;
+    String municipioNascimento;
+    int sexo, raca, nacionalidade, grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador, planosaude,
+            grupoComunitario, comunidadeTradicional, saida;
+
     String dataInicioResidencia;
     String dataFimResidencia;
 
     public TableIndividuo(){
 
+    }
+
+    public TableIndividuo(String nomeCompleto, String nomeSocial, String cartaoSus, String dataNascimento, String nomeMae, String telefoneCelular,
+                          String ocupacao, String pis_pasep, String pais, String mail, String municipioNascimento, int sexo, int raca, int nacionalidade,
+                          int grau, int parentensco, int creche, int mercadotrab, int orientacao, int deficiencia, int crianca, int cuidador, int planosaude,
+                          int grupoComunitario, int comunidadeTradicional, int saida, String dataInicioResidencia) {
+        this.nomeCompleto = nomeCompleto;
+        this.nomeSocial = nomeSocial;
+        this.cartaoSus = cartaoSus;
+        this.dataNascimento = dataNascimento;
+        this.nomeMae = nomeMae;
+        this.telefoneCelular = telefoneCelular;
+        this.ocupacao = ocupacao;
+        this.pis_pasep = pis_pasep;
+        this.pais = pais;
+        this.mail = mail;
+        this.municipioNascimento = municipioNascimento;
+        this.sexo = sexo;
+        this.raca = raca;
+        this.nacionalidade = nacionalidade;
+        this.grau = grau;
+        this.parentensco = parentensco;
+        this.creche = creche;
+        this.mercadotrab = mercadotrab;
+        this.orientacao = orientacao;
+        this.deficiencia = deficiencia;
+        this.crianca = crianca;
+        this.cuidador = cuidador;
+        this.planosaude = planosaude;
+        this.grupoComunitario = grupoComunitario;
+        this.comunidadeTradicional = comunidadeTradicional;
+        this.saida = saida;
+        this.dataInicioResidencia = dataInicioResidencia;
     }
 
     public String getNomeCompleto() {
