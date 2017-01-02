@@ -60,6 +60,18 @@ public class Cadastro_Ind3 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        Bundle bundle = this.getArguments();
+//        if (bundle != null) {
+//            tele = bundle.getString("telefone", "defaultValue");
+//        }
+
+        Intent intent = getActivity().getIntent();
+        if (intent.getExtras() != null) {
+            tele =intent.getStringExtra("name");
+        }
+
+
+
         try{
             if(TableSexo.listAll(TableSexo.class).size() == 0){
                 new TableSexo("Masculino").save();
@@ -111,117 +123,117 @@ public class Cadastro_Ind3 extends Fragment {
         public void onClick(View v) {
             ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
             //EditTexts
-            telefone = (EditText) getView().findViewById(R.id.telefone);
-            municipio = (EditText) getView().findViewById(R.id.municipio);
-            cartaoSus = (EditText) getView().findViewById(R.id.sus);
-            nomeCompleto = (EditText) getView().findViewById(R.id.nomeCompleto);
-            nomeSocial = (EditText) getView().findViewById(R.id.nomeSocial);
-            dataNascimento = (EditText) getView().findViewById(R.id.dataNascimento);
-            pisPasep = (EditText) getView().findViewById(R.id.pisPasep);
-            paisNascimento = (EditText) getView().findViewById(R.id.paisNascimento);
-            nomeMae = (EditText) getView().findViewById(R.id.nomeMae);
-            eMail = (EditText) getView().findViewById(R.id.email);
-
-            //Strings
-            tele = telefone.getText().toString();
-            if(TextUtils.isEmpty(tele)) {
-                telefone.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            muni = municipio.getText().toString();
-            if(TextUtils.isEmpty(muni)) {
-                municipio.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            sus = cartaoSus.getText().toString();
-            if(TextUtils.isEmpty(sus)) {
-                cartaoSus.setError("Este campo não pode estar vazio!");
-                return;
-            }
-            nomeComp = nomeCompleto.getText().toString();
-            if(TextUtils.isEmpty(nomeComp)) {
-                nomeCompleto.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            nomeSoci = nomeSocial.getText().toString();
-            if(TextUtils.isEmpty(nomeSoci)) {
-                nomeSocial.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            data = dataNascimento.getText().toString();
-            if(TextUtils.isEmpty(data)) {
-                dataNascimento.setError("Este campo não pode estar vazio!");
-                return;
-            }
-            pasep = pisPasep.getText().toString();
-            if(TextUtils.isEmpty(pasep)) {
-                pisPasep.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            pais = paisNascimento.getText().toString();
-            if(TextUtils.isEmpty(pais)) {
-                paisNascimento.setError("Este campo não pode estar vazio!");
-                return;
-            }
-            mae = nomeMae.getText().toString();
-            if(TextUtils.isEmpty(mae)) {
-                nomeMae.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            mail = eMail.getText().toString();
-            if(TextUtils.isEmpty(mail)) {
-                eMail.setError("Este campo não pode estar vazio!");
-                return;
-            }
-
-            //RadioGroups
-            RadioGroup radio_grp1 = (RadioGroup) getView().findViewById(R.id.sexoInd);
-            if(radio_grp1.getCheckedRadioButtonId() == -1){
-                Toast.makeText(getActivity().getApplicationContext(), "Sexo não selecionado!", Toast.LENGTH_LONG).show();
-                return;
-            }else {
-                sex = radio_grp1.getCheckedRadioButtonId();
-                radioSexo = (RadioButton) getActivity().findViewById(sex);
-                TableSexo tableSexo = new TableSexo();
-                List<TableSexo> listaSexo = tableSexo.find(TableSexo.class, "descricao = ?", radioSexo.getText().toString());
-                for (TableSexo temporaria : listaSexo) {
-                    sexo = (int) (long) temporaria.getId();
-                }
-            }
-
-            RadioGroup radio_grp2 = (RadioGroup) getView().findViewById(R.id.raca);
-            if(radio_grp2.getCheckedRadioButtonId() == -1){
-                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
-                return;
-            }else {
-                rac = radio_grp2.getCheckedRadioButtonId();
-                radioRaca = (RadioButton) getActivity().findViewById(rac);
-                TableRaca tableRaca = new TableRaca();
-                List<TableRaca> listaRaca = tableRaca.find(TableRaca.class, "descricao = ?", radioRaca.getText().toString());
-                for(TableRaca temporaria : listaRaca){
-                    raca = (int) (long) temporaria.getId();
-                }
-            }
-
-            RadioGroup radio_grp14 = (RadioGroup) getView().findViewById(R.id.nacionalidade);
-            if(radio_grp14.getCheckedRadioButtonId() == -1){
-                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
-                return;
-            }else {
-                naci = radio_grp2.getCheckedRadioButtonId();
-                radioNacionalidade = (RadioButton) getActivity().findViewById(naci);
-                TableNacionalidade tableNacionalidade = new TableNacionalidade();
-                List<TableNacionalidade> listaNacionalidade = tableNacionalidade.find(TableNacionalidade.class, "descricao = ?", radioNacionalidade.getText().toString());
-                for(TableNacionalidade temporaria : listaNacionalidade){
-                    nacionalidade = (int) (long) temporaria.getId();
-                }
-            }
+//            telefone = (EditText) getActivity().findViewById(R.id.telefone);
+//            municipio = (EditText) getActivity().findViewById(R.id.municipio);
+//            cartaoSus = (EditText) getActivity().findViewById(R.id.sus);
+//            nomeCompleto = (EditText) getActivity().findViewById(R.id.nomeCompleto);
+//            nomeSocial = (EditText) getActivity().findViewById(R.id.nomeSocial);
+//            dataNascimento = (EditText) getActivity().findViewById(R.id.dataNascimento);
+//            pisPasep = (EditText) getActivity().findViewById(R.id.pisPasep);
+//            paisNascimento = (EditText) getActivity().findViewById(R.id.paisNascimento);
+//            nomeMae = (EditText) getActivity().findViewById(R.id.nomeMae);
+//            eMail = (EditText) getActivity().findViewById(R.id.email);
+//
+//            //Strings
+//            tele = telefone.getText().toString();
+//            if(TextUtils.isEmpty(tele)) {
+//                telefone.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            muni = municipio.getText().toString();
+//            if(TextUtils.isEmpty(muni)) {
+//                municipio.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            sus = cartaoSus.getText().toString();
+//            if(TextUtils.isEmpty(sus)) {
+//                cartaoSus.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//            nomeComp = nomeCompleto.getText().toString();
+//            if(TextUtils.isEmpty(nomeComp)) {
+//                nomeCompleto.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            nomeSoci = nomeSocial.getText().toString();
+//            if(TextUtils.isEmpty(nomeSoci)) {
+//                nomeSocial.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            data = dataNascimento.getText().toString();
+//            if(TextUtils.isEmpty(data)) {
+//                dataNascimento.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//            pasep = pisPasep.getText().toString();
+//            if(TextUtils.isEmpty(pasep)) {
+//                pisPasep.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            pais = paisNascimento.getText().toString();
+//            if(TextUtils.isEmpty(pais)) {
+//                paisNascimento.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//            mae = nomeMae.getText().toString();
+//            if(TextUtils.isEmpty(mae)) {
+//                nomeMae.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            mail = eMail.getText().toString();
+//            if(TextUtils.isEmpty(mail)) {
+//                eMail.setError("Este campo não pode estar vazio!");
+//                return;
+//            }
+//
+//            //RadioGroups
+//            RadioGroup radio_grp1 = (RadioGroup) getView().findViewById(R.id.sexoInd);
+//            if(radio_grp1.getCheckedRadioButtonId() == -1){
+//                Toast.makeText(getActivity().getApplicationContext(), "Sexo não selecionado!", Toast.LENGTH_LONG).show();
+//                return;
+//            }else {
+//                sex = radio_grp1.getCheckedRadioButtonId();
+//                radioSexo = (RadioButton) getActivity().findViewById(sex);
+//                TableSexo tableSexo = new TableSexo();
+//                List<TableSexo> listaSexo = tableSexo.find(TableSexo.class, "descricao = ?", radioSexo.getText().toString());
+//                for (TableSexo temporaria : listaSexo) {
+//                    sexo = (int) (long) temporaria.getId();
+//                }
+//            }
+//
+//            RadioGroup radio_grp2 = (RadioGroup) getView().findViewById(R.id.raca);
+//            if(radio_grp2.getCheckedRadioButtonId() == -1){
+//                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
+//                return;
+//            }else {
+//                rac = radio_grp2.getCheckedRadioButtonId();
+//                radioRaca = (RadioButton) getActivity().findViewById(rac);
+//                TableRaca tableRaca = new TableRaca();
+//                List<TableRaca> listaRaca = tableRaca.find(TableRaca.class, "descricao = ?", radioRaca.getText().toString());
+//                for(TableRaca temporaria : listaRaca){
+//                    raca = (int) (long) temporaria.getId();
+//                }
+//            }
+//
+//            RadioGroup radio_grp14 = (RadioGroup) getView().findViewById(R.id.nacionalidade);
+//            if(radio_grp14.getCheckedRadioButtonId() == -1){
+//                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
+//                return;
+//            }else {
+//                naci = radio_grp2.getCheckedRadioButtonId();
+//                radioNacionalidade = (RadioButton) getActivity().findViewById(naci);
+//                TableNacionalidade tableNacionalidade = new TableNacionalidade();
+//                List<TableNacionalidade> listaNacionalidade = tableNacionalidade.find(TableNacionalidade.class, "descricao = ?", radioNacionalidade.getText().toString());
+//                for(TableNacionalidade temporaria : listaNacionalidade){
+//                    nacionalidade = (int) (long) temporaria.getId();
+//                }
+//            }
 
 
             ///////////////////////////// FRAGMENTO 2 /////////////////////////////////////////////
@@ -428,10 +440,15 @@ public class Cadastro_Ind3 extends Fragment {
 //
 //            individuo.save();
 
-            Toast.makeText(getActivity().getApplicationContext(), ""+sexo, Toast.LENGTH_LONG).show();
 
-            Intent intent = getActivity().getIntent();
-            TableDomicilio table = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
+
+
+            Toast.makeText(getActivity().getApplicationContext(), ""+tele, Toast.LENGTH_LONG).show();
+
+
+
+            //Intent intent = getActivity().getIntent();
+            //TableDomicilio table = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
 
 //            resultado = crud.insereDado(tele, muni);
 //

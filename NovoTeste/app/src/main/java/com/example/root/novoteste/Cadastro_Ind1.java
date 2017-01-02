@@ -3,6 +3,8 @@ package com.example.root.novoteste;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,8 +68,8 @@ public class Cadastro_Ind1 extends Fragment {
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        Button registrar = (Button)view.findViewById(R.id.registrar);
 
-        Button registrar = (Button) view.findViewById(R.id.cadastrar);
         registrar.setOnClickListener(regHandler);
 
     }
@@ -79,25 +81,25 @@ public class Cadastro_Ind1 extends Fragment {
             ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
 
             //EditTexts
-//            telefone = (EditText) getView().findViewById(R.id.telefone);
-//            municipio = (EditText) getView().findViewById(R.id.municipio);
-//            cartaoSus = (EditText) getView().findViewById(R.id.sus);
-//            nomeCompleto = (EditText) getView().findViewById(R.id.nomeCompleto);
-//            nomeSocial = (EditText) getView().findViewById(R.id.nomeSocial);
-//            dataNascimento = (EditText) getView().findViewById(R.id.dataNascimento);
-//            pisPasep = (EditText) getView().findViewById(R.id.pisPasep);
-//            paisNascimento = (EditText) getView().findViewById(R.id.paisNascimento);
-//            nomeMae = (EditText) getView().findViewById(R.id.nomeMae);
-//            eMail = (EditText) getView().findViewById(R.id.email);
-//
-//
-//            //Strings
-//            tele = telefone.getText().toString();
-//            if(TextUtils.isEmpty(tele)) {
-//                telefone.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
+            telefone = (EditText) getView().findViewById(R.id.telefone);
+            municipio = (EditText) getView().findViewById(R.id.municipio);
+            cartaoSus = (EditText) getView().findViewById(R.id.sus);
+            nomeCompleto = (EditText) getView().findViewById(R.id.nomeCompleto);
+            nomeSocial = (EditText) getView().findViewById(R.id.nomeSocial);
+            dataNascimento = (EditText) getView().findViewById(R.id.dataNascimento);
+            pisPasep = (EditText) getView().findViewById(R.id.pisPasep);
+            paisNascimento = (EditText) getView().findViewById(R.id.paisNascimento);
+            nomeMae = (EditText) getView().findViewById(R.id.nomeMae);
+            eMail = (EditText) getView().findViewById(R.id.email);
+
+
+            //Strings
+            tele = telefone.getText().toString();
+            if(TextUtils.isEmpty(tele)) {
+                telefone.setError("Este campo não pode estar vazio!");
+                return;
+            }
+
 //            muni = municipio.getText().toString();
 //            if(TextUtils.isEmpty(muni)) {
 //                municipio.setError("Este campo não pode estar vazio!");
@@ -192,8 +194,15 @@ public class Cadastro_Ind1 extends Fragment {
 //                }
 //            }
 
-
-            //Toast.makeText(getActivity().getApplicationContext(), table.getNomeLogradouro().toString(), Toast.LENGTH_LONG).show();
+            Cadastro_Ind1 fragmento = new Cadastro_Ind1();
+            Bundle bundle = new Bundle();
+            bundle.putString("telefone", tele); // use as per your need
+            fragmento.setArguments(bundle);
+//            FragmentManager fragmentManager = getFragmentManager();
+//            fragmentManager.beginTransaction()
+//                    .replace(R.id.registrar
+//                            , new Cadastro_Ind2())
+//                    .commit();
 
 
 //            BancoController crud = new BancoController(getActivity().getBaseContext());
