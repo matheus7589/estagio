@@ -193,16 +193,11 @@ public class Cadastro_Ind1 extends Fragment {
 //                    nacionalidade = (int) (long) temporaria.getId();
 //                }
 //            }
-
-            Cadastro_Ind1 fragmento = new Cadastro_Ind1();
             Bundle bundle = new Bundle();
-            bundle.putString("telefone", tele); // use as per your need
-            fragmento.setArguments(bundle);
-//            FragmentManager fragmentManager = getFragmentManager();
-//            fragmentManager.beginTransaction()
-//                    .replace(R.id.registrar
-//                            , new Cadastro_Ind2())
-//                    .commit();
+            bundle.putString("telefone", tele);
+
+            Intent intent = getActivity().getIntent();
+            intent.putExtras(bundle);
 
 
 //            BancoController crud = new BancoController(getActivity().getBaseContext());

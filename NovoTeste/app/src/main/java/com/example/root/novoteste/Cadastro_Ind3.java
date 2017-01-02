@@ -65,13 +65,6 @@ public class Cadastro_Ind3 extends Fragment {
 //            tele = bundle.getString("telefone", "defaultValue");
 //        }
 
-        Intent intent = getActivity().getIntent();
-        if (intent.getExtras() != null) {
-            tele =intent.getStringExtra("name");
-        }
-
-
-
         try{
             if(TableSexo.listAll(TableSexo.class).size() == 0){
                 new TableSexo("Masculino").save();
@@ -95,6 +88,9 @@ public class Cadastro_Ind3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        tele = getArguments().getString("telefone");
+
         // Infla o Layout pra esse fragmento
         return inflater.inflate(R.layout.cadastro_individual3, container, false);
     }
