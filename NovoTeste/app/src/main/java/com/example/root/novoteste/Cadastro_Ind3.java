@@ -60,18 +60,6 @@ public class Cadastro_Ind3 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        Bundle bundle = this.getArguments();
-//        if (bundle != null) {
-//            tele = bundle.getString("telefone", "defaultValue");
-//        }
-
-        Intent intent = getActivity().getIntent();
-        if (intent.getExtras() != null) {
-            tele =intent.getStringExtra("name");
-        }
-
-
-
         try{
             if(TableSexo.listAll(TableSexo.class).size() == 0){
                 new TableSexo("Masculino").save();
@@ -443,7 +431,7 @@ public class Cadastro_Ind3 extends Fragment {
 
 
 
-            Toast.makeText(getActivity().getApplicationContext(), ""+tele, Toast.LENGTH_LONG).show();
+
 
 
 
@@ -455,6 +443,12 @@ public class Cadastro_Ind3 extends Fragment {
 //            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
+
+    public void updateText(String string)
+    {
+        tele = string;
+        //Toast.makeText(getActivity().getApplicationContext(), ""+tele, Toast.LENGTH_LONG).show();
+    }
 
 
 }

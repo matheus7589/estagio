@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class CadastroIndividual extends AppCompatActivity {
+public class CadastroIndividual extends AppCompatActivity implements OnCommunicateInterface {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -77,4 +77,9 @@ public class CadastroIndividual extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onSetText(String str) {
+        Cadastro_Ind3 cad3 = (Cadastro_Ind3) getSupportFragmentManager().findFragmentById(R.id.fragmentIndividual3);
+        cad3.updateText(str);
+    }
 }

@@ -1,11 +1,13 @@
 package com.example.root.novoteste;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,7 @@ import java.util.List;
  */
 public class Cadastro_Ind1 extends Fragment {
 
+    OnCommunicateInterface onCommunicate;
     private EditText telefone, municipio, cartaoSus, nomeCompleto, nomeSocial, dataNascimento, pisPasep, paisNascimento, nomeMae, eMail;
     private String tele, muni, sus, nomeComp, nomeSoci, data, pasep, pais, mae, mail;
 
@@ -193,11 +196,15 @@ public class Cadastro_Ind1 extends Fragment {
 //                    nacionalidade = (int) (long) temporaria.getId();
 //                }
 //            }
+            Toast.makeText(getActivity().getApplicationContext(), ""+tele, Toast.LENGTH_LONG).show();
+            //onCommunicate.onSetText(tele);
 
-            Cadastro_Ind1 fragmento = new Cadastro_Ind1();
-            Bundle bundle = new Bundle();
-            bundle.putString("telefone", tele); // use as per your need
-            fragmento.setArguments(bundle);
+            DataCache.getInstance().push(tele);
+
+//            Cadastro_Ind1 fragmento = new Cadastro_Ind1();
+//            Bundle bundle = new Bundle();
+//            bundle.putString("telefone", tele); // use as per your need
+//            fragmento.setArguments(bundle);
 //            FragmentManager fragmentManager = getFragmentManager();
 //            fragmentManager.beginTransaction()
 //                    .replace(R.id.registrar
@@ -223,6 +230,22 @@ public class Cadastro_Ind1 extends Fragment {
 
         }
     };
+
+    @Override
+    /**************** onAttach **************/
+    public void onAttach(Context context)
+    {
+        super.onAttach(context);
+
+        try
+        {
+            onCommunicate = (OnCommunicateInterface) context;
+        }
+        catch (Exception e)
+        {
+            Log.e("onAttach",e.toString());
+        }
+    }
 
 
 
