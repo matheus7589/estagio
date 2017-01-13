@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.root.novoteste.R;
 
@@ -57,10 +58,25 @@ public class CadastroIndividual extends AppCompatActivity {
 
 
     private void setupViewPager(ViewPager viewPager) {
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null)
+        {
+            String telefone = bundle.getString("telefone");
+
+        }
+        else if (bundle == null)
+        {
+            Toast.makeText(this, "Bundle está null", Toast.LENGTH_SHORT).show();
+        }
+
+        Cadastro_Ind3 cad = new Cadastro_Ind3();
+        cad.setArguments(bundle);
+
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Cadastro_Ind1(), "1º Passo");
         adapter.addFragment(new Cadastro_Ind2(), "2º Passo");
-        adapter.addFragment(new Cadastro_Ind3(), "3º Passo");
+        adapter.addFragment(cad, "3º Passo");
         viewPager.setAdapter(adapter);
     }
 

@@ -88,6 +88,8 @@ public class Cadastro_Ind3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Infla o Layout pra esse fragmento
         return inflater.inflate(R.layout.cadastro_individual3, container, false);
     }
