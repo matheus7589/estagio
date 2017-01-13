@@ -1,14 +1,10 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.util.StringBuilderPrinter;
-import android.widget.Toast;
 
 /**
  * Created by root on 10/10/2016.

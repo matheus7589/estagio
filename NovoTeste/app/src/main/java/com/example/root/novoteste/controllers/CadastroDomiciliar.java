@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.root.novoteste.R;
 
-public class CadastroIndividual extends AppCompatActivity implements OnCommunicateInterface {
+
+public class CadastroDomiciliar extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -30,7 +32,7 @@ public class CadastroIndividual extends AppCompatActivity implements OnCommunica
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_individual);
+        setContentView(R.layout.activity_cadastro_domiciliar);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,21 +46,19 @@ public class CadastroIndividual extends AppCompatActivity implements OnCommunica
             }
         });
 
-
-
-        viewPager = (ViewPager) findViewById(R.id.container);
+        viewPager = (ViewPager) findViewById(R.id.container2);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = (TabLayout) findViewById(R.id.tabs2);
         tabLayout.setupWithViewPager(viewPager);
     }
 
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Cadastro_Ind1(), "1º Passo");
-        adapter.addFragment(new Cadastro_Ind2(), "2º Passo");
-        adapter.addFragment(new Cadastro_Ind3(), "3º Passo");
+        adapter.addFragment(new Cadastro_Domi1(), "1º Passo");
+        adapter.addFragment(new Cadastro_Domi2(), "2º Passo");
+        //adapter.addFragment(new Cadastro_Domi3(), "3º Passo");
         viewPager.setAdapter(adapter);
     }
 
@@ -75,11 +75,5 @@ public class CadastroIndividual extends AppCompatActivity implements OnCommunica
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onSetText(String str) {
-        Cadastro_Ind3 cad3 = (Cadastro_Ind3) getSupportFragmentManager().findFragmentById(R.id.fragmentIndividual3);
-        cad3.updateText(str);
     }
 }

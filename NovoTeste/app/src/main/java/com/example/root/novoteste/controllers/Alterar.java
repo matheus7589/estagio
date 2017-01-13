@@ -1,12 +1,12 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.root.novoteste.R;
 
 /**
  * Created by root on 13/10/2016.

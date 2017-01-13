@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.example.root.novoteste.R;
 
 /**
  * Created by suporte on 08/12/2016.

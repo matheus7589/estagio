@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.root.novoteste.R;
 
 /**
  * Created by root on 30/08/2016.

@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

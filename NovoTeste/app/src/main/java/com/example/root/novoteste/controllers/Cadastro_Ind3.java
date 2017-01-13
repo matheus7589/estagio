@@ -1,9 +1,11 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.root.novoteste.DAO.CadastroIndividualDAO;
+import com.example.root.novoteste.R;
+import com.example.root.novoteste.models.TableCadastroIndividual1;
 import com.example.root.novoteste.models.TableComunidadeTradicional;
 import com.example.root.novoteste.models.TableCreche;
 import com.example.root.novoteste.models.TableCrianca;
@@ -28,7 +33,6 @@ import com.example.root.novoteste.models.TableNacionalidade;
 import com.example.root.novoteste.models.TableOrientacaoSexual;
 import com.example.root.novoteste.models.TableParentesco;
 import com.example.root.novoteste.models.TablePlanoSaude;
-import com.example.root.novoteste.models.TableRaca;
 import com.example.root.novoteste.models.TableSaidaCadastro;
 import com.example.root.novoteste.models.TableSexo;
 
@@ -41,18 +45,19 @@ import java.util.List;
  */
 public class Cadastro_Ind3 extends Fragment {
 
+    TableDomicilio domicilio;
 
-    private EditText ocupacao, telefone, municipio, cartaoSus, nomeCompleto, nomeSocial, dataNascimento, pisPasep, paisNascimento, nomeMae, eMail;
-    private String ocup, tele, muni, sus, nomeComp, nomeSoci, data, pasep, pais, mae, mail;
+    private EditText ocupacao;
+    private String ocup;
 
     //ID's sem converter
     int sex, rac, naci, gra, paren, cre, merc, orien, defi, cria, cuida, plano, grupo, comu, sai;
 
     //ID's convertidos
-    int sexo, raca, nacionalidade, grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador, planosaude,
+    int grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador, planosaude,
             grupoComunitario, comunidadeTradicional, saida;
 
-    RadioButton texto, radioSexo, radioRaca, radioNacionalidade, radioParentesco, radioGrauEscolaridade, radioCreche, radioMercadoTrabalho,
+    RadioButton radioParentesco, radioGrauEscolaridade, radioCreche, radioMercadoTrabalho,
             radioOrientacao, radioDeficiencia, radioCrianca, radioCuidador, radioPlanoSaude, radioGrupoComunitario, radioComunidadeTradicional,
             radioSaida;
 
@@ -109,120 +114,6 @@ public class Cadastro_Ind3 extends Fragment {
     View.OnClickListener regHandler = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ///////////////////////////// FRAGMENTO 1 /////////////////////////////////////////////
-            //EditTexts
-//            telefone = (EditText) getActivity().findViewById(R.id.telefone);
-//            municipio = (EditText) getActivity().findViewById(R.id.municipio);
-//            cartaoSus = (EditText) getActivity().findViewById(R.id.sus);
-//            nomeCompleto = (EditText) getActivity().findViewById(R.id.nomeCompleto);
-//            nomeSocial = (EditText) getActivity().findViewById(R.id.nomeSocial);
-//            dataNascimento = (EditText) getActivity().findViewById(R.id.dataNascimento);
-//            pisPasep = (EditText) getActivity().findViewById(R.id.pisPasep);
-//            paisNascimento = (EditText) getActivity().findViewById(R.id.paisNascimento);
-//            nomeMae = (EditText) getActivity().findViewById(R.id.nomeMae);
-//            eMail = (EditText) getActivity().findViewById(R.id.email);
-//
-//            //Strings
-//            tele = telefone.getText().toString();
-//            if(TextUtils.isEmpty(tele)) {
-//                telefone.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            muni = municipio.getText().toString();
-//            if(TextUtils.isEmpty(muni)) {
-//                municipio.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            sus = cartaoSus.getText().toString();
-//            if(TextUtils.isEmpty(sus)) {
-//                cartaoSus.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//            nomeComp = nomeCompleto.getText().toString();
-//            if(TextUtils.isEmpty(nomeComp)) {
-//                nomeCompleto.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            nomeSoci = nomeSocial.getText().toString();
-//            if(TextUtils.isEmpty(nomeSoci)) {
-//                nomeSocial.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            data = dataNascimento.getText().toString();
-//            if(TextUtils.isEmpty(data)) {
-//                dataNascimento.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//            pasep = pisPasep.getText().toString();
-//            if(TextUtils.isEmpty(pasep)) {
-//                pisPasep.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            pais = paisNascimento.getText().toString();
-//            if(TextUtils.isEmpty(pais)) {
-//                paisNascimento.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//            mae = nomeMae.getText().toString();
-//            if(TextUtils.isEmpty(mae)) {
-//                nomeMae.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            mail = eMail.getText().toString();
-//            if(TextUtils.isEmpty(mail)) {
-//                eMail.setError("Este campo não pode estar vazio!");
-//                return;
-//            }
-//
-//            //RadioGroups
-//            RadioGroup radio_grp1 = (RadioGroup) getView().findViewById(R.id.sexoInd);
-//            if(radio_grp1.getCheckedRadioButtonId() == -1){
-//                Toast.makeText(getActivity().getApplicationContext(), "Sexo não selecionado!", Toast.LENGTH_LONG).show();
-//                return;
-//            }else {
-//                sex = radio_grp1.getCheckedRadioButtonId();
-//                radioSexo = (RadioButton) getActivity().findViewById(sex);
-//                TableSexo tableSexo = new TableSexo();
-//                List<TableSexo> listaSexo = tableSexo.find(TableSexo.class, "descricao = ?", radioSexo.getText().toString());
-//                for (TableSexo temporaria : listaSexo) {
-//                    sexo = (int) (long) temporaria.getId();
-//                }
-//            }
-//
-//            RadioGroup radio_grp2 = (RadioGroup) getView().findViewById(R.id.raca);
-//            if(radio_grp2.getCheckedRadioButtonId() == -1){
-//                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
-//                return;
-//            }else {
-//                rac = radio_grp2.getCheckedRadioButtonId();
-//                radioRaca = (RadioButton) getActivity().findViewById(rac);
-//                TableRaca tableRaca = new TableRaca();
-//                List<TableRaca> listaRaca = tableRaca.find(TableRaca.class, "descricao = ?", radioRaca.getText().toString());
-//                for(TableRaca temporaria : listaRaca){
-//                    raca = (int) (long) temporaria.getId();
-//                }
-//            }
-//
-//            RadioGroup radio_grp14 = (RadioGroup) getView().findViewById(R.id.nacionalidade);
-//            if(radio_grp14.getCheckedRadioButtonId() == -1){
-//                Toast.makeText(getActivity().getApplicationContext(), "Raça não selecionada!", Toast.LENGTH_LONG).show();
-//                return;
-//            }else {
-//                naci = radio_grp2.getCheckedRadioButtonId();
-//                radioNacionalidade = (RadioButton) getActivity().findViewById(naci);
-//                TableNacionalidade tableNacionalidade = new TableNacionalidade();
-//                List<TableNacionalidade> listaNacionalidade = tableNacionalidade.find(TableNacionalidade.class, "descricao = ?", radioNacionalidade.getText().toString());
-//                for(TableNacionalidade temporaria : listaNacionalidade){
-//                    nacionalidade = (int) (long) temporaria.getId();
-//                }
-//            }
-
 
             ///////////////////////////// FRAGMENTO 2 /////////////////////////////////////////////
 
@@ -420,35 +311,68 @@ public class Cadastro_Ind3 extends Fragment {
             SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
             String dataInicioResidencia = dateformat.format(c.getTime());
 
+            TableCadastroIndividual1 cadastroIndividual1 = null;
 
+            try {
+                List<TableCadastroIndividual1> cadastroIndividual1Lista = TableCadastroIndividual1.listAll(TableCadastroIndividual1.class);
+                for(TableCadastroIndividual1 temporaria : cadastroIndividual1Lista){
+                    cadastroIndividual1 = temporaria;
+                }
 
-//            TableIndividuo individuo = new TableIndividuo(nomeComp, nomeSoci, sus, data, mae, tele, ocup, pasep, pais, mail, muni, sexo, raca, nacionalidade, grau,
-//                    parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador, planosaude, grupoComunitario, comunidadeTradicional, saida,
-//                    dataInicioResidencia);
-//
-//            individuo.save();
+                if (cadastroIndividual1 == null) {
+                    Toast.makeText(getActivity().getApplicationContext(), "Dados de identificação do usuário não foram inseridos!", Toast.LENGTH_LONG).show();
+                    return;
+                } else {
 
+                    TableIndividuo individuo = new TableIndividuo(cadastroIndividual1.getNomeCompleto(), cadastroIndividual1.getNomeSocial(),
+                            cadastroIndividual1.getCartaoSus(), cadastroIndividual1.getDataNascimento(), cadastroIndividual1.getNomeMae(),
+                            cadastroIndividual1.getTelefone(), ocup, cadastroIndividual1.getPisPasep(), cadastroIndividual1.getPaisNascimento(),
+                            cadastroIndividual1.getEmail(), cadastroIndividual1.getMunicipio(), cadastroIndividual1.getSexo(), cadastroIndividual1.getRaca(),
+                            cadastroIndividual1.getNacionalidade(), grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador,
+                            planosaude, grupoComunitario, comunidadeTradicional, saida, dataInicioResidencia);
 
+                    if (CadastroIndividualDAO.inserir(individuo)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Indivíduo Inserido com sucesso!", Toast.LENGTH_LONG).show();
+                        cadastroIndividual1.deleteAll(TableCadastroIndividual1.class);
+                        //Intent intent = getActivity().getIntent();
+                        //domicilio = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
+                    }
+                }
+            }catch (SQLiteException e){
+                System.out.println(e);
+            }
 
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+            builder1.setMessage("Deseja adicionar um novo indivíduo à essa residência?");
+            builder1.setCancelable(false);
 
+            builder1.setPositiveButton(
+                    "Sim",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            getActivity().finish();
+                            Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
+                            //individuo.putExtra("Domicilio", domicilio);
+                            startActivity(individuo);
+                            dialog.cancel();
+                        }
+                    });
 
+            builder1.setNegativeButton(
+                    "Não",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            getActivity().finish();
+                        }
+                    });
 
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
 
-
-            //Intent intent = getActivity().getIntent();
-            //TableDomicilio table = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
-
-//            resultado = crud.insereDado(tele, muni);
-//
-//            Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
         }
     };
 
-    public void updateText(String string)
-    {
-        tele = string;
-        //Toast.makeText(getActivity().getApplicationContext(), ""+tele, Toast.LENGTH_LONG).show();
-    }
 
 
 }

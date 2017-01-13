@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.root.novoteste.R;
+
 /**
  * Created by root on 04/08/2016.
  */
-public class Fragmento4 extends Fragment {
+public class Fragmento2 extends Fragment {
 
     ImageButton button1;
     int i = 0;
@@ -19,7 +21,7 @@ public class Fragmento4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Infla o Layout pra esse fragmento
-        return inflater.inflate(R.layout.avaliacao_sensitiva4, container, false);
+        return inflater.inflate(R.layout.avaliacao_sensitiva2, container, false);
     }
 
     @Override

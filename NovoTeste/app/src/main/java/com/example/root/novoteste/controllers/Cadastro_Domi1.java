@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.root.novoteste.R;
 
 /**
  * Created by root on 20/09/2016.

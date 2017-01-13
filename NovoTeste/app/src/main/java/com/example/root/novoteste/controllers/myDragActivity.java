@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -12,6 +12,8 @@ import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.example.root.novoteste.R;
 
 /**
  * Created by root on 07/11/2016.

@@ -1,4 +1,4 @@
-package com.example.root.novoteste;
+package com.example.root.novoteste.controllers;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.root.novoteste.enums.Localizacao;
+import com.example.root.novoteste.R;
 import com.example.root.novoteste.models.TableAbastecimentoAgua;
 import com.example.root.novoteste.models.TableCondicaoTerra;
 import com.example.root.novoteste.models.TableDestinoLixo;
@@ -388,16 +388,6 @@ public class Cadastro_Domi2 extends Fragment {
                 }
             }
 
-            //Toast.makeText(getActivity().getApplicationContext(), "Passou mesmo tendo pego o Erro!!!!!", Toast.LENGTH_LONG).show();
-//
-//
-//            String resultado;
-//
-//            Toast.makeText(getActivity().getApplicationContext(), ""+localizacao, Toast.LENGTH_LONG).show();
-//
-//            //resultado = crud.insereDado(sus, nameLogradouro, tipoLograd, numberLograd, comple, bairr, teleResid, numComods, numMora);
-//
-//            //Toast.makeText(getActivity().getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
             try {
                 final TableDomicilio domicilio = new TableDomicilio(nameLogradouro, numberLograd, sus, tipoLograd, comple, teleResid, numMora, numComods, localizacao,

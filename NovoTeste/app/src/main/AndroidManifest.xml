@@ -34,7 +34,7 @@
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.root.novoteste" />
 
         <activity
-            android:name=".BarraDeNavegacao"
+            android:name=".controllers.BarraDeNavegacao"
             android:label="Novo Teste"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -45,35 +45,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Maps"
+            android:name=".controllers.Maps"
             android:label="Mapa CadHanse"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Abas"
+            android:name=".controllers.Abas"
             android:label="@string/title_activity_abas"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CadastroIndividual"
+            android:name=".controllers.CadastroIndividual"
             android:label="Cadastro Individual"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CadastroDomiciliar"
+            android:name=".controllers.CadastroDomiciliar"
             android:label="Cadastro Domiciliar"
             android:theme="@style/AppTheme.NoActionBar" />
             <!-- android:screenOrientation="portrait" -->
 
         <activity
-            android:name=".listarDados"
+            android:name=".controllers.listarDados"
             android:label="Listar Dados"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".Alterar"
+            android:name=".controllers.Alterar"
             android:label="Alterar dados"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".myDragActivity"
+            android:name=".controllers.myDragActivity"
             android:label="Arrastar"
             android:theme="@style/AppTheme"></activity>
     </application>

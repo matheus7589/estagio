@@ -224,9 +224,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView19"
+                android:textStyle="bold"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/sexoInd"
-                android:layout_toEndOf="@+id/sexoInd"
+                android:layout_centerHorizontal="true"
                 android:textSize="18sp" />
 
             <EditText
@@ -290,8 +290,8 @@
                 android:layout_alignBottom="@+id/sexoInd"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_toRightOf="@+id/cadastrar"
-                android:layout_toEndOf="@+id/cadastrar" />
+                android:layout_toRightOf="@+id/registrar"
+                android:layout_toEndOf="@+id/registrar" />
 
         <Button
             android:text="Registrar"

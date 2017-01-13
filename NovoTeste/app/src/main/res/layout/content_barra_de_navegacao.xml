@@ -9,7 +9,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.root.novoteste.BarraDeNavegacao"
+    tools:context="com.example.root.novoteste.controllers.BarraDeNavegacao"
     tools:showIn="@layout/app_bar_barra_de_navegacao">
 
 

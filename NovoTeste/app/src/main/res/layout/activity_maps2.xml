@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context="com.example.root.novoteste.Maps">
+    tools:context="com.example.root.novoteste.controllers.Maps">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="879dp"
         android:id="@+id/map"
-        tools:context=".Maps"
+        tools:context=".controllers.Maps"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         tools:layout="@layout/content_barra_de_navegacao"
         android:layout_marginTop="60dp"/>
