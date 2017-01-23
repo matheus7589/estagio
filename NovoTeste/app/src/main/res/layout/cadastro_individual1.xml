@@ -302,5 +302,14 @@
             android:layout_marginBottom="12dp"
             android:id="@+id/registrar" />
 
+        <CheckBox
+            android:text="Responsável"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_alignRight="@+id/registrar"
+            android:layout_alignEnd="@+id/registrar"
+            android:id="@+id/responsavel" />
+
     </RelativeLayout>
 </ScrollView>

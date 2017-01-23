@@ -53,6 +53,8 @@ public class Cadastro_Ind3 extends Fragment {
     //ID's sem converter
     int sex, rac, naci, gra, paren, cre, merc, orien, defi, cria, cuida, plano, grupo, comu, sai;
 
+    boolean responsavel;
+
     //ID's convertidos
     int grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador, planosaude,
             grupoComunitario, comunidadeTradicional, saida;
@@ -326,12 +328,14 @@ public class Cadastro_Ind3 extends Fragment {
                     return;
                 } else {
 
+                    responsavel = cadastroIndividual1.isResponsavel();
+
                     TableIndividuo individuo = new TableIndividuo(cadastroIndividual1.getNomeCompleto(), cadastroIndividual1.getNomeSocial(),
                             cadastroIndividual1.getCartaoSus(), cadastroIndividual1.getDataNascimento(), cadastroIndividual1.getNomeMae(),
                             cadastroIndividual1.getTelefone(), ocup, cadastroIndividual1.getPisPasep(), cadastroIndividual1.getPaisNascimento(),
                             cadastroIndividual1.getEmail(), cadastroIndividual1.getMunicipio(), cadastroIndividual1.getSexo(), cadastroIndividual1.getRaca(),
                             cadastroIndividual1.getNacionalidade(), grau, parentensco, creche, mercadotrab, orientacao, deficiencia, crianca, cuidador,
-                            planosaude, grupoComunitario, comunidadeTradicional, saida, dataInicioResidencia);
+                            planosaude, grupoComunitario, comunidadeTradicional, saida, dataInicioResidencia, cadastroIndividual1.isResponsavel());
 
                     if (CadastroIndividualDAO.inserir(individuo)) {
                         Toast.makeText(getActivity().getApplicationContext(), "Indivíduo Inserido com sucesso!", Toast.LENGTH_LONG).show();
@@ -355,6 +359,7 @@ public class Cadastro_Ind3 extends Fragment {
                             getActivity().finish();
                             Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
                             //individuo.putExtra("Domicilio", domicilio);
+                            individuo.putExtra("Responsavel", responsavel);
                             startActivity(individuo);
                             dialog.cancel();
                         }

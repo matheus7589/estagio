@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,6 +39,10 @@ public class Cadastro_Ind1 extends Fragment {
 
     boolean isVazio;
     int salvou = 0;
+
+    CheckBox resposavel;
+
+    boolean resp, isResponsavel;
 
     private EditText telefone, municipio, cartaoSus, nomeCompleto, nomeSocial, dataNascimento, pisPasep, paisNascimento, nomeMae, eMail;
     private String tele, muni, sus, nomeComp, nomeSoci, data, pasep, pais, mae, mail;
@@ -77,6 +82,13 @@ public class Cadastro_Ind1 extends Fragment {
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        Intent intent = getActivity().getIntent();
+        isResponsavel = (boolean) intent.getExtras().getSerializable("Responsavel");
+
+        if(isResponsavel== true){
+            resposavel.setEnabled(false);
+        }
+
         Button registrar = (Button)view.findViewById(R.id.registrar);
 
         registrar.setOnClickListener(regHandler);
@@ -102,6 +114,16 @@ public class Cadastro_Ind1 extends Fragment {
             nomeMae = (EditText) getView().findViewById(R.id.nomeMae);
             eMail = (EditText) getView().findViewById(R.id.email);
 
+            //checkBox
+            resposavel = (CheckBox) getView().findViewById(R.id.responsavel);
+
+            if(isResponsavel == false) {
+                if (resposavel.isChecked()) {
+                    resp = true;
+                } else {
+                    resp = false;
+                }
+            }
 
             //Strings
             tele = telefone.getText().toString();
@@ -218,7 +240,7 @@ public class Cadastro_Ind1 extends Fragment {
             if(salvou == 0) {
                 if (isVazio == true) {
                     TableCadastroIndividual1 tableCadastroIndividual1 = new TableCadastroIndividual1(tele, muni, sus, nomeComp, nomeSoci, data, pasep, pais,
-                            mae, mail, sexo, raca, nacionalidade);
+                            mae, mail, sexo, raca, nacionalidade, resp);
                     if (Cadastro_ind1DAO.inserir(tableCadastroIndividual1)) {
                         Toast.makeText(getActivity().getApplicationContext(), "Salvou!", Toast.LENGTH_LONG).show();
                         salvou++;

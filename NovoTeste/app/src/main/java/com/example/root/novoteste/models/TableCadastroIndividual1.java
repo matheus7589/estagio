@@ -19,12 +19,14 @@ public class TableCadastroIndividual1 extends SugarRecord {
     String nomeMae;
     String email;
 
+    boolean isResponsavel;
+
     int sexo, raca, nacionalidade;
 
     public TableCadastroIndividual1(){}
 
     public TableCadastroIndividual1(String telefone, String municipio, String cartaoSus, String nomeCompleto, String nomeSocial, String dataNascimento,
-                                    String pisPasep, String paisNascimento, String nomeMae, String email, int sexo, int raca, int nacionalidade) {
+                                    String pisPasep, String paisNascimento, String nomeMae, String email, int sexo, int raca, int nacionalidade, boolean isResponsavel) {
         this.telefone = telefone;
         this.municipio = municipio;
         this.cartaoSus = cartaoSus;
@@ -38,6 +40,7 @@ public class TableCadastroIndividual1 extends SugarRecord {
         this.sexo = sexo;
         this.raca = raca;
         this.nacionalidade = nacionalidade;
+        this.isResponsavel = isResponsavel;
     }
 
     public String getTelefone() {
@@ -142,5 +145,13 @@ public class TableCadastroIndividual1 extends SugarRecord {
 
     public void setNacionalidade(int nacionalidade) {
         this.nacionalidade = nacionalidade;
+    }
+
+    public boolean isResponsavel() {
+        return isResponsavel;
+    }
+
+    public void setResponsavel(boolean responsavel) {
+        isResponsavel = responsavel;
     }
 }

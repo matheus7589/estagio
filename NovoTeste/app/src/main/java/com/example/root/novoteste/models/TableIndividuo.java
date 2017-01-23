@@ -8,6 +8,8 @@ import com.orm.SugarRecord;
 
 public class TableIndividuo extends SugarRecord {
 
+    boolean isResposavel;
+
     String nomeCompleto;
     String nomeSocial;
     String cartaoSus;
@@ -32,7 +34,7 @@ public class TableIndividuo extends SugarRecord {
     public TableIndividuo(String nomeCompleto, String nomeSocial, String cartaoSus, String dataNascimento, String nomeMae, String telefoneCelular,
                           String ocupacao, String pis_pasep, String pais, String mail, String municipioNascimento, int sexo, int raca, int nacionalidade,
                           int grau, int parentensco, int creche, int mercadotrab, int orientacao, int deficiencia, int crianca, int cuidador, int planosaude,
-                          int grupoComunitario, int comunidadeTradicional, int saida, String dataInicioResidencia) {
+                          int grupoComunitario, int comunidadeTradicional, int saida, String dataInicioResidencia, boolean isResposavel) {
         this.nomeCompleto = nomeCompleto;
         this.nomeSocial = nomeSocial;
         this.cartaoSus = cartaoSus;
@@ -60,6 +62,7 @@ public class TableIndividuo extends SugarRecord {
         this.comunidadeTradicional = comunidadeTradicional;
         this.saida = saida;
         this.dataInicioResidencia = dataInicioResidencia;
+        this.isResposavel = isResposavel;
     }
 
     public String getNomeCompleto() {
@@ -132,5 +135,13 @@ public class TableIndividuo extends SugarRecord {
 
     public void setDataFimResidencia(String dataFimResidencia) {
         this.dataFimResidencia = dataFimResidencia;
+    }
+
+    public boolean isResposavel() {
+        return isResposavel;
+    }
+
+    public void setResposavel(boolean resposavel) {
+        isResposavel = resposavel;
     }
 }

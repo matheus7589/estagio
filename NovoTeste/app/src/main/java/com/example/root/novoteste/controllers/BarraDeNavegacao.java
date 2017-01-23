@@ -87,6 +87,7 @@ public class BarraDeNavegacao extends AppCompatActivity
             startActivity(abas);
         } else if (id == R.id.nav_slideshow) {
             Intent cadastroIndividual = new Intent(BarraDeNavegacao.this, CadastroIndividual.class);
+            cadastroIndividual.putExtra("Responsavel", false);
             startActivity(cadastroIndividual);
         } else if (id == R.id.nav_manage) {
             Intent cadastroDomicicliar = new Intent(BarraDeNavegacao.this, CadastroDomiciliar.class);
