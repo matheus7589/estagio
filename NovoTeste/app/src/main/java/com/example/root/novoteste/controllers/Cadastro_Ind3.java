@@ -25,6 +25,7 @@ import com.example.root.novoteste.models.TableCrianca;
 import com.example.root.novoteste.models.TableCuidador;
 import com.example.root.novoteste.models.TableDeficiencia;
 import com.example.root.novoteste.models.TableDomicilio;
+import com.example.root.novoteste.models.TableDomicilioIndividuo;
 import com.example.root.novoteste.models.TableGrau;
 import com.example.root.novoteste.models.TableGrupoComunitario;
 import com.example.root.novoteste.models.TableIndividuo;
@@ -45,13 +46,13 @@ import java.util.List;
  */
 public class Cadastro_Ind3 extends Fragment {
 
-    TableDomicilio domicilio;
+    long domicilio;
 
     private EditText ocupacao;
     private String ocup;
 
     //ID's sem converter
-    int sex, rac, naci, gra, paren, cre, merc, orien, defi, cria, cuida, plano, grupo, comu, sai;
+    int sex, rac, naci, gra, paren, cre, merc, orien, defi, cria, cuida, plano, grupo, comu, sai, flag;
 
     boolean responsavel;
 
@@ -113,6 +114,10 @@ public class Cadastro_Ind3 extends Fragment {
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        // Apply the adapter to the spinner
 //        spinner.setAdapter(adapter);
+
+        Intent intent = getActivity().getIntent();
+        domicilio = (long) intent.getExtras().getSerializable("Domicilio");
+
     }
 
     View.OnClickListener regHandler = new View.OnClickListener() {
@@ -329,6 +334,13 @@ public class Cadastro_Ind3 extends Fragment {
                 } else {
 
                     responsavel = cadastroIndividual1.isResponsavel();
+                    if(responsavel == true){
+                        flag = 1;
+                    }
+
+                    if(flag == 1){
+                        responsavel = true;
+                    }
 
                     TableIndividuo individuo = new TableIndividuo(cadastroIndividual1.getNomeCompleto(), cadastroIndividual1.getNomeSocial(),
                             cadastroIndividual1.getCartaoSus(), cadastroIndividual1.getDataNascimento(), cadastroIndividual1.getNomeMae(),
@@ -338,10 +350,11 @@ public class Cadastro_Ind3 extends Fragment {
                             planosaude, grupoComunitario, comunidadeTradicional, saida, dataInicioResidencia, cadastroIndividual1.isResponsavel());
 
                     if (CadastroIndividualDAO.inserir(individuo)) {
-                        Toast.makeText(getActivity().getApplicationContext(), "Indivíduo Inserido com sucesso!", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getActivity().getApplicationContext(), "Indivíduo Inserido com sucesso!", Toast.LENGTH_LONG).show();
                         cadastroIndividual1.deleteAll(TableCadastroIndividual1.class);
-                        //Intent intent = getActivity().getIntent();
-                        //domicilio = (TableDomicilio) intent.getExtras().getSerializable("Domicilio");
+                        Toast.makeText(getActivity().getApplicationContext(), "Domicilio: " + domicilio + "Individuo: " + individuo.getId(), Toast.LENGTH_SHORT).show();
+                        TableDomicilioIndividuo domicilioIndividuo = new TableDomicilioIndividuo(domicilio, individuo.getId());
+                        domicilioIndividuo.save();
                     }
                 }
             }catch (SQLiteException e){
@@ -358,7 +371,7 @@ public class Cadastro_Ind3 extends Fragment {
                         public void onClick(DialogInterface dialog, int id) {
                             getActivity().finish();
                             Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
-                            //individuo.putExtra("Domicilio", domicilio);
+                            individuo.putExtra("Domicilio", domicilio);
                             individuo.putExtra("Responsavel", responsavel);
                             startActivity(individuo);
                             dialog.cancel();

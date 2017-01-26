@@ -82,11 +82,14 @@ public class Cadastro_Ind1 extends Fragment {
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        resposavel = (CheckBox) getView().findViewById(R.id.responsavel);
+
         Intent intent = getActivity().getIntent();
         isResponsavel = (boolean) intent.getExtras().getSerializable("Responsavel");
 
-        if(isResponsavel== true){
+        if(isResponsavel == true){
             resposavel.setEnabled(false);
+            resp = false;
         }
 
         Button registrar = (Button)view.findViewById(R.id.registrar);

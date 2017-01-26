@@ -5,10 +5,14 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
@@ -16,6 +20,8 @@ import com.example.root.novoteste.R;
 import com.example.root.novoteste.models.TableCadastroIndividual1;
 import com.example.root.novoteste.models.TableIndividuo;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class listarDados extends AppCompatActivity {
@@ -38,42 +44,56 @@ public class listarDados extends AppCompatActivity {
             }
         });
 
-        //BancoController crud = new BancoController(getBaseContext());
-        //final Cursor cursorDomi = crud.carregaDadosDomicilio();
-        //final Cursor cursorBairro = crud.carregaDadosEstado();
 
-        final List<TableIndividuo> individuo = TableIndividuo.listAll(TableIndividuo.class);
+        final List<TableIndividuo> individuos = TableIndividuo.listAll(TableIndividuo.class);
+        ArrayList<String> listaNome = new ArrayList<String>();
+
+        for(TableIndividuo temporario : individuos){
+            System.out.println(temporario.isResposavel());
+            if(temporario.isResposavel()) {
+                listaNome.add(temporario.getId() + "    " +temporario.getNomeCompleto());
+            }
+        }
 
 
-//        final CursorJoiner mergedCursor = new CursorJoiner(new Cursor[]{
-//                cursorDomi,
-//                cursorBairro
-//        });
-
-//        if(cursorBairro!=null)
-//            Toast.makeText(getApplicationContext(), mergedCursor.getString(mergedCursor.getColumnIndex(CriaBanco.getDESCRICAO())), Toast.LENGTH_LONG).show();
-
-        String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getCartaoSus(), CriaBanco.getDESCRICAO()};
-        int[] idViews = new int[] {R.id.idDomicilio, R.id.nomeTelefone, R.id.cartaosus};
-
-        ArrayAdapter<TableIndividuo> adaptador = new ArrayAdapter<TableIndividuo>(getBaseContext(),
-                R.layout.content_listar_dados, android.R.id.text1, individuo);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getBaseContext(),
+                R.layout.content_listar_dados, R.id.idDomicilio, listaNome);
         lista = (ListView)findViewById(R.id.listView);
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String codigo;
+                //String codigo;
                 // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
-                String itemValue = (String) lista.getItemAtPosition(position);
+                int itemPosition = position+1;
 
                 // Show Alert
-                Toast.makeText(getApplicationContext(), "Position: " + itemPosition + " ListItem: " + itemValue, Toast.LENGTH_LONG).show();
-                finish();
+                //Toast.makeText(getApplicationContext(), "Posição: " + itemPosition, Toast.LENGTH_SHORT).show();
+
+                PopupMenu menu = new PopupMenu (listarDados.this, view);
+                menu.setOnMenuItemClickListener (new PopupMenu.OnMenuItemClickListener ()
+                {
+                    @Override
+                    public boolean onMenuItemClick (MenuItem item)
+                    {
+                        int id = item.getItemId();
+                        switch (id)
+                        {
+                            case R.id.item_abrir:
+                                //Log.i (Tag, "settings");
+                                break;
+                            case R.id.item_editar:
+                                //Log.i (Tag, "about");
+                                break;
+                            case R.id.item_deletar:
+                                break;
+                        }
+                        return true;
+                    }
+                });
+                menu.inflate (R.menu.menu_editar);
+                menu.show();
             }
         });
 

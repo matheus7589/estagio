@@ -41,6 +41,8 @@ public class Cadastro_Domi2 extends Fragment {
 
     ProgressDialog dialog;
 
+    TableDomicilio tableDomicilio = new TableDomicilio();
+
     private EditText cns, nomeLogradouro, numLogradouro, tipoLogradouro, complemento, telResidencial, numMoradores, numComodos, howManyAnimals;
 
     private String sus, nameLogradouro, numberLograd, tipoLograd, comple, teleResid,  numMora, numComods, quantosAnimais;
@@ -394,31 +396,40 @@ public class Cadastro_Domi2 extends Fragment {
                         moradia, tipoDomicilio, condiTerra, tipoAcesso, abastecimentoAgua, tratamentoAgua, destinoLixo, energia, formaEscoamento, tipoAnimai);
                 domicilio.save();
 
+                tableDomicilio = domicilio;
+
                 dialog = ProgressDialog.show(getActivity(),"Novo Domicílio","Salvando Domicílio. Aguarde...", false, true);
                 dialog.setCancelable(false);
+
 
                 new Thread() {
 
                     public void run() {
 
                         try {
-
                             Thread.sleep(2500);
                             dialog.dismiss();
-                            Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
-                            individuo.putExtra("Domicilio", domicilio);
-                            startActivity(individuo);
-                        }catch (Exception e) {
 
+                            //System.out.println(tableDomicilio.getId());
+
+                            Intent individuo = new Intent(getActivity(), CadastroIndividual.class);
+                            individuo.putExtra("Domicilio", tableDomicilio.getId());
+                            individuo.putExtra("Responsavel", false);
+                            startActivity(individuo);
+
+                            getActivity().finish();
+
+                        }catch (Exception e) {
+                            System.out.println(e);
                         }
                     }
                 }.start();
-                Toast.makeText(getActivity().getApplicationContext(), "Domicílio adicionado com sucesso!", Toast.LENGTH_LONG).show();
 
-            }catch (SQLiteException exception){
+                Toast.makeText(getActivity().getApplicationContext(), "Domicílio salvo com sucesso!", Toast.LENGTH_LONG).show();
+
+            }catch (SQLiteException exception) {
                 Toast.makeText(getActivity().getApplicationContext(), "Erro ao adicionar domicílio!", Toast.LENGTH_LONG).show();
             }
-
         }
     };
 
